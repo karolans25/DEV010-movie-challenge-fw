@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "movie-challenge-fw": {
+      "hosting": {
+        "movie-challenge": [
+          "movie-challenge-fw"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "movie-challenge-fw"
+  }
+}
