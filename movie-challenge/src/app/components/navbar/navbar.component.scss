@@ -1,0 +1,32 @@
+nav{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--height-navbar);
+    display: flex;
+    align-items: center;
+    background-color: var(--color-contrast);
+    color: var(--color-bg);
+    font-weight: 600;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+nav > *{
+    background-color: var(--color-contrast);
+}
+
+.spacer{
+    flex: 1;
+}
+
+select {
+    width: 100px;
+    height: 20px;
+    color: var(--color-bg);
+
+    & option {
+        color: var(--color-contrast);
+    }
+}

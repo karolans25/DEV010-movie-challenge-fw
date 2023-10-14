@@ -1,0 +1,11 @@
+*{
+    background-color: rebeccapurple;
+    position: absolute;
+    top: var(--height-navbar);
+    min-width: 600px;
+    max-width: 900px;
+    min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+}

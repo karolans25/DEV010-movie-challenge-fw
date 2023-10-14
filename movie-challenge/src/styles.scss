@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    --color-contrast: black;
+    // --color-contrast: #B5D1FB;
+    --color-bg: white;
+    --height-navbar: 60px;
+    --height-footer: 40px;
+    margin: 0;
+    // background-color: var(--color-bg);
+    // color: var(--color-contrast);
+    background-color: var(--color-contrast);
+    background-color: #B5D1FB;
+    box-sizing: border-box;
+    // width: 100%;
+    // height: 100%;
+}
