@@ -18,7 +18,7 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

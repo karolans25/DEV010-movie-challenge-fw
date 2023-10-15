@@ -3,10 +3,9 @@
     background-color: transparent;
     position: absolute;
     top: var(--height-navbar);
-    min-width: 600px;
+    min-width: fit-content;
     max-width: 900px;
     min-height: calc(100vh - var(--height-navbar) - var(--height-footer));
-    max-height: 100%;
     display: flex;
     justify-content: center;
 }
