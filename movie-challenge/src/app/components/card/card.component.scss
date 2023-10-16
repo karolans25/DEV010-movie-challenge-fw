@@ -1,0 +1,59 @@
+* {
+    --width-poster: 140px;
+    --height-poster: 210px;
+    --height-overlay: calc(var(--height-poster)/3);
+}
+
+figure{
+    width: var(--width-poster);
+    height: var(--height-poster);
+    border-radius: 13px;
+    background: url('https://image.tmdb.org/t/p/w200/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
+    background-size: var(--width-poster) var(--height-poster);
+    box-shadow: 4px 4px 2px 0px solid grey;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+}
+
+figure::before, figure::after {
+    content:"2023";
+    position:absolute;
+    top: 8px;
+    left: 1px;
+    display: block;
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    background: yellow;
+    height: 13px;
+    width: fit-content;
+    transform: rotate(-30deg);
+}
+// figure:hover{
+//     filter: saturate(2);
+// }
+
+caption{
+    // background: linear-gradient(grey, black);
+    background: black;
+    opacity: .8;
+    color: white;
+    width: var(--width-poster);
+    height: var(--height-overlay);
+    transform: translate(0px, calc(2*var(--height-overlay)));
+    border-bottom-left-radius: 10px;
+    align-items: end;
+    border-bottom-right-radius: 10px;
+}
+
+h4 {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+span{
+    font-size: 10px;
+}

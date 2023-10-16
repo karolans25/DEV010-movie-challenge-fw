@@ -1,0 +1,25 @@
+<main>
+    <!-- background lamps -->
+    <figure></figure>
+    <figure></figure>
+    <figure></figure>
+
+    <!-- options for search, filter and order -->
+    <section>
+        <input type="text" placeholder="Search movie by title" title="Write the movie's title">
+
+        <select title="Select the filter for the data">
+            <option *ngFor = "let option of filterOptions"><span>{{option}}</span></option>
+        </select>
+        
+        <select title="Select the order condition for the data">
+            <option *ngFor = "let option of orderOptions"><span>{{option}}</span></option>
+        </select>
+    </section>
+
+    <!-- container for movies's cards -->
+    <article>
+        <app-movies></app-movies>
+        <section class="pagination"></section>
+    </article>
+</main>

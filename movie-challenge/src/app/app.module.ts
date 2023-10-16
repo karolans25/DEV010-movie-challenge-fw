@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './components/card/card.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MovieListComponent } from './components/movie-list/movie-list.component
     CardComponent,
     NavbarComponent,
     FooterComponent,
-    MovieListComponent
+    HomeComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
