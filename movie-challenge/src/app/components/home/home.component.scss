@@ -4,13 +4,10 @@ main {
     top: var(--height-navbar);
     width: 100%;
     height: calc(100vh - var(--height-navbar) - var(--height-footer));
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    --long-cable: 70px;
-    --width-cable: 2px;
-    --height-lamp: 20px;
-    --width-lamp: 50px;
+    display: grid;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
 }
 
 // lamps 
@@ -41,11 +38,10 @@ figure::after{
     // opacity: 30%;
     border-radius: 0;
     background-color: transparent;
-    transform: translate(-75px, var(--height-lamp));
-    width: 200px;
-    // height: calc(100% - var(--height-navbar) - var(--height-footer));
-    height: 400px;
-    clip-path: polygon( 40% 0%, 60% 0, 100% 100%, 0 100%);
+    transform: translate(calc(-1*var(--width-light)/2 + (var(--width-lamp)/2)), var(--height-lamp));
+    width: var(--width-light);
+    height: calc(77vh - var(--height-lamp)); // 84 o 77 vh
+    clip-path: polygon( 45% 0, 55% 0, 100% 100%, 0 100%);
     padding-top: 40px;
     background: linear-gradient( rgba(255, 255, 255, 1), rgba(255, 255, 255, .2));
     // filter: blur(25px);
@@ -62,21 +58,21 @@ figure:nth-child(3){
     transform: translate(73vw, 0px);    
 }
 
-// figure:hover::after{
-//     background: linear-gradient( yellow, rgba(255, 255, 255, .2));
+figure:hover::after{
+    background: linear-gradient( yellow, rgba(255, 255, 255, .2));
+}
+
+// figure:nth-child(1):hover::after{
+//     background: linear-gradient(#D94B2B, rgba(255, 255, 255, .2));
 // }
 
-figure:nth-child(1):hover::after{
-    background: linear-gradient(#D94B2B, rgba(255, 255, 255, .2));
-}
+// figure:nth-child(2):hover::after{
+//     background: linear-gradient( #400414, rgba(255, 255, 255, .2));
+// }
 
-figure:nth-child(2):hover::after{
-    background: linear-gradient( #400414, rgba(255, 255, 255, .2));
-}
-
-figure:nth-child(3):hover::after{
-    background: linear-gradient(#0C4022, rgba(255, 255, 255, .2));
-}
+// figure:nth-child(3):hover::after{
+//     background: linear-gradient(#0C4022, rgba(255, 255, 255, .2));
+// }
 
 // figure:hover::after{
 //     background: linear-gradient(white, rgba(255, 255, 255, .2));
@@ -85,9 +81,17 @@ figure:nth-child(3):hover::after{
 
 section{
     padding: 10px;
-    top: calc(var(--long-cable) + var(--height-lamp) + 100px);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    position: absolute;
+    top: calc(3*var(--height-lamp));
+    justify-self: center;
+    // top: calc(var(--long-cable) + var(--height-lamp) + 100px);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    max-width: 60vw;
+    width: 100%;
+    // transform: translate(20vw, 0);
+    z-index: 1;
 }
 
 section > * {
@@ -99,40 +103,50 @@ section > * {
     background: rgba(255, 255, 255, .3);
     backdrop-filter: blur(5px);
     // border: 1.5px solid rgba(209, 213, 219, 0.3);
-    border: 1.5px solid white;
+    // border: 1.5px solid white;
     box-shadow: 5px 5px 4px 0 lightgoldenrodyellow;
+    border: 2px solid grey;
     text-align: center;
-    z-index: 2;
     cursor: pointer;
 }
 
 section input{
-    justify-self: end;
+    // justify-self: end;
+    transform: translate(0px, 0px);
 }
 
 section select:first-of-type{
-    justify-self: center;
+    // justify-self: end;
+    transform: translate(0px, 0px);
 }
 
 section select:last-child{
-    justify-self: start;
+    // justify-self: end;
+    transform: translate(0px, 0px);
 }
 
 article {
-    width: 900px;
-    height: 285px;
-    z-index: 2;
+    width: 85vw;
+    height: 61vh;
+    margin-bottom: 5vh;
+    z-index: 1;
     border-radius: 40px;
     // border: 1.5px solid rgba(209, 213, 219, 0.3);
     border: 1.5px solid white;
     background: rgba(255, 255, 255, .3);
     backdrop-filter: blur(5px);
+    // filter: blur(4px);
+    transform: blur(5px);
     box-shadow: 5px 5px 4px 0 lightgoldenrodyellow;
+    justify-self: center;
+    align-self: flex-end;
+    // bottom: 0;
     // transform: translate(0px, calc(4*var(--height-lamp)));
     // justify-self: center;
-    transform-origin: center;
-    transform: translate(10%, 10%);
-    padding: 15px;
+    // transform-origin: center;
+    // transform: translate(10%, 10%);
+    padding: 10px;
+    padding-top: 15px;
 }
 
 app-movies, .pagination{

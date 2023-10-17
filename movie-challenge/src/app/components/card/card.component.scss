@@ -1,16 +1,12 @@
-* {
-    --width-poster: 140px;
-    --height-poster: 210px;
-    --height-overlay: calc(var(--height-poster)/3);
-}
-
 figure{
     width: var(--width-poster);
     height: var(--height-poster);
+    margin: 5px;
     border-radius: 13px;
-    background: url('https://image.tmdb.org/t/p/w200/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
+    background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
     background-size: var(--width-poster) var(--height-poster);
-    box-shadow: 4px 4px 2px 0px solid grey;
+    border: 2px solid yellow;
+    // box-shadow: 10px 10px 2px 0px solid grey;
     cursor: pointer;
     transition: all .3s ease;
     position: relative;
