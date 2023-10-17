@@ -11,3 +11,7 @@ main{
     // gap: 15px;
     overflow-y: scroll;
 }
+
+.selected{
+    transform: scale(1.1);
+}

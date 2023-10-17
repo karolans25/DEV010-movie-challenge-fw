@@ -3,7 +3,8 @@ figure{
     height: var(--height-poster);
     margin: 5px;
     border-radius: 13px;
-    background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
+    background-color: black;
+    // background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
     background-size: var(--width-poster) var(--height-poster);
     border: 2px solid yellow;
     // box-shadow: 10px 10px 2px 0px solid grey;
@@ -28,28 +29,18 @@ figure::before, figure::after {
     width: fit-content;
     transform: rotate(-30deg);
 }
-// figure:hover{
-//     filter: saturate(2);
-// }
 
-caption{
-    // background: linear-gradient(grey, black);
-    background: black;
-    opacity: .8;
-    color: white;
-    width: var(--width-poster);
-    height: var(--height-overlay);
-    transform: translate(0px, calc(2*var(--height-overlay)));
-    border-bottom-left-radius: 10px;
-    align-items: end;
-    border-bottom-right-radius: 10px;
+figcaption{
+    position: absolute;
+    bottom: 0;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-h4 {
-    margin-top: 10px;
-    overflow: hidden;
-}
-
-span{
-    font-size: 10px;
+figure:hover{
+    transform: scale(1.1);
+    z-index: 1;
+    border: 2px solid blue;
+    border: 5px 5px 2px 2px grey;
 }
