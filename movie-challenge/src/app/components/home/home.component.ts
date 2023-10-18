@@ -21,4 +21,7 @@ export class HomeComponent implements OnInit{
   //   this.selectedFilter = this.selectedFilter;
   //   this.selectedOrder = this.selectedOrder;
   // }
+  searchByPage(page: number): void{
+    console.log('click on page -> ', page+1);
+  }
 }
