@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit{
   selectedFilter!: string;
   selectedOrder!: string;
 
-  filterOptions: string[] = ['Filter by', 'Filter by genres'];
+  filterOptions: string[] = ['Filter by', 'Genres'];
   orderOptions: string[] = ['Order by', 'Popularity (desc.)', 'Popularity (asc.)', 'Year (desc.)', 'Year (asc.)', 'Vote average (desc.)', 'Vote average (asc.)', 'Vote count (desc.)', 'Vote count (asc.)'];
 
   ngOnInit(): void{

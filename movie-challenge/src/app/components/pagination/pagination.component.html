@@ -1,0 +1,15 @@
+<nav>
+    <section>
+        <button><span> << </span></button>
+        <button><span> < </span></button>    
+    </section>
+    <section>
+        <button *ngFor="let i of [].constructor(10), let index = index" [ngClass]="{'selected': index === selection}">
+            <span>{{index+1}}</span>
+        </button>
+    </section>
+    <section>
+        <button><span> > </span></button>
+        <button><span> >> </span></button>    
+    </section>
+</nav>

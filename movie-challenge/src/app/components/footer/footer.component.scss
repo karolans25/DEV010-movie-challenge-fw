@@ -36,8 +36,9 @@ ul {
 }
 
 ul li {
-    color: green;
-    color: yellow;
+    // color: green;
+    // color: #9500ff;
+    color: #00DDFF;
     position: relative;
     animation: slide 24s steps(4) 2sinfinite;
     animation: name duration timing-function delay iteration-count direction fill-mode;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Movie } from '../interfaces/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,7 @@ export class MovieService {
       .set('sort_by', 'popularity.desc');
 
     return this.httpClient.get(`${this.apiUrl}discover/movie`, { params });
+    // return this.httpClient.get(`${this.apiUrl}discover/movie`, { params }).pipe(map((resp:any) => { return resp.results as Movie[] }));
   }
 
   getMovieByTitle(page: number, title: string): Observable<any> {
