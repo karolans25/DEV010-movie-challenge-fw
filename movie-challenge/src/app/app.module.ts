@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { FormsModule } from '@angular/forms';
 import { PaginationComponent } from './components/pagination/pagination.component';
+import { OptionsComponent } from './components/options/options.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     FooterComponent,
     HomeComponent,
     MoviesComponent,
-    PaginationComponent
+    PaginationComponent,
+    OptionsComponent
   ],
   imports: [
     BrowserModule,

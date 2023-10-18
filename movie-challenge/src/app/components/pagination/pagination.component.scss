@@ -77,3 +77,8 @@ button:hover span{
 button:active {
     transform: scale(0.9);
 }
+
+.selected span{
+    // transform: scale(1.1);
+    background-color: transparent;
+}

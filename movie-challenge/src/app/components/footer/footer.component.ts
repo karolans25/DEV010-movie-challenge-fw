@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  text: string = 'Made with ❤️ ';
+  text = 'Made with ❤️ ';
   msgs: string[] = ['by Carolina Pulido', 'using TMDB and Angular', 'to have fun with movies', 'in Laboratoria Bootcamp'];
 }
