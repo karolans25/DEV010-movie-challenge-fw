@@ -1,13 +1,13 @@
 main {
+    background: url('../../../assets/cinta_0.png') no-repeat;
+    background-size: 11% 100%;
+    // background-color: #B5D1FB;
     background-color: #bcc1c4;
     position: absolute;
     top: var(--height-navbar);
     width: 100%;
     height: calc(100vh - var(--height-navbar) - var(--height-footer));
     display: grid;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
 }
 
 // lamps 
@@ -63,20 +63,27 @@ figure:hover::after{
 }
 
 // figure:nth-child(1):hover::after{
-//     background: linear-gradient(#D94B2B, rgba(255, 255, 255, .2));
+//     background: linear-gradient( #09f, rgba(255, 255, 255, .2));
 // }
 
 // figure:nth-child(2):hover::after{
-//     background: linear-gradient( #400414, rgba(255, 255, 255, .2));
+//     background: linear-gradient(#9500ff, rgba(255, 255, 255, .2));
 // }
 
 // figure:nth-child(3):hover::after{
-//     background: linear-gradient(#0C4022, rgba(255, 255, 255, .2));
+//     background: linear-gradient(#00DDFF, rgba(255, 255, 255, .2));
 // }
 
 // figure:hover::after{
 //     background: linear-gradient(white, rgba(255, 255, 255, .2));
 //     opacity: 100%;
+// }
+
+// iframe {
+    // width: 10%;
+    // height: auto;
+    // transform: translate(0vw, 0vh);
+    // z-index: -1;
 // }
 
 section{
@@ -95,9 +102,9 @@ section{
 }
 
 section > * {
-    width: 150px;
+    width: 130px;
     height: 30px;
-    font-size: 12px;
+    font-size: 15px;
     border-radius: 20px;
     padding-left: 10px;
     background: rgba(255, 255, 255, .3);
@@ -125,14 +132,33 @@ section select:last-child{
     transform: translate(0px, 0px);
 }
 
+button span{
+    background-color: #111;
+    padding: 16px 24px;
+    border-radius: 6px;
+    transition: .3s;
+}
+
+button:hover span{
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
 article {
-    width: 85vw;
+    width: 75vw;
     height: 61vh;
     margin-bottom: 5vh;
     z-index: 1;
     border-radius: 40px;
     // border: 1.5px solid rgba(209, 213, 219, 0.3);
-    border: 1.5px solid white;
+    // border: 1.5px solid grey;
+    border: 1.5px solid #9500ff;
+    // border: 1.5px solid #09f;
+    // border: 1.5px solid #00DDFF;
+
     background: rgba(255, 255, 255, .3);
     backdrop-filter: blur(5px);
     // filter: blur(4px);
@@ -145,19 +171,14 @@ article {
     // justify-self: center;
     // transform-origin: center;
     // transform: translate(10%, 10%);
-    padding: 10px;
-    padding-top: 15px;
+    padding: 20px 20px 10px 10px;
 }
 
-app-movies, .pagination{
-    background: transparent;
-    width: 100%;
-    height: 90%;
-    position: relative;
-    top: 0;
-    left: 0;
-}
-
-.pagination{
-    height: 10%;
-}
+// app-movies{
+//     background: transparent;
+//     width: 100%;
+//     height: 100%;
+//     position: relative;
+//     top: 0;
+//     left: 0;
+// }

@@ -1,12 +1,21 @@
+// * {
+//  --text-year: "2023";
+// }
+
 figure{
+    --text-year: "2023";
+    --color-ribbon-back: #283593;
+    --color-ribbon: #3949ab;
     width: var(--width-poster);
     height: var(--height-poster);
-    margin: 5px;
+    margin: 10px;
     border-radius: 13px;
     background-color: black;
     // background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
     background-size: var(--width-poster) var(--height-poster);
     border: 2px solid yellow;
+    border: 2px solid #9500ff;
+    // border: 2px solid blue;
     // box-shadow: 10px 10px 2px 0px solid grey;
     cursor: pointer;
     transition: all .3s ease;
@@ -14,33 +23,71 @@ figure{
 }
 
 figure::before, figure::after {
-    content:"2023";
+    // content:"2023";
+    // content: var(--text-year);
+    content: '';
     position:absolute;
-    top: 8px;
-    left: 1px;
-    display: block;
-    font-family: monospace;
-    font-size: 12px;
     text-align: center;
-    font-weight: 700;
-    color: black;
-    background: yellow;
-    height: 13px;
-    width: fit-content;
-    transform: rotate(-30deg);
+    border-top: 9px solid var(--color-ribbon-back);
+    border-right: 9px solid var(--color-ribbon-back);
+    border-top: 9px solid black;
+    border-right: 9px solid black;
+    border-top: 9px solid gray;
+    border-right: 9px solid gray;
+    border-bottom: 9px solid transparent;
+    border-left: 9px solid transparent;
+    top: 27px;
+    right: -11px;
+    transform : rotate(45deg);
+    border-radius: 5px;
+}
+
+figure::after{
+    // position: absolute;
+    content: var(--text-year);
+    transform : rotate(0deg);
+    border: none;
+    background: var(--color-ribbon);
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    // background-color: white;
+    // color: black;
+    top: 11px;
+    right: -14px;
+    padding: 5px;
+    width: 50px;
+    text-align: center;
+    font-family: monospace;
+    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
 }
 
 figcaption{
     position: absolute;
     bottom: 0;
-    color: red;
+    background-color: black;
+    opacity: 75%;
+    color: yellow;
+    color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-align: center;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    font-family: monospace;
+    font-family: amit;
+    padding: 5px;
 }
 
 figure:hover{
     transform: scale(1.1);
     z-index: 1;
-    border: 2px solid blue;
-    border: 5px 5px 2px 2px grey;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+    border: 2px solid white;
 }

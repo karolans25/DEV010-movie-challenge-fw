@@ -3,10 +3,11 @@
     <figure></figure>
     <figure></figure>
     <figure></figure>
+    <!-- <div style="padding-top:56.111%;position:relative;"><iframe src="https://gifer.com/embed/TwtY" width="100%" height="100%" style='position:absolute;top:0;left:0;' frameBorder="0" allowFullScreen></iframe></div><p><a href="https://gifer.com">a través de GIFER</a></p> -->
 
     <!-- options for search, filter and order -->
     <section>
-        <input [(ngModel)]="selectedSearch" type="text" placeholder="Search movie by title" title="Write the movie's title">
+        <input [(ngModel)]="selectedSearch" type="text" placeholder="Search movie" title="Write the movie's title">
         <p *ngIf="selectedSearch">{{selectedSearch}}</p>
 
         <select [(ngModel)]="selectedFilter" title="Select the filter for the data">
@@ -25,6 +26,10 @@
     <!-- container for movies's cards -->
     <article>
         <app-movies></app-movies>
-        <section class="pagination"></section>
+        <app-pagination></app-pagination>
     </article>
+
+    <!-- <iframe src="https://gifer.com/embed/TwtY" width=480 height=269.333 frameBorder="0" allowFullScreen></iframe> -->
+    <!-- <p><a href="https://gifer.com">a través de GIFER</a></p> -->
+
 </main>

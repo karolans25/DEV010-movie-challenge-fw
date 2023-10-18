@@ -9,9 +9,10 @@ export class CardComponent implements OnInit{
   // @Input() transform!: string;
   @Input() background!: string;
   @Input() title!: string;
+  @Input() year!: string;
 
   ngOnInit(): void {
       // console.log(this.background);
-      // console.log(this.title?this.title:'noexiste');
+      console.log(this.title?this.title:'noexiste');
   }
 }

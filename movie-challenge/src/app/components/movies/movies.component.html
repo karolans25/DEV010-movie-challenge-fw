@@ -1,8 +1,13 @@
 <main>
-    <app-card (click)="onCardClicked(index)" *ngFor="let movie of movies; let index = index" [ngClass]="{'selected': index === selection}" [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154'+movie.poster_path" [title]=movie.title></app-card>
-    <!-- <app-card (click)="onCardClicked(index)" *ngFor="let item of [].constructor(20); let index = index" [ngClass]="{'selected': index === selection}" [transform]="'scaleX(-1)'" [width]="'300px'"></app-card> -->
+    <app-card 
+        (click)="onCardClicked(index)"
+        *ngFor="let movie of movies; let index = index" 
+        [ngClass]="{'selected': index === selection}" 
+        [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154'+movie.poster_path" 
+        [title]=movie.original_title [year]=movie.release_date>
+    </app-card>
 </main>
 
-<div>
+<!-- <div>
     <p *ngIf="selection">Your card index is: {{selection}}</p>
-</div>
+</div> -->

@@ -9,6 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    MoviesComponent
+    MoviesComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
