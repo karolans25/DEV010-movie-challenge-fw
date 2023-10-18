@@ -7,22 +7,8 @@
 
     <!-- options for search, filter and order -->
     <section>
-        <input [(ngModel)]="selectedSearch" type="text" placeholder="Search movie" title="Write the movie's title">
-        <p *ngIf="selectedSearch">{{selectedSearch}}</p>
-
-        <select [(ngModel)]="selectedFilter" title="Select the filter for the data">
-            <option *ngFor = "let option of filterOptions; let index = index"  [value]="index"><span>{{option}}</span></option>
-        </select>
-        <!-- <p >Haz seleccionado la opción # {{ verSeleccion }}</p> -->
-        <p *ngIf="selectedFilter" [hidden]="selectedFilter === '0'">{{selectedFilter}}</p>
-        
-        <select [(ngModel)]="selectedOrder" title="Select the order condition for the data">
-            <option *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
-        </select>
-        <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'">{{selectedOrder}}</p>
-
+        <app-options></app-options>
     </section>
-
     <!-- container for movies's cards -->
     <article>
         <app-movies></app-movies>
