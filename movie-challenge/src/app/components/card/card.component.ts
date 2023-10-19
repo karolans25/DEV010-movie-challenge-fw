@@ -10,7 +10,7 @@ export class CardComponent implements OnInit{
   // @Input() transform!: string;
   @Input() background!: string;
   @Input() title!: string;
-  @Input() year!: string;
+  @Input() year!: number;
 
   ngOnInit(): void {
       // console.log(this.background);

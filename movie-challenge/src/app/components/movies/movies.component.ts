@@ -20,4 +20,9 @@ export class MoviesComponent implements OnInit{
     this.selection = index;
     console.log(index);
   }
+
+  getYearOfDate(date: string): number{
+    const objectDate = new Date(date);
+    return objectDate.getFullYear();
+  }
 }

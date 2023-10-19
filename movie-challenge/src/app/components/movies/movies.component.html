@@ -4,7 +4,7 @@
         *ngFor="let movie of movies; let index = index" 
         [ngClass]="{'selected': index === selection}" 
         [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154'+movie.poster_path" 
-        [title]=movie.original_title [year]=movie.release_date>
+        [title]=movie.original_title [year]="getYearOfDate(movie.release_date)">
     </app-card>
 </main>
 
