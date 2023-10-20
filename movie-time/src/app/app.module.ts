@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { OptionsComponent } from './components/options/options.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CardComponent } from './components/card/card.component';
 
@@ -25,6 +26,7 @@ import { CardComponent } from './components/card/card.component';
     FooterComponent,
     OptionsComponent,
     MoviesComponent,
+    PageNotFoundComponent,
     PaginationComponent,
     CardComponent,
   ],
