@@ -4,17 +4,17 @@
 
 figure{
     --text-year: "2023";
-    --color-ribbon-back: #283593;
-    --color-ribbon: #3949ab;
-    width: var(--width-poster);
-    height: var(--height-poster);
-    margin: 10px;
-    border-radius: 13px;
+    // --color-ribbon-back: #283593;
+    // --color-ribbon: #3949ab;
+    width: 154px;
+    height: 231px;
+    // margin: 10px;
+    // border-radius: 13px;
     background-color: black;
-    background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
-    background-size: var(--width-poster) var(--height-poster);
-    border: 2px solid yellow;
-    border: 2px solid #9500ff;
+    // background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
+    background-size: 154px 231px;
+    // border: 2px solid yellow;
+    // border: 2px solid #9500ff;
     // border: 2px solid blue;
     // box-shadow: 10px 10px 2px 0px solid grey;
     cursor: pointer;
@@ -28,10 +28,10 @@ figure::before, figure::after {
     content: '';
     position:absolute;
     text-align: center;
-    border-top: 9px solid var(--color-ribbon-back);
-    border-right: 9px solid var(--color-ribbon-back);
-    border-top: 9px solid black;
-    border-right: 9px solid black;
+    // border-top: 9px solid var(--color-ribbon-back);
+    // border-right: 9px solid var(--color-ribbon-back);
+    // border-top: 9px solid black;
+    // border-right: 9px solid black;
     border-top: 9px solid gray;
     border-right: 9px solid gray;
     border-bottom: 9px solid transparent;
@@ -39,7 +39,7 @@ figure::before, figure::after {
     top: 27px;
     right: -11px;
     transform : rotate(45deg);
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 figure::after{

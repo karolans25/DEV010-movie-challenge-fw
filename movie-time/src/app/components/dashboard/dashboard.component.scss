@@ -7,9 +7,24 @@ main {
     top: 45px;
     width: 100%;
     height: calc(100vh - 55px - 30px);
-    display: flex;
+    display: grid;
+    grid-template-rows: 1fr 6fr;
     justify-content: center;
     flex-flow: row wrap;
     padding-top: 100px;
     left: 0;
+}
+
+article{
+    height: 60vh;
+    width: 90%;
+    justify-self: center;
+
+}
+
+app-options{
+    width: 100%;
+    justify-self: center;
+    display: grid;
+    justify-content: space-between;
 }
