@@ -11,7 +11,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item" *ngFor="let link of links">
-            <a class="nav-link" href={{link.link}}>{{link.text}}</a>
+            <a class="nav-link" routerLink={{link.link}} routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{link.text}}</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Link</a>

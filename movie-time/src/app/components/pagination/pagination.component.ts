@@ -20,7 +20,7 @@ export class PaginationComponent implements OnInit{
 
   ngOnInit(): void{
     this.selection = 0;
-    this.numPages = 10;
+    this.numPages = 15;
     this.pages = [].constructor(this.numPages);
   }
 

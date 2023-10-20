@@ -1,21 +1,32 @@
-<form>
+<form class="rounded">
     <section class="row">
-        <section class="col form-floating mb-3 mt-3">
-            <input type="text" class="form-control" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
-            <label for="search">Search movie <i class="fab fa-search"></i></label>
+        <section class="col form-floating mb-3 mt-3 section-input">
+            <figure></figure>
+            <section class="col form-floating mb-3 mt-3 input-grandpha ">
+                <input type="text" class="form-control bg-transparent" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
+                <label for="search">Search movie by title: <i class="fab fa-search"></i></label>
+            </section>
         </section>
-        <section class="col form-floating mb-3 mt-3">
-            <select class="form-select">
-                <option *ngFor="let opt of filterOptions, let index = index">{{opt}}</option>
-                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                    Open Offcanvas Sidebar
-                </button>
-            </select>
+        <section class="col form-floating mb-3 mt-3 section-select">
+            <figure></figure>
+            <section class="col form-floating mb-3 mt-3 select-grandpha">
+                <select class="form-select bg-transparent" id="filter">
+                    <option *ngFor="let opt of filterOptions, let index = index">{{opt}}</option>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        Open Offcanvas Sidebar
+                    </button>
+                    <label for="filter">Filter by: <i class="fab fa-search"></i></label>
+                </select>
+            </section>
         </section>
-        <section class="col form-floating mb-3 mt-3">
-            <select class="form-select">
-                <option *ngFor="let opt of orderOptions">{{opt}}</option>
-            </select>
+        <section class="col form-floating mb-3 mt-3 section-select">
+            <figure></figure>
+            <section class="col form-floating mb-3 mt-3 select-grandpha">
+                <select class="form-select bg-transparent" id="order">
+                    <option *ngFor="let opt of orderOptions">{{opt}}</option>
+                    <label for="order">Order by <i class="fab fa-search"></i></label>
+                </select>
+            </section>
         </section>
     </section>
 </form>

@@ -1,5 +1,5 @@
-<main>
-    <app-card class="card rounded"
+<main class="rounded">
+    <app-card class="card rounded bg-transparent border border-0"
         (click)="onCardClicked(index)"
         *ngFor="let movie of movies; let index = index" 
         [ngClass]="{'selected': index === selection}" 

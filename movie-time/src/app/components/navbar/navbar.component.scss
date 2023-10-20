@@ -38,3 +38,7 @@ nav div {
 nav button {
     justify-self: flex-end;
 }
+
+.nav-link.active{
+    background: green;
+}

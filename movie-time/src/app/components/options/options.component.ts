@@ -11,7 +11,7 @@ export class OptionsComponent implements OnInit {
   selectedFilter!: string;
   selectedOrder!: string;
 
-  filterOptions: string[] = ['Filter by', 'Genres'];
+  filterOptions: string[] = ['Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
   orderOptions: string[] = ['Order by', 'Popularity (desc.)', 'Popularity (asc.)', 'Year (desc.)', 'Year (asc.)', 'Vote average (desc.)', 'Vote average (asc.)', 'Vote count (desc.)', 'Vote count (asc.)'];
   genres: string[] = ['Comedy', 'Fantasy', 'Western'];
 

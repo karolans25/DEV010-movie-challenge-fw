@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
   title = '🎞 \t Movie Time \t 📽️';//'🎞️🎬 \t Movie Time \t 📽️';
   links = [
-    {text: 'Movies', link: '/dashboard'}, 
-    {text: 'Series', link: '/dashboard'},
+    {text: 'Movies', link: '/dashboard/movies'}, 
+    {text: 'Series', link: '/dashboard/series'},
     {text: 'Home', link: '/home'}
   ];
 }

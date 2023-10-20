@@ -17,14 +17,16 @@ main {
 
 article{
     height: 60vh;
-    width: 90%;
+    width: 80%;
     justify-self: center;
-
 }
 
 app-options{
-    width: 100%;
+    width: 100vw;
     justify-self: center;
-    display: grid;
-    justify-content: space-between;
+    background: red;
+    display: flex;
+    justify-content: center;
+    // display: grid;
+    // justify-content: space-between;
 }
