@@ -1,0 +1,15 @@
+<!-- <p>dashboard works!</p> -->
+<app-navbar></app-navbar>
+
+<main>
+
+    <app-options></app-options>
+
+<article>
+    <app-movies></app-movies>
+    <app-pagination (newPageEvent)="searchByPage($event)"></app-pagination>
+</article>
+
+</main>
+
+<app-footer></app-footer>

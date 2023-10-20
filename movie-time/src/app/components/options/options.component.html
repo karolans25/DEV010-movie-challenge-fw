@@ -1,0 +1,29 @@
+<form>
+    <section class="row">
+        <section class="col form-floating mb-3 mt-3">
+            <input type="text" class="form-control" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
+            <label for="search">Search movie <i class="fab fa-search"></i></label>
+        </section>
+        <section class="col form-floating mb-3 mt-3">
+            <select class="form-select">
+                <option *ngFor="let opt of filterOptions, let index = index">{{opt}}</option>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    Open Offcanvas Sidebar
+                </button>
+            </select>
+        </section>
+        <section class="col form-floating mb-3 mt-3">
+            <select class="form-select">
+                <option *ngFor="let opt of orderOptions">{{opt}}</option>
+            </select>
+        </section>
+    </section>
+</form>
+<!-- <div class="form-floating mb-3 mt-3"> -->
+
+    <!-- <select class="form-select form-select-lg"> -->
+<!-- </div> -->
+
+<!-- <select class="form-select"> -->
+<!-- <select class="form-select form-select-sm">  -->
+

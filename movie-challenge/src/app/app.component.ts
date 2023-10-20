@@ -9,7 +9,7 @@ export class AppComponent implements OnChanges, OnInit, OnDestroy {
   title = 'movie-challenge';
   pageTitle = 'Movie Time';
 
-  constructor() { }
+  // constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('Change -> ', changes);

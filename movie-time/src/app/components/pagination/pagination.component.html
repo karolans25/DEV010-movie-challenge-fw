@@ -1,0 +1,26 @@
+<!-- <p>pagination works!</p> -->
+<nav>
+    <!-- Buttons to go to the previous page -->
+    <section class="btn-group">
+        <button type="button" class="btn btn-primary" (click)="onPageClicked(0)" ><span> << </span></button>
+        <button type="button" class="btn btn-primary" (click)="onPreviousClicked()"><span> < </span></button>
+    </section>
+
+    <!-- Buttons to navigate on number of pages -->
+    <section>
+        <button type="button" class="btn btn-info"
+            (click)="onPageClicked(index)"
+            *ngFor="let i of pages, let index = index" 
+            [ngClass]="{'selected': index === selection}" >
+            <span>{{index+1}}</span>
+        </button>
+    </section>
+
+    <!-- Buttons to go to the next page -->
+    <section>
+        <button type="button" class="btn btn-primary" (click)="onNextClicked()"><span> > </span></button>
+        <button type="button" class="btn btn-primary" (click)="onPageClicked(numPages-1)" ><span> >> </span></button>    
+    </section>
+</nav>
+
+

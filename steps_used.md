@@ -127,3 +127,12 @@ When Angular development runs, you can open `http://localhost:4200/` on your bro
 `<home>`: it would be the name of the component
 
 ### Generate services `ng g s`
+
+<!-- ## Aditional for animations 
+
+### Option 1: `npm install animate.css --save` and import it `import 'animate.css`
+
+### Option 2: Use CDNJS in the `index.html`
+    
+    <link rel="stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
+

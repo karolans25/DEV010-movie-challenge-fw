@@ -1,0 +1,12 @@
+<main>
+    <app-card class="card rounded"
+        (click)="onCardClicked(index)"
+        *ngFor="let movie of movies; let index = index" 
+        [ngClass]="{'selected': index === selection}" 
+        [title]=movie.original_title >
+    </app-card>
+</main>
+
+<!-- <div>
+    <p *ngIf="selection">Your card index is: {{selection}}</p>
+</div> -->
