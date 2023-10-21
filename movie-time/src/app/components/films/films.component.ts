@@ -4,10 +4,10 @@ import { Movie } from '../../interfaces/movie';
 
 @Component({
   selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  templateUrl: './films.component.html',
+  styleUrls: ['./films.component.scss']
 })
-export class MoviesComponent implements OnInit{
+export class FilmsComponent implements OnInit{
   selection!: number;
 
   @Input() movies!: Movie[]; // ¿Por qué tenía que ser de tipo any?
