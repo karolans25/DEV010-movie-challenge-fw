@@ -18,6 +18,6 @@ figure:hover, figure:hover + * {
     background-color: yellow;
 }
 
-.input-grandpha:hover, .select-grandpha:hover {
+.input-grandpha:hover, .input-grandpha:hover ~ .figure-search, .select-grandpha:hover {
     background-color: blue;
 }

@@ -13,7 +13,7 @@ export class CardComponent implements OnInit{
   @Input() year!: number;
 
   ngOnInit(): void {
-      console.log(this.background);
+      // console.log(this.background);
       // console.log(this.title?this.title:'noexiste');
   }
 }

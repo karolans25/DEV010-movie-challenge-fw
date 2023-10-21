@@ -1,14 +1,14 @@
 <form class="rounded">
     <section class="row">
-        <section class="col form-floating mb-3 mt-3 section-input">
-            <figure></figure>
+        <section class="col form-floating mb-3 mt-3">
+            <figure class="figure-search"></figure>
             <section class="col form-floating mb-3 mt-3 input-grandpha ">
                 <input type="text" class="form-control bg-transparent" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
                 <label for="search">Search movie by title: <i class="fab fa-search"></i></label>
             </section>
         </section>
-        <section class="col form-floating mb-3 mt-3 section-select">
-            <figure></figure>
+        <section class="col form-floating mb-3 mt-3 ">
+            <figure class="figure-filter"></figure>
             <section class="col form-floating mb-3 mt-3 select-grandpha">
                 <select class="form-select bg-transparent" id="filter">
                     <option *ngFor="let opt of filterOptions, let index = index">{{opt}}</option>
@@ -19,11 +19,11 @@
                 </select>
             </section>
         </section>
-        <section class="col form-floating mb-3 mt-3 section-select">
-            <figure></figure>
+        <section class="col form-floating mb-3 mt-3 ">
+            <figure class="figure-order"></figure>
             <section class="col form-floating mb-3 mt-3 select-grandpha">
                 <select class="form-select bg-transparent" id="order">
-                    <option *ngFor="let opt of orderOptions">{{opt}}</option>
+                    <option *ngFor="let opt of orderOptions, let index = index" [value]="index">{{opt}}</option>
                     <label for="order">Order by <i class="fab fa-search"></i></label>
                 </select>
             </section>

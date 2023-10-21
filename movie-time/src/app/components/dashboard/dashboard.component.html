@@ -6,7 +6,7 @@
     <app-options></app-options>
 
     <article class="rounded">
-        <app-movies ></app-movies>
+        <app-movies [movies] = "movies"></app-movies>
         <app-pagination (newPageEvent)="searchByPage($event)"></app-pagination>
     </article>
 

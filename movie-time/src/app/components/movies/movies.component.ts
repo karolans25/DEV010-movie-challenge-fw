@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/movie';
-import { MOVIES } from './mock-movies';
+// import { MOVIES } from './mock-movies';
 
 @Component({
   selector: 'app-movies',
@@ -9,11 +9,12 @@ import { MOVIES } from './mock-movies';
 })
 export class MoviesComponent implements OnInit{
   selection!: number;
-  movies!: Movie[];
+  @Input() movies!: any;
   // caption!: EventTarget | null;
 
   ngOnInit(): void {
-    this.movies = MOVIES;
+    // this.movies = MOVIES;
+    console.log(this.movies);
   }
 
   onCardClicked(index: number): void{
