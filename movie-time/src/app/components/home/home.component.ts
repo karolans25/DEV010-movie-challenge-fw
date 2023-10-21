@@ -12,7 +12,7 @@ export class HomeComponent {
 
   ngOnInit(){
     this.typeFilms = ['Movies', 'Series'];
-    this.routerTypes = ['dashboard/movie', 'dashboard/serie'];
+    this.routerTypes = ['/dashboard/movies', '/dashboard/series'];
   }
 
   // getMovies(): void{
