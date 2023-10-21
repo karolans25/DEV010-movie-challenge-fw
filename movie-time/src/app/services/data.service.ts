@@ -17,6 +17,8 @@ export class DataService {
   //   return this.http.get<>(this.url);
   // }
 
+  // private numPages!: number;
+
   getAllGenres(): Observable<object> {
     const params = new HttpParams()
       .set('api_key', this.API)
@@ -26,19 +28,27 @@ export class DataService {
     return this.http.get<object>(`${this.URL}${entity}`, { params });
   }
 
-  getMovies(): Observable<Movie[]>{
+  getMovies(page: number, extraParams: object): Observable<any>{
     const params = new HttpParams()
       .set('api_key', this.API)
       .set('include_adult', false)
       .set('include_video', false)
       .set('language', 'en-US')
-      .set('page', 1)
+      .set('page', page)
       .set('sort_by', 'popularity.desc');
     const entity = 'discover/movie';
     return this.http.get<any>(`${this.URL}${entity}`, {params})
-      .pipe(map(response => response.results));
+      .pipe(map(response => {
+        // this.numPages = response.total_pages;
+        // console.log(response);
+        return { movies: response.results, pages: response.total_pages > 500 ? 500 : response.total_pages };
+      }));
   }
 
+  // getNumOfPages():number{
+  //   return this.numPages;
+  //   // return 5;
+  // }
   // getAllGenres(): Observable<object> {
   //   const params = new HttpParams()
   //     .set('apikey', this.apiKey)

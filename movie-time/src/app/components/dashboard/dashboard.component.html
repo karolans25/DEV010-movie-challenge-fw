@@ -6,8 +6,11 @@
     <app-options></app-options>
 
     <article class="rounded">
+        <!-- <p *ngIf="movies !== undefined">{{movies}}</p> -->
         <app-movies [movies] = "movies"></app-movies>
-        <app-pagination (newPageEvent)="searchByPage($event)"></app-pagination>
+        <app-pagination [numOfPages] = "numOfPages" (newPageEvent)="searchByPage($event)">
+        </app-pagination>
+        <p>{{numOfPages}}</p>
     </article>
 
 </main>

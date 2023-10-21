@@ -4,9 +4,10 @@ main {
     // background-color: #B5D1FB;
     background-color: #bcc1c4;
     position: absolute;
-    top: 45px;
+    top: 0px;
     width: 100%;
-    height: calc(100vh - 55px - 30px);
+    // height: calc(100vh - 55px - 30px);
+    height: 100%;
     display: grid;
     grid-template-rows: 1fr 6fr;
     justify-content: center;

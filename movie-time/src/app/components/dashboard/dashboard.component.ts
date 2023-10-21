@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { MOVIES } from '../movies/mock-movies';
+import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,29 +11,35 @@ import { MOVIES } from '../movies/mock-movies';
 export class DashboardComponent implements OnInit{
   
   genres!: object;
-  movies!: object;
+  movies!: Movie[];
+  numOfPages!: number;
 
   constructor(private readonly dataSvc: DataService){}
   
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    this.dataSvc.getAllGenres()
-    .subscribe( genres => {
-      this.genres = genres;
-    });
+    // this.dataSvc.getAllGenres()
+    // .subscribe( genres => {
+    //   this.genres = genres;
+    // });
 
-    this.dataSvc.getMovies()
-    .subscribe( movies => {
-      console.log(movies);
-      this.movies = movies;
-      // this.movies = movies? movies : MOVIES;
-    });
+    // this.movies = MOVIES;
 
-    console.log(this.genres);
-    console.log(this.movies);
+    this.makeARequest(1, {});
   }
 
   searchByPage(page: number): void{
-    console.log('click on page -> ', page+1);
+    // console.log('page -> ', page);
+    this.makeARequest(page, {});
+  }
+
+  makeARequest(page: number, params: object): void{
+    this.dataSvc.getMovies(page, {})
+    .subscribe( response => {
+      this.movies = response.movies;
+      // this.movies = movies? movies : MOVIES;
+      this.numOfPages = response.pages;
+      console.log(this.numOfPages);
+    });
   }
 }

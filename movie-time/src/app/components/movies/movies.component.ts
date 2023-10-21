@@ -9,12 +9,13 @@ import { Movie } from '../../interfaces/movie';
 })
 export class MoviesComponent implements OnInit{
   selection!: number;
-  @Input() movies!: any;
+
+  @Input() movies!: Movie[]; // ¿Por qué tenía que ser de tipo any?
   // caption!: EventTarget | null;
 
   ngOnInit(): void {
     // this.movies = MOVIES;
-    console.log(this.movies);
+    // console.log(this.movies);
   }
 
   onCardClicked(index: number): void{
