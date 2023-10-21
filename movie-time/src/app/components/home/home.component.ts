@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  typeFilms!: string[];
+  routerTypes!: string[];
+
+  ngOnInit(){
+    this.typeFilms = ['Movies', 'Series'];
+    this.routerTypes = ['dashboard/movie', 'dashboard/serie'];
+  }
+
   // getMovies(): void{
   //   console.log('Get Movies');
   //   alert('Get movies');

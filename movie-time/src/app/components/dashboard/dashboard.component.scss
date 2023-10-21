@@ -6,28 +6,26 @@ main {
     position: absolute;
     top: 0px;
     width: 100%;
+    // max-width: 1000px;
     // height: calc(100vh - 55px - 30px);
     height: 100%;
     display: grid;
     grid-template-rows: 1fr 6fr;
     justify-content: center;
     flex-flow: row wrap;
-    padding-top: 100px;
+    padding-top: 60px;
     left: 0;
 }
 
 article{
-    height: 60vh;
-    width: 80%;
+    width: 80vw;
+    height: 61vh;
     justify-self: center;
-}
-
-app-options{
-    width: 100vw;
-    justify-self: center;
-    background: red;
-    display: flex;
-    justify-content: center;
-    // display: grid;
-    // justify-content: space-between;
+    margin-bottom: 5vh;
+    // align-self: flex-end;
+    z-index: 1;
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(6px);
+    box-shadow: 10px 10px 10px 0 lightgoldenrodyellow;
+    padding: 20px 20px 10px 10px;
 }

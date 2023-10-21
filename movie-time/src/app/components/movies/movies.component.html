@@ -3,7 +3,7 @@
         (click)="onCardClicked(index)"
         *ngFor="let movie of movies; let index = index" 
         [ngClass]="{'selected': index === selection}" 
-        [title]=movie.original_title 
+        [title]=movie.title 
         [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + movie.poster_path + '\') no-repeat center'"
         [year]="getYearOfDate(movie.release_date)"
     >

@@ -19,6 +19,13 @@ nav > * {
     color: white;
 }
 
+.toast{
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+    z-index: 2;
+}
+
 // button {
 //     border: 0;
 //     background-image: linear-gradient(

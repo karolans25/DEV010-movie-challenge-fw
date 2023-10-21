@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { MOVIES } from '../movies/mock-movies';
+// import { MOVIES } from '../movies/mock-movies';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit{
   }
 
   makeARequest(page: number, params: object): void{
-    this.dataSvc.getMovies(page, {})
+    this.dataSvc.getMovies(page, params)
     .subscribe( response => {
       this.movies = response.movies;
       // this.movies = movies? movies : MOVIES;

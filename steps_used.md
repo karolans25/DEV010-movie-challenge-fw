@@ -136,3 +136,23 @@ When Angular development runs, you can open `http://localhost:4200/` on your bro
     
     <link rel="stylesheet href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" /> -->
 
+
+
+La propiedad backdrop-filter está implementado en el navegador Firefox para escritorio a partir de la versión 70.0 pero no está activado por defecto, si quieres probarlo en tu navegador Firefox debes activar algunas preferencias.
+
+Paso 1
+
+Ir a tu navegador Firefox y poner en tu barra de buscador "about:config" para ir a la configuración.
+
+Paso 2
+
+En el buscador de configuración, buscas la preferencia llamada "layout.css.backdrop-filter.enabled" y la activas.
+
+Buscas la preferencia llamada "gfx.webrender.all" y la activas.
+
+Cierras el navegador y lo vuelves abrir.
+
+[Tomado de stackoverflow: ](https://es.stackoverflow.com/questions/354765/problema-con-la-compatibilidad-de-la-propiedad-backdrop-filter-de-css-en-firefox)
+
+Para mejorar:
+Controlar la asincronía de los toast en paginación
