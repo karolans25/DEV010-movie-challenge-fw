@@ -3,6 +3,8 @@ import { DataService } from 'src/app/services/data.service';
 import { MOVIES } from 'src/app/components/films/mock-movies';
 import { SERIES } from 'src/app/components/films/mock-series';
 import { Movie } from 'src/app/interfaces/movie';
+import { Serie } from 'src/app/interfaces/serie';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,10 +15,12 @@ export class DashboardComponent implements OnInit{
   
   genres!: [];
   movies!: Movie[];
+  series!: Serie[];
   numOfPages!: number;
   params!: object;
+  films!: Movie[] | Serie[];
 
-  constructor(private readonly dataSvc: DataService){}
+  constructor(private readonly dataSvc: DataService, private readonly route: ActivatedRoute){}
   
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -27,8 +31,24 @@ export class DashboardComponent implements OnInit{
     //   console.log(this.genres);
     // });
 
-    this.movies = MOVIES;
+    this.route.queryParams.subscribe( (params: Params) => {
+      console.log(params['type']);
+      console.log(params['type'] === '0')
+      switch (params['type']) {
+        case '0':
+          this.films = MOVIES;
+          break;
+        case '1':
+          this.films = SERIES;
+          break; 
+        default:
+          this.films = MOVIES;
+          break;
+      }
+      // this.movies= this.data;
+    });
     this.params = {};
+    // this.movies = MOVIES;
     // this.makeARequest(1, this.params);
   }
 
@@ -45,7 +65,7 @@ export class DashboardComponent implements OnInit{
   makeARequest(page: number, params: object): void{
     this.dataSvc.getMovies(page, params)
     .subscribe( response => {
-      this.movies = response.movies;
+      this.films = response.movies;
       // this.movies = movies? movies : MOVIES;
       this.numOfPages = response.pages;
       console.log(this.numOfPages);

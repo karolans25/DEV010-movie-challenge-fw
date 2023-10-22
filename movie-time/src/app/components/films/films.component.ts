@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../interfaces/movie';
+import { Serie } from '../../interfaces/serie';
 // import { MOVIES } from './mock-movies';
 
 @Component({
@@ -7,10 +8,12 @@ import { Movie } from '../../interfaces/movie';
   templateUrl: './films.component.html',
   styleUrls: ['./films.component.scss']
 })
-export class FilmsComponent implements OnInit{
+export class FilmsComponent implements OnInit {
   selection!: number;
 
-  @Input() movies!: Movie[]; // ¿Por qué tenía que ser de tipo any?
+  // @Input() films!: Movie[] | Serie[]; // ¿Por qué tenía que ser de tipo any?
+  // caption!: EventTarget | null;
+  @Input() films!: any[]; // ¿Por qué tenía que ser de tipo any?
   // caption!: EventTarget | null;
 
   ngOnInit(): void {

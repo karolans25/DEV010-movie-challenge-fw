@@ -1,11 +1,11 @@
 <main class="rounded">
     <app-card class="card rounded bg-transparent border border-0"
         (click)="onCardClicked(index)"
-        *ngFor="let movie of movies; let index = index" 
+        *ngFor="let film of films; let index = index" 
         [ngClass]="{'selected': index === selection}" 
-        [title]=movie.title 
-        [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + movie.poster_path + '\') no-repeat center'"
-        [year]="getYearOfDate(movie.release_date)"
+        [title]=film.title
+        [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + film.poster_path + '\') no-repeat center'"
+        [year]="getYearOfDate(film.release_date)"
     >
     </app-card>
 </main>

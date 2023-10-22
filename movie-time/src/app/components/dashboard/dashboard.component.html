@@ -7,7 +7,7 @@
 
     <article class="rounded">
         <!-- <p *ngIf="movies !== undefined">{{movies}}</p> -->
-        <app-movies [movies] = "movies"></app-movies>
+        <app-movies [films] = "films"></app-movies>
         <app-pagination (newPageEvent)="searchByPage($event)" [numOfPages] = "numOfPages ? numOfPages : 500">
         </app-pagination>
         <!-- <p>{{numOfPages}}</p> -->

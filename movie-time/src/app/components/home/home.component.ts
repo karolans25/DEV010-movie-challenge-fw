@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,27 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
-  typeFilms!: string[];
+  typeFilms!: any[];
   routerTypes!: string[];
 
+  constructor(private readonly router: Router){}
+  
   ngOnInit(){
-    this.typeFilms = ['Movies', 'Series'];
-    this.routerTypes = ['/dashboard/movies', '/dashboard/series'];
+    this.typeFilms = [
+      {text: 'Movies', link: '/dashboard/movies'}, 
+      {text: 'Series', link: '/dashboard/series'}
+    ];
   }
+
+  // data = [
+  //   { type: 'movie', films: MOVIES},
+  //   { type: 'tv', films: SERIES},
+  //   { type: 'tv', films: SERIES},
+  // ];
+
+  // goSeriesDashboard():void {
+  //   this.router.navigate([this.typeFilms[1].link], {queryParams: {data: this.data[1].films}});
+  // }
 
   // getMovies(): void{
   //   console.log('Get Movies');
@@ -24,4 +39,8 @@ export class HomeComponent {
   //   console.log('Get Series');
   //   alert('Get movies');
   // };
+  goRoute(index: number): void {
+    console.log(index);
+    this.router.navigate([this.typeFilms[index].link], {queryParams: {type: index}});
+  }
 }
