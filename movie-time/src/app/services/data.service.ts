@@ -19,13 +19,18 @@ export class DataService {
 
   // private numPages!: number;
 
-  getAllGenres(): Observable<object> {
+  getAllGenres(): Observable<any> {
     const params = new HttpParams()
       .set('api_key', this.API)
       .set('language', 'en')
       .set('type', 'movie');
     const entity = 'genre/movie/list';
-    return this.http.get<object>(`${this.URL}${entity}`, { params });
+    return this.http.get<any>(`${this.URL}${entity}`, { params })
+      .pipe(map(response => {
+        // this.numPages = response.total_pages;
+        // console.log(response);
+        return { genres: response.genres };
+      }));
   }
 
   getMovies(page: number, extraParams: object): Observable<any>{

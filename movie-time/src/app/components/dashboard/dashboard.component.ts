@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-// import { MOVIES } from '../movies/mock-movies';
+import { MOVIES } from '../films/mock-movies';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
@@ -10,27 +10,35 @@ import { Movie } from 'src/app/interfaces/movie';
 })
 export class DashboardComponent implements OnInit{
   
-  genres!: object;
+  genres!: [];
   movies!: Movie[];
   numOfPages!: number;
+  params!: object;
 
   constructor(private readonly dataSvc: DataService){}
   
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
+
     // this.dataSvc.getAllGenres()
-    // .subscribe( genres => {
-    //   this.genres = genres;
+    // .subscribe( response => {
+    //   this.genres = response.genres;
+    //   console.log(this.genres);
     // });
 
-    // this.movies = MOVIES;
-
-    this.makeARequest(1, {});
+    this.movies = MOVIES;
+    this.params = {};
+    // this.makeARequest(1, this.params);
   }
 
   searchByPage(page: number): void{
     // console.log('page -> ', page);
-    this.makeARequest(page, {});
+    this.makeARequest(page, this.params);
+  }
+
+  searchWithOptions(options: object): void{
+    console.log(options);
+    this.params = options;
   }
 
   makeARequest(page: number, params: object): void{

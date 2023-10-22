@@ -1,6 +1,7 @@
 main {
+    background: url('../../../assets/film-lamps.png') no-repeat;
     // background: url('../../../assets/cinta_0.png') no-repeat;
-    // background-size: 11% 100%;
+    background-size: 100% auto;
     // background-color: #B5D1FB;
     background-color: #bcc1c4;
     position: absolute;
@@ -13,7 +14,7 @@ main {
     grid-template-rows: 1fr 6fr;
     justify-content: center;
     flex-flow: row wrap;
-    padding-top: 60px;
+    padding-top: 50px;
     left: 0;
 }
 

@@ -16,6 +16,7 @@ import { FilmsComponent } from './components/films/films.component'
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { CardComponent } from './components/card/card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import { CardComponent } from './components/card/card.component';
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

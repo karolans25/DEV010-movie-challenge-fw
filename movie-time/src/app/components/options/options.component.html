@@ -1,40 +1,92 @@
-<form class="rounded">
+<!-- <form class="rounded">
     <section class="row">
+        <figure class="fig-search"></figure>
         <section class="col form-floating mb-3 mt-3">
-            <figure class="figure-search"></figure>
-            <section class="col form-floating mb-3 mt-3 input-grandpha ">
                 <input type="text" class="form-control bg-transparent" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
                 <label for="search">Search movie by title: <i class="fab fa-search"></i></label>
-            </section>
         </section>
-        <section class="col form-floating mb-3 mt-3 ">
-            <figure class="figure-filter"></figure>
-            <section class="col form-floating mb-3 mt-3 select-grandpha">
+        <figure class="fig-filter"></figure>
+        <section class="col form-floating mb-3 mt-3">
                 <select class="form-select bg-transparent" id="filter">
-                    <option *ngFor="let opt of filterOptions, let index = index">{{opt}}</option>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                        Open Offcanvas Sidebar
-                    </button>
+                    <option *ngFor="let opt of filterOptions, let index = index">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                        {{opt}}
+                        </button>
+                    </option>
                     <label for="filter">Filter by: <i class="fab fa-search"></i></label>
                 </select>
-            </section>
         </section>
-        <section class="col form-floating mb-3 mt-3 ">
-            <figure class="figure-order"></figure>
-            <section class="col form-floating mb-3 mt-3 select-grandpha">
+        <figure class="fig-order"></figure>
+        <section class="col form-floating mb-3 mt-3">
                 <select class="form-select bg-transparent" id="order">
                     <option *ngFor="let opt of orderOptions, let index = index" [value]="index">{{opt}}</option>
                     <label for="order">Order by <i class="fab fa-search"></i></label>
                 </select>
-            </section>
+        </section>
+    </section>
+</form> -->
+
+<!-- Offcanvas Sidebar -->
+<!-- <div class="offcanvas offcanvas-start" id="demo">
+    <div class="offcanvas-header">
+      <h1 class="offcanvas-title">Heading</h1>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p>Some text lorem ipsum.</p>
+      <p>Some text lorem ipsum.</p>
+      <button class="btn btn-secondary" type="button">A Button</button>
+    </div>
+  </div> -->
+
+  <!-- Button to open the offcanvas sidebar -->
+<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+    Open Offcanvas Sidebar
+  </button> -->
+
+
+  <!-- [(ngModel)]="selectedSearch" #selectedSearch="ngModel"-->
+  <!-- [(ngModel)]="selectedFilter" #selectedFilter="ngModel"-->
+  <!-- [(ngModel)]="selectedOrder" #selectedOrder="ngModel"-->
+<!-- <pre>{{optionsForm.value | json}}</pre> -->
+<form (ngSubmit)="onSubmit()"  class="rounded" [formGroup]="optionsForm">
+    <section class="row col-12">
+        
+        <!-- <figure class="fig-search"></figure> -->
+        <section class="col form-floating mb-3 mt-3">
+            <input type="text" class="form-control bg-transparent" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie"  formControlName="search">
+            <label for="search" class="form-label">Search movie by title 
+                <!-- <i class="fab fa-search"></i> -->
+            </label>
+            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
+            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div>
+            <!-- <p *ngIf="selectedSearch.value === 'C'">{{selectedSearch}}</p> -->
+        </section>
+
+        <!-- <figure class="fig-search"></figure> -->
+        <section class="col form-floating mb-3 mt-3">
+            <select class="form-select form-select-sm bg-transparent" id="filter" title="Select the filter for the data" name="filter" formControlName="filter">
+                <option *ngFor = "let option of filterOptions; let index = index"  [value]="index"><span>{{option}}</span></option>
+            </select>
+            <label for="filter" class="form-label">Fitler by:</label>
+            <!-- <p >Haz seleccionado la opción # {{ verSeleccion }}</p> -->
+            <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === '0'">{{selectedFilter}}</p> -->
+        </section>
+        
+        <!-- <figure class="fig-search"></figure> -->
+        <section class="col form-floating mb-3 mt-3">
+            <select class="form-select bg-transparent" id="order" title="Select the order condition for the data" aria-placeholder="" name="order" formControlName="order">
+                <option *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
+            </select>
+            <label for="order" class="form-label">Order by:</label>
+            <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
+        </section>
+
+    </section>
+    <section class="row">
+        <section class="d-grid gap-2 col-8 float-end">
+            <button type="submit" class="btn btn-info btn-sm" [disabled]="optionsForm.invalid">Send</button>
         </section>
     </section>
 </form>
-<!-- <div class="form-floating mb-3 mt-3"> -->
-
-    <!-- <select class="form-select form-select-lg"> -->
-<!-- </div> -->
-
-<!-- <select class="form-select"> -->
-<!-- <select class="form-select form-select-sm">  -->
-
+  

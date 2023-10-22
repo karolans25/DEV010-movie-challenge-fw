@@ -3,7 +3,7 @@
 
 <main>
 
-    <app-options></app-options>
+    <app-options (newOptionsEvent)="searchWithOptions($event)"></app-options>
 
     <article class="rounded">
         <!-- <p *ngIf="movies !== undefined">{{movies}}</p> -->

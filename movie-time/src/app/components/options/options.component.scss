@@ -1,9 +1,24 @@
 form{
-    width: 80%;
+    width: 100vw;
     justify-self: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
 }
+
+form .row{
+    width: 80%;
+    background-color: violet;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // justify-content: center;
+}
+
+// .row section, .row section section{
+//     width: 80%;
+//     justify-self: center;
+// }
 
 figure{
     position: absolute;
@@ -11,13 +26,23 @@ figure{
     height: 500px;
     clip-path: polygon (50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
     background-color: white;
-    transform: translate(0px, -25px);
+    // transform: translate(0px, -25px);
 }
 
 figure:hover, figure:hover + * {
     background-color: yellow;
 }
 
-.input-grandpha:hover, .input-grandpha:hover ~ .figure-search, .select-grandpha:hover {
-    background-color: blue;
+.fig-search {
+    transform: translate(170px, 0px);
 }
+
+.fig-filter {
+    transform: translate(550px, 0px);
+}
+
+.fig-order {
+    transform: translate(900px, 0px);
+    background: cyan;
+}
+
