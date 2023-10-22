@@ -2,6 +2,7 @@ form{
     width: 100vw;
     justify-self: center;
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-around;
     // display: grid;
     // grid-template-columns: 1fr 1fr 1fr;
@@ -9,12 +10,21 @@ form{
 
 form .row{
     width: 80%;
-    background-color: violet;
+    // background-color: violet;
     // display: grid;
     // grid-template-columns: 1fr 1fr 1fr;
     // justify-content: center;
 }
 
+input, select {
+    backdrop-filter: blur(6px);
+}
+
+.sec-submit {
+    // background-color: blue;
+    display: flex;
+    justify-content: flex-end;
+}
 // .row section, .row section section{
 //     width: 80%;
 //     justify-self: center;

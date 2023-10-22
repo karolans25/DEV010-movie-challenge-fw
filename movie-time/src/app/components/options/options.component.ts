@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -8,25 +8,18 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 
 export class OptionsComponent implements OnInit {
-  
+
+  // @Input() genres!: any[];
+  @Input() filterOptions!: string[];
+  @Input() orderOptions!: string[];
   @Output() newOptionsEvent= new EventEmitter<object>();
 
   optionsForm!: FormGroup;
-  
-  filterOptions!: string[];
-  orderOptions!: string[];
-  genres!: any[]; 
+  genres!: {id: number, name: string}[]; 
 
   constructor(private readonly fb:FormBuilder){ }
 
   ngOnInit(): void{    
-    this.filterOptions = ['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
-
-    this.filterOptions = ['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
-
-    
-    this.orderOptions = ['', 'Popularity (desc.)', 'Popularity (asc.)', 'Year (desc.)', 'Year (asc.)', 'Vote average (desc.)', 'Vote average (asc.)', 'Vote count (desc.)', 'Vote count (asc.)'];
-    
     this.genres = [{id: 35, name: "Comedy"}, {id: 14, name: 'Fantasy'},{id: 10751, name: 'Family'}];
 
     // this.optionsForm = new FormGroup({
@@ -45,7 +38,7 @@ export class OptionsComponent implements OnInit {
   initForm():FormGroup{
     return this.fb.group({
       // search: ['', [Validators.required, Validators.minLength(3)]]
-      search: ['', [Validators.required, Validators.minLength(3)]],
+      search: ['',],
       filter: ['',],
       order: ['',]
     })

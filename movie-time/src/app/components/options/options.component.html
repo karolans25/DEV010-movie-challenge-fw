@@ -49,26 +49,28 @@
   <!-- [(ngModel)]="selectedFilter" #selectedFilter="ngModel"-->
   <!-- [(ngModel)]="selectedOrder" #selectedOrder="ngModel"-->
 <!-- <pre>{{optionsForm.value | json}}</pre> -->
-<form (ngSubmit)="onSubmit()"  class="rounded" [formGroup]="optionsForm">
+<form (ngSubmit)="onSubmit()"  class="rounded mb-3" [formGroup]="optionsForm">
     <section class="row col-12">
         
         <!-- <figure class="fig-search"></figure> -->
         <section class="col form-floating mb-3 mt-3">
             <input type="text" class="form-control bg-transparent" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie"  formControlName="search">
-            <label for="search" class="form-label">Search movie by title 
+            <label for="search" class="form-label ms-3 mt-0">Search movie by title 
                 <!-- <i class="fab fa-search"></i> -->
             </label>
-            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
-            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div>
+
+            <!-- <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
+            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div> -->
+
             <!-- <p *ngIf="selectedSearch.value === 'C'">{{selectedSearch}}</p> -->
         </section>
 
         <!-- <figure class="fig-search"></figure> -->
         <section class="col form-floating mb-3 mt-3">
-            <select class="form-select form-select-sm bg-transparent" id="filter" title="Select the filter for the data" name="filter" formControlName="filter">
-                <option *ngFor = "let option of filterOptions; let index = index"  [value]="index"><span>{{option}}</span></option>
+            <select class="form-select bg-transparent" id="filter" title="Select the filter for the data" name="filter" formControlName="filter">
+                <option class="bg-dark text-light ms-5" *ngFor = "let option of filterOptions; let index = index"  [value]="index"><span>{{option}}</span></option>
             </select>
-            <label for="filter" class="form-label">Fitler by:</label>
+            <label for="filter" class="form-label ms-3">Fitler by:</label>
             <!-- <p >Haz seleccionado la opción # {{ verSeleccion }}</p> -->
             <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === '0'">{{selectedFilter}}</p> -->
         </section>
@@ -76,17 +78,20 @@
         <!-- <figure class="fig-search"></figure> -->
         <section class="col form-floating mb-3 mt-3">
             <select class="form-select bg-transparent" id="order" title="Select the order condition for the data" aria-placeholder="" name="order" formControlName="order">
-                <option *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
+                <option class="bg-dark text-light ms-5" *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
             </select>
-            <label for="order" class="form-label">Order by:</label>
+            <label for="order" class="form-label ms-3 mt-0">Order by:</label>
             <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
         </section>
 
     </section>
     <section class="row">
-        <section class="d-grid gap-2 col-8 float-end">
-            <button type="submit" class="btn btn-info btn-sm" [disabled]="optionsForm.invalid">Send</button>
+        <section class="float-end sec-submit">
+            <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid || (!optionsForm.get('search')?.touched && !optionsForm.get('filter')?.touched && !optionsForm.get('order')?.touched) ">Send</button>
+            <!-- <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid || ( (!optionsForm.get('filter')?.touched || optionsForm.get('search')?.value === '') && !optionsForm.get('filter')?.touched && !optionsForm.get('order')?.touched )">Send</button> -->
         </section>
+        <!-- <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
+        <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div> -->
     </section>
 </form>
   

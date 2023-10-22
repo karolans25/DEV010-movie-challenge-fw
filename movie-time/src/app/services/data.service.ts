@@ -18,6 +18,13 @@ export class DataService {
   // }
 
   // private numPages!: number;
+  getAllFilterOptions(): string[] {
+    return ['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
+  }
+
+  getAllOrderOptions(): string[] {
+    return ['', 'Popularity (desc.)', 'Popularity (asc.)', 'Year (desc.)', 'Year (asc.)', 'Vote average (desc.)', 'Vote average (asc.)', 'Vote count (desc.)', 'Vote count (asc.)'];
+  }
 
   getAllGenres(): Observable<any> {
     const params = new HttpParams()

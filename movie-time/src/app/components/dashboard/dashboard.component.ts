@@ -14,11 +14,13 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class DashboardComponent implements OnInit{
   
   genres!: [];
-  movies!: Movie[];
-  series!: Serie[];
+  // movies!: Movie[];
+  // series!: Serie[];
   numOfPages!: number;
   params!: object;
   films!: Movie[] | Serie[];
+  filterOptions!: string[];
+  orderOptions!: string[];
 
   constructor(private readonly dataSvc: DataService, private readonly route: ActivatedRoute){}
   
@@ -30,6 +32,9 @@ export class DashboardComponent implements OnInit{
     //   this.genres = response.genres;
     //   console.log(this.genres);
     // });
+    this.filterOptions = this.dataSvc.getAllFilterOptions();
+
+    this.orderOptions = this.dataSvc.getAllOrderOptions();
 
     this.route.queryParams.subscribe( (params: Params) => {
       console.log(params['type']);
