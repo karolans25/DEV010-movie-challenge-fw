@@ -1,4 +1,4 @@
-export interface Movie {
+export interface Serie {
     backdrop_path: string;
     first_air_date: string;
     genre_ids: number[];

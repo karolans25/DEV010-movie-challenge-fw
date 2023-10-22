@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-import { MOVIES } from '../films/mock-movies';
+import { MOVIES } from 'src/app/components/films/mock-movies';
+import { SERIES } from 'src/app/components/films/mock-series';
 import { Movie } from 'src/app/interfaces/movie';
 
 @Component({
