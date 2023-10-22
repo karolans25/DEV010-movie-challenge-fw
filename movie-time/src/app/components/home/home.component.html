@@ -59,7 +59,7 @@
         <p class="lead">What would you like to search first?</p>
         <div>
             <!-- <button *ngFor="let type of typeFilms; let index = index" [routerLink]="[routerTypes[index]]" routerLinkActive="router-link-active" [type]="index" type="button" class="btn btn-dark" >{{typeFilms[index]}}</button> -->
-            <button *ngFor="let type of typeFilms; let index = index" (click)="goRoute(index)" routerLinkActive="router-link-active" [type]="index" type="button" class="btn btn-dark" >{{type.text}}</button>
+            <button *ngFor="let type of typeFilms; let index = index" (click)="goRoute(type)" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{type.text}}</button>
         </div>
     </aside>
   </section>
