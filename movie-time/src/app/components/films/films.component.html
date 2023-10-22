@@ -3,9 +3,9 @@
         (click)="onCardClicked(index)"
         *ngFor="let film of films; let index = index" 
         [ngClass]="{'selected': index === selection}" 
-        [title]=film.title
-        [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + film.poster_path + '\') no-repeat center'"
-        [year]="getYearOfDate(film.release_date)"
+        [title]="film.title? film.title : film.name"
+        [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + film.poster_path + '\') no-repeat top'"
+        [year]="getYearOfDate(film.release_date? film.release_date: film.first_air_date)"
     >
     </app-card>
 </main>

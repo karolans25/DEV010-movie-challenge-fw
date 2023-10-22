@@ -1,66 +1,15 @@
-// * {
-//  --text-year: "2023";
-// }
+* {
+    --width-card: 154px;
+    --height-card: 231px;
+}
 
 figure{
-    --text-year: "2023";
-    // --color-ribbon-back: #283593;
-    // --color-ribbon: #3949ab;
-    width: 154px;
-    height: 231px;
-    // margin: 10px;
-    // border-radius: 13px;
-    // background: url('https://image.tmdb.org/t/p/w154/f6l9rghSHORkWLurUGJhaKAiyjY.jpg') no-repeat center;
-    background-size: 154px 231px;
-    // border: 2px solid yellow;
-    // border: 2px solid #9500ff;
-    // border: 2px solid blue;
-    // box-shadow: 10px 10px 2px 0px solid grey;
+    width: var(--width-card);
+    height: var(--height-card);
     cursor: pointer;
     transition: all .3s ease;
     position: relative;
     margin: 10px;
-
-}
-
-figure::before, figure::after {
-    // content:"2023";
-    // content: var(--text-year);
-    content: '';
-    position:absolute;
-    text-align: center;
-    // border-top: 9px solid var(--color-ribbon-back);
-    // border-right: 9px solid var(--color-ribbon-back);
-    // border-top: 9px solid black;
-    // border-right: 9px solid black;
-    border-top: 9px solid gray;
-    border-right: 9px solid gray;
-    border-bottom: 9px solid transparent;
-    border-left: 9px solid transparent;
-    top: 27px;
-    right: -11px;
-    transform : rotate(45deg);
-    border-radius: 4px;
-}
-
-figure::after{
-    // position: absolute;
-    content: var(--text-year);
-    transform : rotate(0deg);
-    border: none;
-    background: var(--color-ribbon);
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-    // background-color: white;
-    // color: black;
-    top: 11px;
-    right: -14px;
-    padding: 5px;
-    width: 50px;
-    text-align: center;
-    font-family: monospace;
-    box-shadow: 4px 4px 15px rgba(26, 35, 126, 0.2);
 }
 
 figcaption{
@@ -68,7 +17,6 @@ figcaption{
     bottom: 0;
     background-color: black;
     opacity: 75%;
-    color: yellow;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -84,6 +32,17 @@ figcaption{
     font-family: monospace;
     font-family: amit;
     padding: 5px;
+}
+
+.ribbon {
+    position:absolute;
+    text-align: center;
+    width: 60px;
+    font-size: 14px;
+    line-height: 14px;
+    border: 1px solid white;
+    opacity: .9;
+    transform: translate(calc(var(--width-card) - 52px), calc(-1*var(--height-card) + 40px));
 }
 
 figure:hover{
