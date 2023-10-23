@@ -27,30 +27,10 @@ export class PaginationComponent implements OnInit{
   ngOnInit(): void{
     this.maxButtons = 12;
     this.selection = 1;
-    // this.numPages = 15;
-    // console.log(this.numOfPages);
-    // this.pages = [].constructor(this.selection + this.maxButtons);
-    // console.log(this.numOfPages);
-    let packages:number [] = [];
-    for (let i = 1; i < this.numOfPages + 1; i++){
-      // const num: number = 501;
-      // console.log(this.pages);
-      // for (let i = 1; i < num; i++){
-      // console.log(i);
-      if( i % this.maxButtons === 0) {
-        packages.push(i);
-        this.totalPages.push(packages);
-        packages = [];
-      } else {
-        packages.push(i); 
-        if(i===this.numOfPages) this.totalPages.push(packages);
-      }
-    }
-    // this.indixes = this.totalPages.length;
     this.indixes = 0;
+    console.log(this.numOfPages);
+    this.createPagesButton(this.numOfPages);
     this.pages = this.totalPages[this.indixes];
-    // console.log(this.totalPages[this.indixes]);
-    // console.log(this.pages);
   }
 
   onPageClicked(index: number): void{
@@ -89,6 +69,7 @@ export class PaginationComponent implements OnInit{
   }
 
   onNextClicked(): void {
+    console.log(this.numOfPages);
     if (this.selection < this.numOfPages){
       if(this.selection%this.maxButtons === 0){
         this.indixes ++;
@@ -110,5 +91,21 @@ export class PaginationComponent implements OnInit{
     setTimeout(() => {
       this.renderer.removeClass(toastElement, 'show');
     }, 3000);
+  }
+
+  createPagesButton(totalPages: any){
+    this.numOfPages = totalPages;
+    let packages:number [] = [];
+    for (let i = 1; i < this.numOfPages + 1; i++){
+      console.log(this.numOfPages);
+      if( i % this.maxButtons === 0) {
+        packages.push(i);
+        this.totalPages.push(packages);
+        packages = [];
+      } else {
+        packages.push(i); 
+        if(i===this.numOfPages) this.totalPages.push(packages);
+      }
+    }
   }
 }

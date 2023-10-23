@@ -1,10 +1,11 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
-import { MOVIES } from 'src/app/components/films/mock-movies';
-import { SERIES } from 'src/app/components/films/mock-series';
 import { Movie } from 'src/app/interfaces/movie';
 import { Serie } from 'src/app/interfaces/serie';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Options } from 'src/app/interfaces/options';
+// import { MOVIES } from 'src/app/components/films/mock-movies';
+// import { SERIES } from 'src/app/components/films/mock-series';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,12 +14,14 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class DashboardComponent implements OnInit{
   
+  @Output() updateNumOfPages = new EventEmitter<number>();
+
   genres!: [];
   // movies!: Movie[];
   // series!: Serie[];
   numOfPages!: number;
   currentPage!: number;
-  params!: {search: string, filter: string, order: string};
+  params!: Options;
   films!: Movie[] | Serie[];
   type!: string;
   filterOptions!: string[];
@@ -34,33 +37,19 @@ export class DashboardComponent implements OnInit{
     //   this.genres = response.genres;
     //   console.log(this.genres);
     // });
-    this.filterOptions = this.dataSvc.getAllFilterOptions();
-
     this.orderOptions = this.dataSvc.getAllOrderOptions();
 
     this.route.queryParams.subscribe( (params: Params) => {
       this.type = params['type'];
-      // switch (params['type']) {
-      //   case '0': {
-      //     this.films = MOVIES;
-      //     this.films = MOVIES;
-      //     break;
-      //   }
-      //   case '1': {
-      //     this.films = SERIES;
-      //     this.films = MOVIES;
-      //     break; 
-      //   }
-      //   default: {
-      //     this.films = MOVIES;
-      //     this.films = MOVIES;
-      //     break;
-      //   }
-      // }
+      this.filterOptions = this.dataSvc.getAllFilterOptions()[parseInt(this.type)];
     });
+
     this.params = {search: '', filter: '0', order: '0'};
-    // this.movies = MOVIES;
-    this.makeARequest(1, this.params);
+    console.log(this.numOfPages);
+    console.log(this.films);
+    this.makeARequest(this.numOfPages, this.params);
+    console.log(this.films);
+    console.log(this.numOfPages);
   }
 
   searchByPage(page: number): void{
@@ -69,19 +58,19 @@ export class DashboardComponent implements OnInit{
     this.makeARequest(this.currentPage, this.params);
   }
 
-  searchWithOptions(options: {search: string, filter: string, order: string}): void{
-  // searchWithOptions(options: object): void{
-    // console.log(options);
+  searchWithOptions(options: Options): void {
     this.params = options;
     this.makeARequest(this.currentPage, this.params);
   }
 
-  makeARequest(page: number, params: {search: string, filter:string, order:string}): void{
+  makeARequest(page: number, params: Options): void{
     this.dataSvc.getFilms(page, params, this.type)
     .subscribe( response => {
-      this.films = response.films;
-      // this.movies = movies? movies : MOVIES;
       this.numOfPages = response.pages;
+      this.films = response.films;
+      console.log(this.numOfPages);
+      console.log(typeof this.numOfPages);
+      this.updateNumOfPages.emit(this.numOfPages);
     });
   }
 

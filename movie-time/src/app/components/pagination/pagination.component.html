@@ -8,7 +8,7 @@
 
     <!-- Buttons to navigate on number of pages -->
     <section class="btn-group">
-        <button type="button" class="btn btn-secondary"
+        <button (updateNumOfPages)="createPagesButton($event)" type="button" class="btn btn-secondary"
             (click)="onPageClicked(i)"
             *ngFor="let i of pages" 
             [ngClass]="{'selected': i === selection}" 
