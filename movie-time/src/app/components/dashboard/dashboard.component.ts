@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { Movie } from 'src/app/interfaces/movie';
 import { Serie } from 'src/app/interfaces/serie';
@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit{
   filterOptions!: string[];
   orderOptions!: string[];
 
-  constructor(private readonly dataSvc: DataService, private readonly route: ActivatedRoute){}
+  constructor(private readonly dataSvc: DataService, private readonly route: ActivatedRoute, private readonly router: Router){}
   
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
@@ -79,7 +79,9 @@ export class DashboardComponent implements OnInit{
     console.log(this.films[index].id, this.type);
     this.dataSvc.getFilmById(this.films[index].id, this.type)
     .subscribe( response => {
-      console.log(response);
+      const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
+      const queryParams = new URLSearchParams(response).toString();
+      const newTab = window.open( link + '?' + queryParams, '_blank');
     });
   }
 }
