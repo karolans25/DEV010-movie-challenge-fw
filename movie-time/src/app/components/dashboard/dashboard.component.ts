@@ -47,20 +47,20 @@ export class DashboardComponent implements OnInit{
     this.params = {search: '', filter: '0', order: '0'};
     console.log(this.numOfPages);
     console.log(this.films);
-    this.makeARequest(this.numOfPages, this.params);
+    this.makeARequest(1, this.params);
     console.log(this.films);
     console.log(this.numOfPages);
   }
 
   searchByPage(page: number): void{
     // console.log('page -> ', page);
+    this.makeARequest(page, this.params);
     this.currentPage = page;
-    this.makeARequest(this.currentPage, this.params);
   }
 
   searchWithOptions(options: Options): void {
     this.params = options;
-    this.makeARequest(this.currentPage, this.params);
+    this.makeARequest(1, this.params);
   }
 
   makeARequest(page: number, params: Options): void{

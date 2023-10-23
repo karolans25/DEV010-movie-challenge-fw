@@ -40,7 +40,9 @@ export class DataService {
 
   getFilms(page: number, extraParams: Options, type: string): Observable<any>{
     const params = this.constructParams(page, extraParams);
-    const entity = this.constructEntity(type, extraParams.filter);
+    const entity = this.constructEntity(type, extraParams.filter, extraParams.search);
+    console.log(`${this.URL}${entity}`);
+    console.log(params);
     return this.http.get<any>(`${this.URL}${entity}`, {params})
       .pipe(map(response => {
         console.log(response.total_pages > 500 ? 500 : response.total_pages);
@@ -83,24 +85,22 @@ export class DataService {
   if (extraParams.search !== '') 
     params = params.append('query', extraParams.search);
   if (extraParams.order !== '0')
-    params = params.set('sort_by', this.orderParam[parseInt(extraParams.order)]);  
+    params = params.set('sort_by', this.orderParam[parseInt(extraParams.order)]);
+  console.log(params);
   return params; 
   }
 
-  constructEntity(type: string, filter: string): string {
+  constructEntity(type: string, filter: string, search: string): string {
     let entity!: string;
-    entity = this.filterEntity[parseInt(filter)][parseInt(type)];
-    // switch (type){
-    //   case '0':
-    //     entity = 'discover/movie';
-    //     break;
-    //   case '1':
-    //     entity = 'discover/tv';
-    //     break;
-    //   default:
-    //     entity = 'discover/movie'
-    //     break;
-    // }
+    if (search !== '') {
+      if (type === '0') {
+        entity = 'search/movie';
+      } else if (type === '1') {
+        entity = 'search/tv';
+      }
+    } else {
+      entity = this.filterEntity[parseInt(filter)][parseInt(type)];
+    }
     return entity;
   }
 

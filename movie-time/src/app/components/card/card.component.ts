@@ -15,6 +15,6 @@ export class CardComponent implements OnInit{
   backgroundUrl!: string;
   ngOnInit(): void {
     this.backgroundUrl = this.backgroundImg !== null ? "url(\'https:\/\/image.tmdb.org/t/p/w154" + this.backgroundImg + "\')" : 'url(../../../assets/not-available.png)';
-    this.backgroundUrl = this.backgroundImg !== null ? "url(\'https:\/\/image.tmdb.org/t/p/w154" + this.backgroundImg + "\')" : 'url(../../../assets/not-found.png)';
+    // this.backgroundUrl = this.backgroundImg !== null ? "url(\'https:\/\/image.tmdb.org/t/p/w154" + this.backgroundImg + "\')" : 'url(../../../assets/not-found.png)';
   }
 }
