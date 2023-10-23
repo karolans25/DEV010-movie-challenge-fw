@@ -11,19 +11,18 @@ export class DataService {
   private readonly API = environment._APIkey;
   private readonly URL = environment._APIUrl;
 
+  private readonly filters = ['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
+
+  private readonly orderParam = ['popularity.desc', 'popularity.desc', 'popularity.asc', 'revenue.desc', 'revenue.asc', 'primary_release_date.desc', 'primary_release_date.asc', 'vote_average.desc', 'vote_average.asc', 'vote_count.desc', 'vote_count.asc'];
+
   constructor(private readonly http: HttpClient) { }
 
-  // getGenres(): Observable<[]>{
-  //   return this.http.get<>(this.url);
-  // }
-
-  // private numPages!: number;
   getAllFilterOptions(): string[] {
-    return ['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'];
+    return this.filters;
   }
 
   getAllOrderOptions(): string[] {
-    return ['', 'Popularity (desc.)', 'Popularity (asc.)', 'Year (desc.)', 'Year (asc.)', 'Vote average (desc.)', 'Vote average (asc.)', 'Vote count (desc.)', 'Vote count (asc.)'];
+    return ['', 'Popularity Descending', 'Popularity Ascending', 'Revenues Descending', 'Revenues Ascending', 'Release date Descending', 'Release date Ascending', 'Vote average Descending', 'Vote average Ascending', 'Vote count Descending', 'Vote count Ascending'];
   }
 
   getAllGenres(): Observable<any> {
@@ -34,41 +33,81 @@ export class DataService {
     const entity = 'genre/movie/list';
     return this.http.get<any>(`${this.URL}${entity}`, { params })
       .pipe(map(response => {
-        // this.numPages = response.total_pages;
-        // console.log(response);
         return { genres: response.genres };
       }));
   }
 
-  getMovies(page: number, extraParams: object): Observable<any>{
+  getFilms(page: number, extraParams: {search:string, filter:string, order:string}, type: string): Observable<any>{
+    const params = this.constructParams(page, extraParams);
+    const entity = this.constructEntity(type, extraParams.filter);
+    return this.http.get<any>(`${this.URL}${entity}`, {params})
+      .pipe(map(response => {
+        return { films: response.results, pages: response.total_pages > 500 ? 500 : response.total_pages };
+      }));
+  }
+
+  getFilmById(id: number, type:string): Observable<any>{
     const params = new HttpParams()
       .set('api_key', this.API)
       .set('include_adult', false)
       .set('include_video', false)
       .set('language', 'en-US')
-      .set('page', page)
+      .set('page', 1)
       .set('sort_by', 'popularity.desc');
-    const entity = 'discover/movie';
-    return this.http.get<any>(`${this.URL}${entity}`, {params})
-      .pipe(map(response => {
-        // this.numPages = response.total_pages;
-        // console.log(response);
-        return { movies: response.results, pages: response.total_pages > 500 ? 500 : response.total_pages };
-      }));
+    let entity!: string;
+    switch (type){
+      case '0':
+        entity = `movie/${id}`;
+        break;
+      case '1':
+        entity = `tv/${id}`;
+        break;
+      default:
+        entity = `movie/${id}`;
+        break;
+    }
+    return this.http.get<any>(`${this.URL}${entity}`, {params});
   }
 
-  // getNumOfPages():number{
-  //   return this.numPages;
-  //   // return 5;
-  // }
-  // getAllGenres(): Observable<object> {
-  //   const params = new HttpParams()
-  //     .set('apikey', this.apiKey)
-  //     .set('language', 'en')
-  //     .set('type', 'movie');
+  constructParams(page: number, extraParams: {search:string, filter:string, order:string}): HttpParams{
+    let params: HttpParams = new HttpParams()
+    .set('api_key', this.API)
+    .set('include_adult', false)
+    .set('include_video', false)
+    .set('language', 'en-US')
+    .set('page', page)
+    .set('sort_by', this.orderParam[parseInt(extraParams.order)]);
 
-  //   return this.httpClient.get<string[]>(`${this.apiUrl}genre/movie/list`, { params });
-  // }
+  if (extraParams.search !== '') params = params.append('query', extraParams.search);
+  if (extraParams.order !== '0')
+    params = params.set('sort_by', this.orderParam[parseInt(extraParams.order)]);  
 
+    //    params = new HttpParams()
+    //   .set('api_key', this.API)
+    //   .set('include_adult', false)
+    //   .set('include_video', false)
+    //   .set('language', 'en-US')
+    //   .set('page', page)
+    //   .set('sort_by', this.orderParam[parseInt(extraParams.order)]);  
+    // }
+    console.log(params);
+    return params; 
+  }
+
+  constructEntity(type: string, extraParams: {}): string {
+    let entity!: string;
+    switch (type){
+      case '0':
+        entity = 'discover/movie';
+        break;
+      case '1':
+        entity = 'discover/tv';
+        break;
+      default:
+        entity = 'discover/movie'
+        break;
+    }
+    return entity;
+  }
 
 }

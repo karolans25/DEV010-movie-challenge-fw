@@ -12,15 +12,16 @@ export class OptionsComponent implements OnInit {
   // @Input() genres!: any[];
   @Input() filterOptions!: string[];
   @Input() orderOptions!: string[];
-  @Output() newOptionsEvent= new EventEmitter<object>();
+  @Input() genres!: {id: number, name:string }[];
+  @Output() newOptionsEvent= new EventEmitter<{search: string, filter: string, order: string}>();
 
   optionsForm!: FormGroup;
-  genres!: {id: number, name: string}[]; 
+  // genres!: {id: number, name: string}[]; 
 
   constructor(private readonly fb:FormBuilder){ }
 
   ngOnInit(): void{    
-    this.genres = [{id: 35, name: "Comedy"}, {id: 14, name: 'Fantasy'},{id: 10751, name: 'Family'}];
+    // this.genres = [{id: 35, name: "Comedy"}, {id: 14, name: 'Fantasy'},{id: 10751, name: 'Family'}];
 
     // this.optionsForm = new FormGroup({
     //   search: new FormControl(),
@@ -31,16 +32,22 @@ export class OptionsComponent implements OnInit {
   }
 
   onSubmit():void{
-    console.log('Form ->', this.optionsForm.value);
+    // const values = this.optionsForm.value;
+    // console.log('Form ->', values);
+    // const data:{search:string, filter:string, order:string} = {
+    //   search: values.seaarch, 
+    //   filter: values.filter, 
+    //   order: values.order
+    // }
     this.newOptionsEvent.emit(this.optionsForm.value);
   }
 
   initForm():FormGroup{
     return this.fb.group({
       // search: ['', [Validators.required, Validators.minLength(3)]]
-      search: ['',],
-      filter: ['',],
-      order: ['',]
+      search: [''],
+      filter: ['0'],
+      order: ['0']
     })
   }
 }

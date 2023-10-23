@@ -6,6 +6,8 @@
 figure{
     width: var(--width-card);
     height: var(--height-card);
+    background-repeat: no-repeat;
+    background-position: top;
     cursor: pointer;
     transition: all .3s ease;
     position: relative;

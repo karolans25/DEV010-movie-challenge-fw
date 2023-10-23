@@ -8,12 +8,13 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class CardComponent implements OnInit{
   // @Input() transform!: string;
-  @Input() background!: string;
+  @Input() backgroundImg!: string;
   @Input() title!: string;
   @Input() year!: number;
 
+  backgroundUrl!: string;
   ngOnInit(): void {
-      // console.log(this.background);
-      // console.log(this.title?this.title:'noexiste');
+    this.backgroundUrl = this.backgroundImg !== null ? "url(\'https:\/\/image.tmdb.org/t/p/w154" + this.backgroundImg + "\')" : 'url(../../../assets/not-available.png)';
+    this.backgroundUrl = this.backgroundImg !== null ? "url(\'https:\/\/image.tmdb.org/t/p/w154" + this.backgroundImg + "\')" : 'url(../../../assets/not-found.png)';
   }
 }

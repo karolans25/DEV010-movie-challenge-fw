@@ -2,379 +2,404 @@ import { Serie } from "src/app/interfaces/serie";
 
 export const SERIES: Serie[] = [
     {
-        "backdrop_path": "/8Z8dVGTn3OhX1AR49tgvh89i79G.jpg",
-        "genre_ids": [
-            37,
-            28,
-            53
-        ],
-        "id": 884315,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Terror on the Prairie",
-        "overview": "A pioneering family fights back against a gang of vicious outlaws that is terrorizing them on their newly-built farm on the plains of Montana.",
-        "popularity": 772.159,
-        "poster_path": "/xfwHIY865AYJoFgBAYoAJLvPLO9.jpg",
-        "first_air_date": "2022-09-08",
-        "name": "Terror on the Prairie",
-        "vote_average": 6.1,
-        "vote_count": 41
-    },
-    {
-        "backdrop_path": "/dZbLqRjjiiNCpTYzhzL2NMvz4J0.jpg",
-        "genre_ids": [
-            27,
-            53
-        ],
-        "id": 951491,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Saw X",
-        "overview": "Between the events of 'Saw' and 'Saw II', a sick and desperate John Kramer travels to Mexico for a risky and experimental medical procedure in hopes of a miracle cure for his cancer, only to discover the entire operation is a scam to defraud the most vulnerable. Armed with a newfound purpose, the infamous serial killer returns to his work, turning the tables on the con artists in his signature visceral way through devious, deranged, and ingenious traps.",
-        "popularity": 749.58,
-        "poster_path": "/b16RAVwj2QN6RAs752UJNzQ9Of0.jpg",
-        "first_air_date": "2023-09-26",
-        "name": "Saw X",
-        "vote_average": 7.3,
-        "vote_count": 182
-    },
-    {
-        "backdrop_path": "/o6kfGs1qTAaFX22YitIvlYMyeqA.jpg",
-        "genre_ids": [
-            27
-        ],
-        "id": 807172,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "The Exorcist: Believer",
-        "overview": "When his daughter, Angela, and her friend Katherine, show signs of demonic possession, it unleashes a chain of events that forces single father Victor Fielding to confront the nadir of evil. Terrified and desperate, he seeks out Chris MacNeil, the only person alive who's witnessed anything like it before.",
-        "popularity": 436.59,
-        "poster_path": "/lxRLC3WOFM2INoyEa3bFGIUApvn.jpg",
-        "first_air_date": "2023-10-04",
-        "name": "The Exorcist: Believer",
-        "vote_average": 5.4,
-        "vote_count": 131
-    },
-    {
-        "backdrop_path": "/eSsMzJpzAwCa69tm6Wco2il44aJ.jpg",
-        "genre_ids": [
-            28,
-            80,
-            18,
-            53
-        ],
-        "id": 939335,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Muzzle",
-        "overview": "LAPD K-9 officer Jake Rosser has just witnessed the shocking murder of his dedicated partner by a mysterious assailant. As he investigates the shooter’s identity, he uncovers a vast conspiracy that has a chokehold on the city in this thrilling journey through the tangled streets of Los Angeles and the corrupt bureaucracy of the LAPD.",
-        "popularity": 664.059,
-        "poster_path": "/qXChf7MFL36BgoLkiB3BzXiwW82.jpg",
-        "first_air_date": "2023-09-29",
-        "name": "Muzzle",
-        "vote_average": 6.2,
-        "vote_count": 34
-    },
-    {
-        "backdrop_path": "/iiXliCeykkzmJ0Eg9RYJ7F2CWSz.jpg",
-        "genre_ids": [
-            28,
-            53,
-            80
-        ],
-        "id": 762430,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Retribution",
-        "overview": "When a mysterious caller puts a bomb under his car seat, Matt Turner begins a high-speed chase across the city to complete a specific series of tasks. With his kids trapped in the back seat and a bomb that will explode if they get out of the car, a normal commute becomes a twisted game of life or death as Matt follows the stranger's increasingly dangerous instructions in a race against time to save his family.",
-        "popularity": 579.857,
-        "poster_path": "/oUmmY7QWWn7OhKlcPOnirHJpP1F.jpg",
-        "first_air_date": "2023-08-23",
-        "name": "Retribution",
-        "vote_average": 6.9,
-        "vote_count": 419
-    },
-    {
-        "backdrop_path": "/xHqTnPtpd9Qd7R0fVtoqxZYM67Q.jpg",
-        "genre_ids": [
-            80,
-            53,
-            28
-        ],
-        "id": 958006,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "The Kill Room",
-        "overview": "A hitman, his boss, an art dealer and a money-laundering scheme that accidentally turns the assassin into an overnight avant-garde sensation, one that forces her to play the art world against the underworld.",
-        "popularity": 574.62,
-        "poster_path": "/qKpdy7N6zX05eisopvvviiTwPxb.jpg",
-        "first_air_date": "2023-09-14",
-        "name": "The Kill Room",
-        "vote_average": 5.5,
-        "vote_count": 22
-    },
-    {
-        "backdrop_path": "/fm6KqXpk3M2HVveHwCrBSSBaO0V.jpg",
+        "backdrop_path": "/q3jHCb4dMfYF6ojikKuHd6LscxC.jpg",
+        "first_air_date": "2021-06-09",
         "genre_ids": [
             18,
-            36
+            10765
         ],
-        "id": 872585,
-        "origin_country": ["US"],
+        "id": 84958,
+        "name": "Loki",
+        "origin_country": [
+            "US"
+        ],
         "original_language": "en",
-        "original_name": "Oppenheimer",
-        "overview": "The story of J. Robert Oppenheimer’s role in the development of the atomic bomb during World War II.",
-        "popularity": 382.119,
-        "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-        "first_air_date": "2023-07-19",
-        "name": "Oppenheimer",
-        "vote_average": 8.3,
-        "vote_count": 3923
+        "original_name": "Loki",
+        "overview": "After stealing the Tesseract during the events of “Avengers: Endgame,” an alternate version of Loki is brought to the mysterious Time Variance Authority, a bureaucratic organization that exists outside of time and space and monitors the timeline. They give Loki a choice: face being erased from existence due to being a “time variant” or help fix the timeline and stop a greater threat.",
+        "popularity": 2782.511,
+        "poster_path": "/voHUmluYmKyleFkTu3lOXQG702u.jpg",
+        "vote_average": 8.2,
+        "vote_count": 10333
     },
     {
-        "backdrop_path": "/2vFuG6bWGyQUzYS9d69E5l85nIz.jpg",
+        "backdrop_path": "/jWXrQstj7p3Wl5MfYWY6IHqRpDb.jpg",
+        "first_air_date": "1952-12-26",
         "genre_ids": [
-            28,
-            12,
-            878
+            10763
         ],
-        "id": 667538,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Transformers: Rise of the Beasts",
-        "overview": "When a new threat capable of destroying the entire planet emerges, Optimus Prime and the Autobots must team up with a powerful faction known as the Maximals. With the fate of humanity hanging in the balance, humans Noah and Elena will do whatever it takes to help the Transformers as they engage in the ultimate battle to save Earth.",
-        "popularity": 496.209,
-        "poster_path": "/gPbM0MK8CP8A174rmUwGsADNYKD.jpg",
-        "first_air_date": "2023-06-06",
-        "name": "Transformers: Rise of the Beasts",
-        "vote_average": 7.5,
-        "vote_count": 3419
+        "id": 94722,
+        "name": "Tagesschau",
+        "origin_country": [
+            "DE"
+        ],
+        "original_language": "de",
+        "original_name": "Tagesschau",
+        "overview": "German daily news program, the oldest still existing program on German television.",
+        "popularity": 3090.653,
+        "poster_path": "/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg",
+        "vote_average": 7.4,
+        "vote_count": 153
     },
     {
-        "backdrop_path": "/jkKVLzLWjSvTnc84VzeljhSy6j8.jpg",
+        "backdrop_path": "/9xxLWtnFxkpJ2h1uthpvCRK6vta.jpg",
+        "first_air_date": "1999-09-20",
         "genre_ids": [
-            10749,
-            18
-        ],
-        "id": 820525,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "After Everything",
-        "overview": "Besieged by writer’s block and the crushing breakup with Tessa, Hardin travels to Portugal in search of a woman he wronged in the past – and to find himself. Hoping to win back Tessa, he realizes he needs to change his ways before he can make the ultimate commitment.",
-        "popularity": 372.663,
-        "poster_path": "/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg",
-        "first_air_date": "2023-09-13",
-        "name": "After Everything",
-        
-        "vote_average": 6.8,
-        "vote_count": 342
-    },
-    {
-        "backdrop_path": "/4fLZUr1e65hKPPVw0R3PmKFKxj1.jpg",
-        "genre_ids": [
-            16,
-            35,
-            10751,
-            14,
-            10749
-        ],
-        "id": 976573,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Elemental",
-        "overview": "In a city where fire, water, land and air residents live together, a fiery young woman and a go-with-the-flow guy will discover something elemental: how much they have in common.",
-        "popularity": 492.482,
-        "poster_path": "/4Y1WNkd88JXmGfhtWR7dmDAo1T2.jpg",
-        "first_air_date": "2023-06-14",
-        "name": "Elemental",
-        "vote_average": 7.7,
-        "vote_count": 2706
-    },
-    {
-        "backdrop_path": "/oP03EF9eYWqvycFGN5TeEo3nN7l.jpg",
-        "genre_ids": [
-            27,
+            80,
+            18,
             9648
         ],
-        "id": 1024773,
-        "origin_country": ["US"],
+        "id": 2734,
+        "name": "Law & Order: Special Victims Unit",
+        "origin_country": [
+            "US"
+        ],
         "original_language": "en",
-        "original_name": "It Lives Inside",
-        "overview": "Desperate to fit in at school, Sam rejects her East Indian culture and family to be like everyone else. However, when a mythological demonic spirit latches onto her former best friend, she must come to terms with her heritage to defeat it.",
-        "popularity": 535.08,
-        "poster_path": "/73gIfV8gDwkVgUrFDzt4TfZC9Zc.jpg",
-        "first_air_date": "2023-09-06",
-        "name": "It Lives Inside",
-        
-        "vote_average": 5.3,
-        "vote_count": 35
+        "original_name": "Law & Order: Special Victims Unit",
+        "overview": "In the criminal justice system, sexually-based offenses are considered especially heinous. In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit. These are their stories.",
+        "popularity": 2656.28,
+        "poster_path": "/ywBt4WKADdMVgxTR1rS2uFwMYTH.jpg",
+        "vote_average": 8,
+        "vote_count": 3408
     },
     {
-        "backdrop_path": "/6tCTR5Gr91Kocrt0goLrpFs1tqh.jpg",
+        "backdrop_path": "/oOce9hLMVFubjAJliau4kiSNPnW.jpg",
+        "first_air_date": "1990-09-13",
+        "genre_ids": [
+            80,
+            18
+        ],
+        "id": 549,
+        "name": "Law & Order",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Law & Order",
+        "overview": "In cases ripped from the headlines, police investigate serious and often deadly crimes, weighing the evidence and questioning the suspects until someone is taken into custody. The district attorney's office then builds a case to convict the perpetrator by proving the person guilty beyond a reasonable doubt. Working together, these expert teams navigate all sides of the complex criminal justice system to make New York a safer place.",
+        "popularity": 2503.434,
+        "poster_path": "/77OPlbsvX3pzoFbyfpcE3GXMCod.jpg",
+        "vote_average": 7.5,
+        "vote_count": 460
+    },
+    {
+        "backdrop_path": "/8CXw90lEmnJQeUvkgSnl5bEjbQI.jpg",
+        "first_air_date": "2013-12-02",
+        "genre_ids": [
+            16,
+            35,
+            10765,
+            10759
+        ],
+        "id": 60625,
+        "name": "Rick and Morty",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Rick and Morty",
+        "overview": "Rick is a mentally-unbalanced but scientifically gifted old man who has recently reconnected with his family. He spends most of his time involving his young grandson Morty in dangerous, outlandish adventures throughout space and alternate universes. Compounded with Morty's already unstable family life, these events cause Morty much distress at home and school.",
+        "popularity": 1787.296,
+        "poster_path": "/gdIrmf2DdY5mgN6ycVP0XlzKzbE.jpg",
+        "vote_average": 8.7,
+        "vote_count": 8664
+    },
+    {
+        "backdrop_path": "/218ZehBKlH8efPRRccmB7bu0oLQ.jpg",
+        "first_air_date": "2023-09-25",
+        "genre_ids": [
+            35,
+            9648,
+            10766,
+            18
+        ],
+        "id": 219109,
+        "name": "Elas por Elas",
+        "origin_country": [
+            "BR"
+        ],
+        "original_language": "pt",
+        "original_name": "Elas por Elas",
+        "overview": "",
+        "popularity": 2269.834,
+        "poster_path": "/hCSH5KvSqShWXhFiXr88wtJXwlO.jpg",
+        "vote_average": 9.5,
+        "vote_count": 4
+    },
+    {
+        "backdrop_path": "/2eIlCirgcvEwmCSYh2wDfz5Sxvz.jpg",
+        "first_air_date": "2013-09-23",
+        "genre_ids": [
+            18,
+            80,
+            9648
+        ],
+        "id": 46952,
+        "name": "The Blacklist",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Blacklist",
+        "overview": "Raymond \"Red\" Reddington, one of the FBI's most wanted fugitives, surrenders in person at FBI Headquarters in Washington, D.C. He claims that he and the FBI have the same interests: bringing down dangerous criminals and terrorists. In the last two decades, he's made a list of criminals and terrorists that matter the most but the FBI cannot find because it does not know they exist. Reddington calls this \"The Blacklist\". Reddington will co-operate, but insists that he will speak only to Elizabeth Keen, a rookie FBI profiler.",
+        "popularity": 1675.825,
+        "poster_path": "/r935SMphvXppx5bJjbIBNx02fwc.jpg",
+        "vote_average": 7.6,
+        "vote_count": 2850
+    },
+    {
+        "backdrop_path": "/gmECX1DvFgdUPjtio2zaL8BPYPu.jpg",
+        "first_air_date": "2020-10-03",
+        "genre_ids": [
+            16,
+            10759,
+            10765
+        ],
+        "id": 95479,
+        "name": "Jujutsu Kaisen",
+        "origin_country": [
+            "JP"
+        ],
+        "original_language": "ja",
+        "original_name": "呪術廻戦",
+        "overview": "Yuji Itadori is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Satoru Gojo, Itadori is admitted to Tokyo Jujutsu High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.",
+        "popularity": 1301.245,
+        "poster_path": "/hFWP5HkbVEe40hrXgtCeQxoccHE.jpg",
+        "vote_average": 8.6,
+        "vote_count": 2835
+    },
+    {
+        "backdrop_path": "/xXRsKNJHTOGrs5wfYAxkbM2RiyT.jpg",
+        "first_air_date": "2017-09-25",
         "genre_ids": [
             18
         ],
-        "id": 833326,
-        "origin_country": ["US"],
-        "original_language": "fr",
-        "original_name": "Rien à foutre",
-        "overview": "Cassandre, 26, is a flight attendant for a low-cost airline. Based in Lanzarote, she’s always willing to take on extra hours and carries out her duties with robotic efficiency. On the side, she just goes with the flow and floats between Tinder, parties and lazy days. When she suddenly gets dismissed, she is forced to return home.",
-        "popularity": 220.713,
-        "poster_path": "/wLZ5jijVpOxHuBLmsICKLXwlldu.jpg",
-        "first_air_date": "2022-03-02",
-        "name": "Zero Fucks Given",
-        "vote_average": 6.4,
-        "vote_count": 265
-    },
-    {
-        "backdrop_path": "/cK9LrH5Ggqf2005AhWrpDT98bHU.jpg",
-        "genre_ids": [
-            28,
-            12
+        "id": 71712,
+        "name": "The Good Doctor",
+        "origin_country": [
+            "US"
         ],
-        "id": 732684,
-        "origin_country": ["US"],
-        "original_language": "ru",
-        "original_name": "Либерея: Охотники за сокровищами",
-        "overview": "While digging one of the many tunnels for the Moscow metro, Soviet workers unearth ruins of a dungeon. The site is closed, the metro tunnel is diverted, and amidst the bustle no one notices the tunnel workers’ foreman pocketing a little ‘souvenir’ – a book-sized frame made of precious metals featuring an inscription in an unknown language. Decades later, the foreman’s grandson Ilya, who works as a courier, discovers the ancient relic in a pile of old junk. Oblivious to the true value of the family heirloom, he soon learns about it from a mysterious stranger. The relic is the key to the secret location of the priceless ancient library that belonged to Ivan the Terrible. What Ilya doesn’t know is that the search for the lost library has been going on for centuries, and now very powerful people are after him. Ilya and the mysterious stranger decide to try their luck in finding the library.",
-        "popularity": 513.712,
-        "poster_path": "/lc0KueWbDDwIsg76JnPohA7jday.jpg",
-        "first_air_date": "2022-10-27",
-        "name": "Raiders of the Lost Library",
-        "vote_average": 5.4,
-        "vote_count": 14
-    },
-    {
-        "backdrop_path": "/9qWD2PS8fWeUv3ud3yE9XMoorer.jpg",
-        "genre_ids": [
-            27,
-            14,
-            53
-        ],
-        "id": 675531,
-        "origin_country": ["US"],
         "original_language": "en",
-        "original_name": "Dark Harvest",
-        "overview": "In a cursed town, the annual harvest becomes a brutal battle for survival. On Halloween 1963, Sawtooth Jack, a terrifying legend, rises from the cornfields, threatening the town’s children. Groups of boys unite to defeat the murderous scarecrow before midnight. Richie, a rebellious outcast, joins the run, motivated by his brother’s previous victory. As the hunt progresses, Richie makes a shocking discovery and faces a pivotal choice to break the relentless cycle.",
-        "popularity": 498.364,
-        "poster_path": "/sFBDjWdw8gHSI2dMivP7H52iwvp.jpg",
-        "first_air_date": "2023-10-11",
-        "name": "Dark Harvest",
-        "vote_average": 5.9,
-        "vote_count": 48
+        "original_name": "The Good Doctor",
+        "overview": "Shaun Murphy, a young surgeon with autism and savant syndrome, relocates from a quiet country life to join a prestigious hospital's surgical unit. Unable to personally connect with those around him, Shaun uses his extraordinary medical gifts to save lives and challenge the skepticism of his colleagues.",
+        "popularity": 1495.996,
+        "poster_path": "/luhKkdD80qe62fwop6sdrXK9jUT.jpg",
+        "vote_average": 8.5,
+        "vote_count": 11803
     },
     {
-        "backdrop_path": "/35z8hWuzfFUZQaYog8E9LsXW3iI.jpg",
-        "genre_ids": [
-            12,
-            28
-        ],
-        "id": 335977,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Indiana Jones and the Dial of Destiny",
-        "overview": "Finding himself in a new era, and approaching retirement, Indy wrestles with fitting into a world that seems to have outgrown him. But as the tentacles of an all-too-familiar evil return in the form of an old rival, Indy must don his hat and pick up his whip once more to make sure an ancient and powerful artifact doesn't fall into the wrong hands.",
-        "popularity": 389.94,
-        "poster_path": "/Af4bXE63pVsb2FtbW8uYIyPBadD.jpg",
-        "first_air_date": "2023-06-28",
-        "name": "Indiana Jones and the Dial of Destiny",
-        "vote_average": 6.7,
-        "vote_count": 1914
-    },
-    {
-        "backdrop_path": "/7I6VUdPj6tQECNHdviJkUHD2u89.jpg",
-        "genre_ids": [
-            28,
-            53,
-            80
-        ],
-        "id": 603692,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "John Wick: Chapter 4",
-        "overview": "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
-        "popularity": 397.571,
-        "poster_path": "/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
-        "first_air_date": "2023-03-22",
-        "name": "John Wick: Chapter 4",
-        "vote_average": 7.8,
-        "vote_count": 4776
-    },
-    {
-        "backdrop_path": "/4HodYYKEIsGOdinkGi2Ucz6X9i0.jpg",
+        "backdrop_path": "/wU1y7snEVYiJBpZ2k1DjIpHgJbx.jpg",
+        "first_air_date": "1999-01-31",
         "genre_ids": [
             16,
-            28,
-            12
-        ],
-        "id": 569094,
-        "origin_country": ["US"],
-        "original_language": "en",
-        "original_name": "Spider-Man: Across the Spider-Verse",
-        "overview": "After reuniting with Gwen Stacy, Brooklyn’s full-time, friendly neighborhood Spider-Man is catapulted across the Multiverse, where he encounters the Spider Society, a team of Spider-People charged with protecting the Multiverse’s very existence. But when the heroes clash on how to handle a new threat, Miles finds himself pitted against the other Spiders and must set out on his own to save those he loves most.",
-        "popularity": 408.111,
-        "poster_path": "/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg",
-        "first_air_date": "2023-05-31",
-        "name": "Spider-Man: Across the Spider-Verse",
-        "vote_average": 8.4,
-        "vote_count": 4582
-    },
-    {
-        "backdrop_path": "/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg",
-        "genre_ids": [
-            16,
-            10751,
-            12,
-            14,
             35
         ],
-        "id": 502356,
-        "origin_country": ["US"],
+        "id": 1434,
+        "name": "Family Guy",
+        "origin_country": [
+            "US"
+        ],
         "original_language": "en",
-        "original_name": "The Super Mario Bros. Movie",
-        "overview": "While working underground to fix a water main, Brooklyn plumbers—and brothers—Mario and Luigi are transported down a mysterious pipe and wander into a magical new world. But when the brothers are separated, Mario embarks on an epic quest to find Luigi.",
-        "popularity": 386.241,
-        "poster_path": "/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg",
-        "first_air_date": "2023-04-05",
-        "name": "The Super Mario Bros. Movie",
-        "vote_average": 7.8,
-        "vote_count": 6918
+        "original_name": "Family Guy",
+        "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+        "popularity": 1431.154,
+        "poster_path": "/hw2vi8agaJZ7oeSvS8uEYgOtK32.jpg",
+        "vote_average": 7.3,
+        "vote_count": 3905
     },
     {
-        "backdrop_path": "/rrucFNW1qOgSPL4n2Fy6CdpBDEY.jpg",
+        "backdrop_path": "/sLFzswJzWUBwTNnLaQ7EOikR1He.jpg",
+        "first_air_date": "2023-10-07",
         "genre_ids": [
-            27,
+            18
+        ],
+        "id": 233076,
+        "name": "The Heart",
+        "origin_country": [
+            "CN"
+        ],
+        "original_language": "zh",
+        "original_name": "问心",
+        "overview": "Xiao Feng is the Deputy Chief Physician of the Cardiology Department at Dongli Hospital. He is introverted and strict. He becomes work partners with the impulsive doctor Lin Yi, yet friction arises due to the differences in their medical beliefs. Meanwhile, Xiao Feng's younger sister also gets a job working as a doctor at the Intensive Care Unit.",
+        "popularity": 1549.21,
+        "poster_path": "/sEyJgrm80Lad7MRMchh6ZrdoAAi.jpg",
+        "vote_average": 9,
+        "vote_count": 2
+    },
+    {
+        "backdrop_path": "/xl1wGwaPZInJo1JAnpKqnFozWBE.jpg",
+        "first_air_date": "2014-02-17",
+        "genre_ids": [
             35,
-            53
+            10767
         ],
-        "id": 1161048,
-        "origin_country": ["US"],
-        "original_language": "sv",
-        "original_name": "Konferensen",
-        "overview": "A team-building conference for municipal employees turns into a nightmare when accusations of corruption begin to circulate and plague the work environment. At the same time, a mysterious figure begins murdering the participants.",
-        "popularity": 458.205,
-        "poster_path": "/gpLHbB6emWDnfMFdQs0EoZZs0cV.jpg",
-        "first_air_date": "2023-10-13",
-        "name": "The Conference",
-        "vote_average": 5.6,
-        "vote_count": 91
+        "id": 59941,
+        "name": "The Tonight Show Starring Jimmy Fallon",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Tonight Show Starring Jimmy Fallon",
+        "overview": "After Jay Leno's second retirement from the program, Jimmy Fallon stepped in as his permanent replacement. After 42 years in Los Angeles the program was brought back to New York.",
+        "popularity": 1538.559,
+        "poster_path": "/g4amxJvtpnY79J77xeamnAEUO8r.jpg",
+        "vote_average": 6,
+        "vote_count": 235
     },
     {
-        "backdrop_path": "/whB2PJfxrDWwwksprliJTjYbcZJ.jpg",
+        "backdrop_path": "/ds1n5P0Y92cTh6UpbcA89hxM96a.jpg",
+        "first_air_date": "2005-03-27",
         "genre_ids": [
-            27,
-            53
+            18
         ],
-        "id": 507089,
-        "origin_country": ["US"],
+        "id": 1416,
+        "name": "Grey's Anatomy",
+        "origin_country": [
+            "US"
+        ],
         "original_language": "en",
-        "original_name": "Five Nights at Freddy's",
-        "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
-        "popularity": 319.177,
-        "poster_path": "/A4j8S6moJS2zNtRR8oWF08gRnL5.jpg",
-        "first_air_date": "2023-10-25",
-        "name": "Five Nights at Freddy's",
-        "vote_average": 0,
-        "vote_count": 0
+        "original_name": "Grey's Anatomy",
+        "overview": "Follows the personal and professional lives of a group of doctors at Seattle’s Grey Sloan Memorial Hospital.",
+        "popularity": 1488.589,
+        "poster_path": "/daSFbrt8QCXV2hSwB0hqYjbj681.jpg",
+        "vote_average": 8.3,
+        "vote_count": 9556
     },
+    {
+        "backdrop_path": "/ScaVfT5IkwVC3Edhmxqyl0GbK0.jpg",
+        "first_air_date": "2023-09-28",
+        "genre_ids": [
+            10765,
+            10759,
+            18
+        ],
+        "id": 205715,
+        "name": "Gen V",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Gen V",
+        "overview": "At America's only college for superheroes, gifted students put their moral boundaries to the test, competing for the university's top ranking, and a chance to join The Seven, Vought International's elite superhero team. When the school's dark secrets come to light, they must decide what kind of heroes they want to become.",
+        "popularity": 1338.074,
+        "poster_path": "/uuot1N5AgZ7xRCKgm4ZCwOhgIJu.jpg",
+        "vote_average": 8.2,
+        "vote_count": 191
+    },
+    {
+        "backdrop_path": "/2N4LXvTkUwPRkbvyzdmzvtnCHgR.jpg",
+        "first_air_date": "2023-07-25",
+        "genre_ids": [],
+        "id": 225660,
+        "name": "Pira-Pirasong Paraiso",
+        "origin_country": [
+            "PH"
+        ],
+        "original_language": "tl",
+        "original_name": "Pira-Pirasong Paraiso",
+        "overview": "A con artist takes on the job of pretending to be one of the long-lost sisters of a young and rich woman. As she navigates a world of cunning and lies, she learns about right and wrong, love and family, and spectacular truths about herself.",
+        "popularity": 1791.383,
+        "poster_path": "/gELcO56G9EsUj6LSjaDq8VvI8De.jpg",
+        "vote_average": 6.5,
+        "vote_count": 20
+    },
+    {
+        "backdrop_path": "/gNPWlhUXhyWiHv9qxr57tvT0WwS.jpg",
+        "first_air_date": "2014-10-07",
+        "genre_ids": [
+            18,
+            10765
+        ],
+        "id": 60735,
+        "name": "The Flash",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Flash",
+        "overview": "After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma. Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent. For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won't be long before the world learns what Barry Allen has become...The Flash.",
+        "popularity": 1525.381,
+        "poster_path": "/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg",
+        "vote_average": 7.8,
+        "vote_count": 10656
+    },
+    {
+        "backdrop_path": "/6s3ftX4a1kECPCb1Ewq3GLhVFnn.jpg",
+        "first_air_date": "2003-09-23",
+        "genre_ids": [
+            80,
+            18,
+            10759
+        ],
+        "id": 4614,
+        "name": "NCIS",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "NCIS",
+        "overview": "From murder and espionage to terrorism and stolen submarines, a team of special agents investigates any crime that has a shred of evidence connected to Navy and Marine Corps personnel, regardless of rank or position.",
+        "popularity": 1717.941,
+        "poster_path": "/2exOHePjOTquUsbThPGhuEjYTyA.jpg",
+        "vote_average": 7.6,
+        "vote_count": 2056
+    },
+    {
+        "backdrop_path": "/aDBRtunw49UF4XmqfyNuD9nlYIu.jpg",
+        "first_air_date": "2016-01-25",
+        "genre_ids": [
+            80,
+            10765
+        ],
+        "id": 63174,
+        "name": "Lucifer",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Lucifer",
+        "overview": "Bored and unhappy as the Lord of Hell, Lucifer Morningstar abandoned his throne and retired to Los Angeles, where he has teamed up with LAPD detective Chloe Decker to take down criminals. But the longer he's away from the underworld, the greater the threat that the worst of humanity could escape.",
+        "popularity": 1259.591,
+        "poster_path": "/ekZobS8isE6mA53RAiGDG93hBxL.jpg",
+        "vote_average": 8.5,
+        "vote_count": 13913
+    },
+    {
+        "backdrop_path": "/gMMnf8VRg3Z98WaFmOLr9Jk8pIs.jpg",
+        "first_air_date": "2015-09-08",
+        "genre_ids": [
+            35,
+            10767
+        ],
+        "id": 63770,
+        "name": "The Late Show with Stephen Colbert",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "The Late Show with Stephen Colbert",
+        "overview": "Stephen Colbert brings his signature satire and comedy to The Late Show with Stephen Colbert, the #1 show in late night, where he talks with an eclectic mix of guests about what is new and relevant in the worlds of politics, entertainment, business, music, technology, and more. Featuring bandleader Jon Batiste with his band Stay Human, the Emmy Award-nominated show is broadcast from the historic Ed Sullivan Theater. Stephen Colbert, Chris Licht, Tom Purcell, and Jon Stewart are executive producers. Barry Julien and Denise Rehrig serve as co-executive producers.",
+        "popularity": 1698.151,
+        "poster_path": "/9jkThAGYj2yp8jsS6Nriy5mzKFT.jpg",
+        "vote_average": 6.5,
+        "vote_count": 209
+    },
+    {
+        "backdrop_path": "/5AkPhazx8F0Ht74CUdJU03vNzBi.jpg",
+        "first_air_date": "2014-02-25",
+        "genre_ids": [
+            10767
+        ],
+        "id": 61818,
+        "name": "Late Night with Seth Meyers",
+        "origin_country": [
+            "US"
+        ],
+        "original_language": "en",
+        "original_name": "Late Night with Seth Meyers",
+        "overview": "Seth Meyers, who is \"Saturday Night Live’s\" longest serving anchor on the show’s wildly popular \"Weekend Update,\" takes over as host of NBC’s \"Late Night\" — home to A-list celebrity guests, memorable comedy and the best in musical talent. As the Emmy Award-winning head writer for \"SNL,\" Meyers has established a reputation for sharp wit and perfectly timed comedy, and has gained fame for his spot-on jokes and satire. Meyers takes his departure from \"SNL\" to his new post at \"Late Night,\" as Jimmy Fallon moves to \"The Tonight Show\".",
+        "popularity": 1221.602,
+        "poster_path": "/x5asOuPOjW21e0Ykkvkuzu1TGEl.jpg",
+        "vote_average": 5.5,
+        "vote_count": 53
+    }
 ]

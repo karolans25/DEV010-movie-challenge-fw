@@ -17,8 +17,10 @@ export class DashboardComponent implements OnInit{
   // movies!: Movie[];
   // series!: Serie[];
   numOfPages!: number;
-  params!: object;
+  currentPage!: number;
+  params!: {search: string, filter: string, order: string};
   films!: Movie[] | Serie[];
+  type!: string;
   filterOptions!: string[];
   orderOptions!: string[];
 
@@ -37,43 +39,58 @@ export class DashboardComponent implements OnInit{
     this.orderOptions = this.dataSvc.getAllOrderOptions();
 
     this.route.queryParams.subscribe( (params: Params) => {
-      console.log(params['type']);
-      console.log(params['type'] === '0')
-      switch (params['type']) {
-        case '0':
-          this.films = MOVIES;
-          break;
-        case '1':
-          this.films = SERIES;
-          break; 
-        default:
-          this.films = MOVIES;
-          break;
-      }
-      // this.movies= this.data;
+      this.type = params['type'];
+      // switch (params['type']) {
+      //   case '0': {
+      //     this.films = MOVIES;
+      //     this.films = MOVIES;
+      //     break;
+      //   }
+      //   case '1': {
+      //     this.films = SERIES;
+      //     this.films = MOVIES;
+      //     break; 
+      //   }
+      //   default: {
+      //     this.films = MOVIES;
+      //     this.films = MOVIES;
+      //     break;
+      //   }
+      // }
     });
-    this.params = {};
+    this.params = {search: '', filter: '0', order: '0'};
     // this.movies = MOVIES;
-    // this.makeARequest(1, this.params);
+    this.makeARequest(1, this.params);
   }
 
   searchByPage(page: number): void{
     // console.log('page -> ', page);
-    this.makeARequest(page, this.params);
+    this.currentPage = page;
+    this.makeARequest(this.currentPage, this.params);
   }
 
-  searchWithOptions(options: object): void{
-    console.log(options);
+  searchWithOptions(options: {search: string, filter: string, order: string}): void{
+  // searchWithOptions(options: object): void{
+    // console.log(options);
     this.params = options;
+    this.makeARequest(this.currentPage, this.params);
   }
 
-  makeARequest(page: number, params: object): void{
-    this.dataSvc.getMovies(page, params)
+  makeARequest(page: number, params: {search: string, filter:string, order:string}): void{
+    this.dataSvc.getFilms(page, params, this.type)
     .subscribe( response => {
-      this.films = response.movies;
+      this.films = response.films;
       // this.movies = movies? movies : MOVIES;
       this.numOfPages = response.pages;
-      console.log(this.numOfPages);
+    });
+  }
+
+  showDetailFilm(index: number): void{
+    console.log(index);
+    console.log(this.films[index].id, this.type);
+    this.dataSvc.getFilmById(this.films[index].id, this.type)
+    .subscribe( response => {
+      console.log(response);
     });
   }
 }

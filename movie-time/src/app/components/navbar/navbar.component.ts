@@ -19,6 +19,10 @@ export class NavbarComponent {
 
   goPath(link: any):void {
     const index = this.links.indexOf(link);
-    this.router.navigate([link.link], {queryParams: {type: index}});
+    if (index !== this.links.length - 1){
+      this.router.navigate([link.link], {queryParams: {type: index}});
+    } else {
+      this.router.navigate([link.link], {queryParams: {}});
+    }
   }
 }

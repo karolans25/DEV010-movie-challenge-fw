@@ -1,10 +1,17 @@
 <main class="rounded">
-    <app-card class="card rounded bg-transparent border border-0"
+    <!-- <app-card class="card rounded bg-transparent border border-0"
         (click)="onCardClicked(index)"
         *ngFor="let film of films; let index = index" 
         [ngClass]="{'selected': index === selection}" 
         [title]="film.title? film.title : film.name"
         [background]="'url(\'https:\/\/image.tmdb.org/t/p/w154' + film.poster_path + '\') no-repeat top'"
+        [year]="getYearOfDate(film.release_date? film.release_date: film.first_air_date)"
+    > -->
+    <app-card class="card rounded bg-transparent border border-0"
+        (click)="onCardClicked(index)"
+        *ngFor="let film of films; let index = index" 
+        [title]="film.title? film.title : film.name"
+        [backgroundImg]="film.poster_path"
         [year]="getYearOfDate(film.release_date? film.release_date: film.first_air_date)"
     >
     </app-card>
