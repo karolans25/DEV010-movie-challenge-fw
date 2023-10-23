@@ -79,6 +79,7 @@ export class DashboardComponent implements OnInit{
     console.log(this.films[index].id, this.type);
     this.dataSvc.getFilmById(this.films[index].id, this.type)
     .subscribe( response => {
+      console.log(response);
       const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
       const queryParams = new URLSearchParams(response).toString();
       const newTab = window.open( link + '?' + queryParams, '_blank');

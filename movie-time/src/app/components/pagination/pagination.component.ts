@@ -7,7 +7,7 @@ import { Component, OnChanges, OnInit, OnDestroy, SimpleChanges, Output, EventEm
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class PaginationComponent implements OnInit{
+export class PaginationComponent implements OnInit, OnChanges{
 
   @Input() numOfPages!: number;
   @Output() newPageEvent= new EventEmitter<number>();
@@ -24,12 +24,16 @@ export class PaginationComponent implements OnInit{
   //   console.log(changes);
   // }
 
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log('Hubo un cambioo -> ', this.numOfPages);
+  }
+
   ngOnInit(): void{
     this.maxButtons = 12;
     this.selection = 1;
     this.indixes = 0;
     console.log(this.numOfPages);
-    this.createPagesButton(this.numOfPages);
+    this.createPagesButton();
     this.pages = this.totalPages[this.indixes];
   }
 
@@ -93,8 +97,7 @@ export class PaginationComponent implements OnInit{
     }, 3000);
   }
 
-  createPagesButton(totalPages: any){
-    this.numOfPages = totalPages;
+  createPagesButton(){
     let packages:number [] = [];
     for (let i = 1; i < this.numOfPages + 1; i++){
       console.log(this.numOfPages);
