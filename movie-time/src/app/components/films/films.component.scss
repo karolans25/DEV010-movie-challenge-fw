@@ -1,0 +1,17 @@
+main{
+    height: 88%;
+    // border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    // padding-left: 18px;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    // gap: 15px;
+    overflow-y: scroll;
+}
+
+// .selected{
+//     transform: scale(0.9);
+// }

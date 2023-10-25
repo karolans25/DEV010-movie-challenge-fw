@@ -1,0 +1,49 @@
+// nav{
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     height: var(--height-navbar);
+//     display: flex;
+//     align-items: center;
+//     background-color: var(--color-contrast);
+//     color: var(--color-bg);
+//     font-weight: 600;
+//     padding-left: 40px;
+//     padding-right: 40px;
+//     width: 100%;
+// }
+
+// nav > *{
+//     background-color: var(--color-contrast);
+// }
+
+.spacer{
+    flex: 1;
+}
+
+nav h2 {
+    font-family: 'Amita';
+    color: white;
+    padding-left: 20px;
+    text-align: center;
+    align-self: center;
+    margin: 0;
+}
+
+nav div {
+    justify-content: flex-end;
+}
+
+nav button {
+    justify-self: flex-end;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.nav-link.active{
+    background: #0dc6eb;
+    color: black;
+}

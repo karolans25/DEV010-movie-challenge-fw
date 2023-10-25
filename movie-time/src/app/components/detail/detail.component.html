@@ -1,0 +1,20 @@
+<!-- <p>dashboard works!</p> -->
+<app-navbar></app-navbar>
+
+<main>
+    <article class="rounded" [ngStyle]="{'background-image': backdrop}">
+        <figure class="rounded" [ngStyle]="{'background-image': poster}">
+            <!-- <img src={{poster}}> -->
+        </figure>
+        <section>
+            <h2>{{title}}</h2>
+            <h6>⭐{{vote_average}} ({{vote_count}})</h6>
+            <h4>({{year}})</h4>
+            <span>{{date | date:'longDate'}}</span><br>
+            <span class="badge bg-primary" *ngFor="let genre of genres">{{genre.name}}</span>
+            <p><strong>Review:</strong><br>{{overview}}</p>
+        </section>
+    </article>
+</main>
+
+<app-footer></app-footer>

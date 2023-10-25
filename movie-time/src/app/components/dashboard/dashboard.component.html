@@ -1,0 +1,18 @@
+<!-- <p>dashboard works!</p> -->
+<app-navbar></app-navbar>
+
+<main>
+
+    <app-options (newOptionsEvent)="searchWithOptions($event)" [filterOptions] = "filterOptions" [orderOptions]="orderOptions" [genres]="genres"></app-options>
+
+    <article class="rounded">
+        <!-- <p *ngIf="movies !== undefined">{{movies}}</p> -->
+        <app-movies (clickedCardEvent)="showDetailFilm($event)" [films] = "films"></app-movies>
+        <app-pagination (newPageEvent)="searchByPage($event)" [numOfPages] = "numOfPages ? numOfPages : 500">
+        </app-pagination>
+        <!-- <p>{{numOfPages}}</p> -->
+    </article>
+
+</main>
+
+<app-footer></app-footer>

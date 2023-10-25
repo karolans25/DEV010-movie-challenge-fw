@@ -1,0 +1,51 @@
+<!-- [(ngModel)]="selectedSearch" #selectedSearch="ngModel"-->
+<!-- [(ngModel)]="selectedFilter" #selectedFilter="ngModel"-->
+<!-- [(ngModel)]="selectedOrder" #selectedOrder="ngModel"-->
+<form (ngSubmit)="onSubmit()"  class="rounded mb-3 mt-3 p-3" [formGroup]="optionsForm">
+    
+    <!-- Search input -->
+    <label for="search" class="form-label ms-3 mt-2">
+        <strong>Search by title </strong>
+        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-light" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
+        <!-- <p *ngIf="selectedSearch" [hidden]="selectedSearch === ''">{{selectedSearch}}</p>  -->
+    </label>
+
+    <!-- Simple filter  -->
+    <label for="filter" class="form-label ms-3 mt-2"><strong>Filter by</strong>
+        <select (change)="onSubmit()" class="form-select bg-warning text-dark text-center ms-0" id="filter" title="Find movies or series with simple filters" name="filter" formControlName="filter" [disabled]="true">
+            <option class="bg-dark text-light ms-5" *ngFor = "let option of filterOptions; let index = index, let last = last" [value]="index"><span>{{option}}</span></option>
+        </select>
+        <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === (filterOptions.length - 1).toString()">{{selectedFilter}}</p> -->
+    </label>
+
+    <!-- Advanced filter -->
+    <button class="btn btn-warning btn-md mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithOptions" aria-controls="offcanvasWithBothOptions">Advanced Filtering 👆</button>
+
+    <div class="offcanvas offcanvas-start bg-dark text-light" data-bs-scroll="true" tabindex="-1" id="offcanvasWithOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title text-warning" id="offcanvasWithOptionsLabel">Advanced Filtering</h3>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5>Choose the options for filtering</h5>
+            
+            <label for="order" class="col form-label ms-3 mb-3 mt-0"><p class="text-light">Order by:</p>
+                <select [(ngModel)]="selectedOrder" class="form-select bg-dark text-warning order" id="order" title="Select the order condition for the data" aria-placeholder="Select the condition for sorting the films" name="order" formControlName="order">
+                    <option class="bg-dark text-light ms-5" *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
+                </select>
+            </label>
+            <br>
+            
+            <label class="col form-label ms-3 mb-3 mt-0 text-light"><p>Filter with genre:</p>
+                <span class="badge badge-md text-dark" *ngFor="let genre of genres, let index = index" (click)="addGenre(genre, index)" id="{{genre.id}}">{{genre.name}}</span>
+            </label>
+            <br>
+            <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
+            
+            <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid">Send</button>
+            <button type="button" class="btn btn-secondary btn-md" [disabled]="(optionsForm.get('order')?.value === '0')" (click)="resetForm()">Reset</button>
+        </div>
+      </div>
+</form>
+<!-- <pre>{{optionsForm.value | json}}</pre> -->
+  

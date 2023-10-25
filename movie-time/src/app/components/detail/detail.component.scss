@@ -1,0 +1,74 @@
+main {
+    background-color: black;
+    background-image: url('../../../assets/cinema-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+article {
+    width: 70%;
+    height: 70%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    // background-color: rgba(255, 255, 255, .3);
+    // width: 100vw;
+    // height: 100vh;
+    transform: translate(50px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // display: grid;
+    // grid-template-columns: 2fr 3fr;
+}
+
+article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    // background-color: rgba(255, 255, 255, 0.5);
+}
+
+figure {
+    width: 38%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 90% 90%;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin: 20px;
+}
+
+section {
+    color: white;
+    width: 55%;
+    height: 80%;
+    transform: translate(77%, 0%);
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+h4 {
+    transform: translate(0%, -15px);
+    font-family: amita;
+}
+
+h6 {
+    transform: translate(60%, 10px);
+}
+
+span {
+    transform: translate(0px, 0px);
+    margin: 10px;
+    padding: 10px;
+}

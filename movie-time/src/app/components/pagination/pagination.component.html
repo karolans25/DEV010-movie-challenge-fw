@@ -1,0 +1,40 @@
+<!-- <p>pagination works!</p> -->
+<nav>
+    <!-- Buttons to go to the previous page -->
+    <section class="btn-group">
+        <button type="button" class="btn btn-dark" (click)="onPageClicked(1)" ><span> << </span></button>
+        <button type="button" class="btn btn-dark" (click)="onPreviousClicked()"><span> < </span></button>
+    </section>
+
+    <!-- Buttons to navigate on number of pages -->
+    <section class="btn-group">
+        <button (updateNumOfPages)="createPagesButton()" type="button" class="btn btn-secondary"
+            (click)="onPageClicked(i)"
+            *ngFor="let i of pages" 
+            [ngClass]="{'selected': i === selection}" 
+            >
+            <span>{{i}}</span>
+        </button>
+    </section>
+
+    <!-- Buttons to go to the next page -->
+    <section class="btn-group">
+        <button type="button" class="btn btn-dark" (click)="onNextClicked()"><span> > </span></button>
+        <button type="button" class="btn btn-dark" (click)="onPageClicked(numOfPages)" ><span> >> </span></button>  
+    </section>
+
+    <!-- <ngb-toast class="bg-info">
+
+    </ngb-toast> -->
+    
+    <div class="toast bg-light" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header bg-primary text-light">
+          <strong class="me-auto">Pagination</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="toast-body"><p>{{msg}}</p></div>
+    </div>
+    
+</nav>
