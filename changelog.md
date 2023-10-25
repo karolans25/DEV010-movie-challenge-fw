@@ -16,3 +16,4 @@
 * I added the Offcanvas for select the advanced filters.
 * I added the detail view and it's service.
 * I added an error view when the route is unknown (404 page).
+* I added a home view for selecting between movies and series.
