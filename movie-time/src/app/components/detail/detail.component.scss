@@ -53,6 +53,8 @@ section {
     width: 50%;
     height: 100%;
     transform: translate(88%, 10%);
+    overflow-x: hidden;
+    padding: 10px;
 }
 
 h4 {
@@ -60,10 +62,10 @@ h4 {
 }
 
 h6 {
-    transform: translate(75%, 10px);
+    transform: translate(60%, 10px);
 }
 
 span {
-    transform: translate(0px, -10px);
+    transform: translate(0px, 0px);
+    margin: 10px;
 }
-

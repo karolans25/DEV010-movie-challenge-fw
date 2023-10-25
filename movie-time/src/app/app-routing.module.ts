@@ -10,8 +10,9 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'dashboard/movies', component: DashboardComponent },
   { path: 'dashboard/series', component: DashboardComponent },
-  { path: 'detail/movie/', component: DetailComponent },
-  { path: 'detail/serie', component: DetailComponent },  { path: '**', component: PageNotFoundComponent}
+  { path: 'detail/movie', component: DetailComponent },
+  { path: 'detail/serie', component: DetailComponent },  
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({

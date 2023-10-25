@@ -45,11 +45,11 @@ export class DashboardComponent implements OnInit{
     });
 
     this.params = {search: '', filter: '0', order: '0'};
-    console.log(this.numOfPages);
-    console.log(this.films);
+    // console.log(this.numOfPages);
+    // console.log(this.films);
     this.makeARequest(1, this.params);
-    console.log(this.films);
-    console.log(this.numOfPages);
+    // console.log(this.films);
+    // console.log(this.numOfPages);
   }
 
   searchByPage(page: number): void{
@@ -75,14 +75,18 @@ export class DashboardComponent implements OnInit{
   }
 
   showDetailFilm(index: number): void{
-    console.log(index);
-    console.log(this.films[index].id, this.type);
-    this.dataSvc.getFilmById(this.films[index].id, this.type)
-    .subscribe( response => {
-      console.log(response);
-      const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
-      const queryParams = new URLSearchParams(response).toString();
-      const newTab = window.open( link + '?' + queryParams, '_blank');
-    });
+    const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
+    const data = {type: this.type, id: this.films[index].id.toString()}
+    const queryParams = new URLSearchParams(data).toString();
+    const newTab = window.open( link + '?' + queryParams, '_blank');
+    // console.log(index);
+    // console.log(this.films[index].id, this.type);
+    // this.dataSvc.getFilmById(this.films[index].id, this.type)
+    // .subscribe( response => {
+    //   console.log(response);
+    //   const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
+    //   const queryParams = new URLSearchParams(response).toString();
+    //   const newTab = window.open( link + '?' + queryParams, '_blank');
+    // });
   }
 }

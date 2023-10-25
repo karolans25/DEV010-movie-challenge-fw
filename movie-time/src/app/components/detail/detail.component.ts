@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Genre } from 'src/app/interfaces/genre';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-detail',
@@ -19,27 +20,35 @@ export class DetailComponent implements OnInit{
   genres!: Genre[];
   overview!: string;
 
-  constructor(private readonly route: ActivatedRoute){}
+  constructor(private readonly dataSvc: DataService, private readonly route: ActivatedRoute){}
 
   ngOnInit(){
     this.route.queryParams.subscribe( (params: Params) => {
-      console.log(params);
+      this.dataSvc.getFilmById(parseInt(params['id']), params['type'])
+      .subscribe( response => {
+        console.log(response);
+        // const link = this.type === '0' ? 'detail/movie' : 'detail/serie';
+        // const queryParams = new URLSearchParams(response).toString();
+        // const newTab = window.open( link + '?' + queryParams, '_blank');
+        console.log(response);
 
-      this.backdrop = params['backdrop_path']?"url(\'https:\/\/image.tmdb.org/t/p/w780" + params['backdrop_path'] + "\')" : 'url(../../../assets/not-available.png) no-repeat top';
+        this.backdrop = response['backdrop_path']?"url(\'https:\/\/image.tmdb.org/t/p/w780" + response['backdrop_path'] + "\')" : 'url(../../../assets/not-available.png) no-repeat top';
 
-      this.poster = params['poster_path']? "url(\'https:\/\/image.tmdb.org/t/p/w342" + params['poster_path'] + "\')" : 'url(../../../assets/not-available.png)';
+        this.poster = response['poster_path']? "url(\'https:\/\/image.tmdb.org/t/p/w342" + response['poster_path'] + "\')" : 'url(../../../assets/not-available.png)';
 
-      this.title = params['title']? params['title'] : params['name'];
+        this.title = response['title']? response['title'] : response['name'];
 
-      this.date = params['release_date']? params['release_date'] : params['first_air_date'];
-      this.year = this.getYearOfDate(this.date);
+        this.date = response['release_date']? response['release_date'] : response['first_air_date'];
+        this.year = this.getYearOfDate(this.date);
 
-      this.vote_average = params['vote_average'];
-      this.vote_count = params['vote_count'];
+        this.vote_average = response['vote_average'];
+        this.vote_count = response['vote_count'];
 
-      this.genres = params['genres'];
+        this.genres = response['genres'];
 
-      this.overview = params['overview'];
+        this.overview = response['overview'];
+      });
+
     });
 
   }
