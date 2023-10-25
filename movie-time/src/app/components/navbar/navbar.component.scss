@@ -39,6 +39,10 @@ nav button {
     justify-self: flex-end;
 }
 
+.nav-link {
+    cursor: pointer;
+}
+
 .nav-link.active{
     background: #0dc6eb;
     color: black;

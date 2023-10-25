@@ -1,97 +1,51 @@
-<!-- <form class="rounded">
-    <section class="row">
-        <figure class="fig-search"></figure>
-        <section class="col form-floating mb-3 mt-3">
-                <input type="text" class="form-control bg-transparent" id="search" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie">
-                <label for="search">Search movie by title: <i class="fab fa-search"></i></label>
-        </section>
-        <figure class="fig-filter"></figure>
-        <section class="col form-floating mb-3 mt-3">
-                <select class="form-select bg-transparent" id="filter">
-                    <option *ngFor="let opt of filterOptions, let index = index">
-                        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-                        {{opt}}
-                        </button>
-                    </option>
-                    <label for="filter">Filter by: <i class="fab fa-search"></i></label>
+<!-- [(ngModel)]="selectedSearch" #selectedSearch="ngModel"-->
+<!-- [(ngModel)]="selectedFilter" #selectedFilter="ngModel"-->
+<!-- [(ngModel)]="selectedOrder" #selectedOrder="ngModel"-->
+<form (ngSubmit)="onSubmit()"  class="rounded mb-3 mt-3 p-3" [formGroup]="optionsForm">
+    
+    <!-- Search input -->
+    <label for="search" class="form-label ms-3 mt-2">
+        <strong>Search by title </strong>
+        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-light" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
+        <!-- <p *ngIf="selectedSearch" [hidden]="selectedSearch === ''">{{selectedSearch}}</p>  -->
+    </label>
+
+    <!-- Simple filter  -->
+    <label for="filter" class="form-label ms-3 mt-2"><strong>Filter by</strong>
+        <select (change)="onSubmit()" class="form-select bg-warning text-dark text-center ms-0" id="filter" title="Find movies or series with simple filters" name="filter" formControlName="filter" [disabled]="true">
+            <option class="bg-dark text-light ms-5" *ngFor = "let option of filterOptions; let index = index, let last = last" [value]="index"><span>{{option}}</span></option>
+        </select>
+        <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === (filterOptions.length - 1).toString()">{{selectedFilter}}</p> -->
+    </label>
+
+    <!-- Advanced filter -->
+    <button class="btn btn-warning btn-md mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithOptions" aria-controls="offcanvasWithBothOptions">Advanced Filtering 👆</button>
+
+    <div class="offcanvas offcanvas-start bg-dark text-light" data-bs-scroll="true" tabindex="-1" id="offcanvasWithOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title text-warning" id="offcanvasWithOptionsLabel">Advanced Filtering</h3>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h5>Choose the options for filtering</h5>
+            
+            <label for="order" class="col form-label ms-3 mb-3 mt-0"><p class="text-light">Order by:</p>
+                <select [(ngModel)]="selectedOrder" class="form-select bg-dark text-warning order" id="order" title="Select the order condition for the data" aria-placeholder="Select the condition for sorting the films" name="order" formControlName="order">
+                    <option class="bg-dark text-light ms-5" *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
                 </select>
-        </section>
-        <figure class="fig-order"></figure>
-        <section class="col form-floating mb-3 mt-3">
-                <select class="form-select bg-transparent" id="order">
-                    <option *ngFor="let opt of orderOptions, let index = index" [value]="index">{{opt}}</option>
-                    <label for="order">Order by <i class="fab fa-search"></i></label>
-                </select>
-        </section>
-    </section>
-</form> -->
-
-<!-- Offcanvas Sidebar -->
-<!-- <div class="offcanvas offcanvas-start" id="demo">
-    <div class="offcanvas-header">
-      <h1 class="offcanvas-title">Heading</h1>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body">
-      <p>Some text lorem ipsum.</p>
-      <p>Some text lorem ipsum.</p>
-      <button class="btn btn-secondary" type="button">A Button</button>
-    </div>
-  </div> -->
-
-  <!-- Button to open the offcanvas sidebar -->
-<!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
-    Open Offcanvas Sidebar
-  </button> -->
-
-
-  <!-- [(ngModel)]="selectedSearch" #selectedSearch="ngModel"-->
-  <!-- [(ngModel)]="selectedFilter" #selectedFilter="ngModel"-->
-  <!-- [(ngModel)]="selectedOrder" #selectedOrder="ngModel"-->
-<!-- <pre>{{optionsForm.value | json}}</pre> -->
-<form (ngSubmit)="onSubmit()"  class="rounded mb-3" [formGroup]="optionsForm">
-    <section class="row col-12">
-        
-        <!-- <figure class="fig-search"></figure> -->
-        <section class="col form-floating mb-3 mt-3">
-            <input type="text" class="form-control bg-transparent" placeholder="Search movie by title or original title" name="search" title="Write the title or original title of the movie"  formControlName="search">
-            <label for="search" class="form-label ms-3 mt-0">Search movie by title 
-                <!-- <i class="fab fa-search"></i> -->
             </label>
-
-            <!-- <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
-            <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div> -->
-
-            <!-- <p *ngIf="selectedSearch.value === 'C'">{{selectedSearch}}</p> -->
-        </section>
-
-        <!-- <figure class="fig-search"></figure> -->
-        <section class="col form-floating mb-3 mt-3">
-            <select class="form-select bg-transparent" id="filter" title="Select the filter for the data" name="filter" formControlName="filter">
-                <option class="bg-dark text-light ms-5" *ngFor = "let option of filterOptions; let index = index"  [value]="index"><span>{{option}}</span></option>
-            </select>
-            <label for="filter" class="form-label ms-3">Fitler by:</label>
-            <!-- <p >Haz seleccionado la opción # {{ verSeleccion }}</p> -->
-            <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === '0'">{{selectedFilter}}</p> -->
-        </section>
-        
-        <!-- <figure class="fig-search"></figure> -->
-        <section class="col form-floating mb-3 mt-3">
-            <select class="form-select bg-transparent" id="order" title="Select the order condition for the data" aria-placeholder="" name="order" formControlName="order">
-                <option class="bg-dark text-light ms-5" *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
-            </select>
-            <label for="order" class="form-label ms-3 mt-0">Order by:</label>
+            <br>
+            
+            <label class="col form-label ms-3 mb-3 mt-0 text-light"><p>Filter with genre:</p>
+                <span class="badge badge-md text-dark" *ngFor="let genre of genres, let index = index" (click)="addGenre(genre, index)" id="{{genre.id}}">{{genre.name}}</span>
+            </label>
+            <br>
             <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
-        </section>
-
-    </section>
-    <section class="row">
-        <section class="float-end sec-submit">
-            <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid || (!optionsForm.get('search')?.touched && !optionsForm.get('filter')?.touched && !optionsForm.get('order')?.touched) ">Send</button>
-            <!-- <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid || ( (!optionsForm.get('filter')?.touched || optionsForm.get('search')?.value === '') && !optionsForm.get('filter')?.touched && !optionsForm.get('order')?.touched )">Send</button> -->
-        </section>
-        <!-- <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['required']" class="alert alert-danger">This field is required.</div>
-        <div *ngIf="optionsForm.get('search')?.touched && optionsForm.get('search')?.errors?.['minlength']" class="alert alert-danger">Title must be longer than {{ optionsForm.get('search')?.errors?.['minlength'].requiredLength }} characters.</div> -->
-    </section>
+            
+            <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid">Send</button>
+            <button type="button" class="btn btn-secondary btn-md" [disabled]="(optionsForm.get('order')?.value === '0')" (click)="resetForm()">Reset</button>
+        </div>
+      </div>
 </form>
+<!-- <pre>{{optionsForm.value | json}}</pre> -->
   

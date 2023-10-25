@@ -12,28 +12,32 @@ export class DataService {
   private readonly API = environment._APIkey;
   private readonly URL = environment._APIUrl;
 
-  private readonly filterEntity = [['discover/movie', 'discover/tv'], ['movie/now_playing', 'tv/airing_today'], ['movie/popular', 'tv/popular'], ['movie/top_rated', 'tv/top_rated'], ['movie/upcoming', 'tv/on_the_air'], ['discover/movie', 'discover/tv']];
+  private readonly filterEntity = [['discover/movie', 'discover/tv'], ['movie/now_playing', 'tv/airing_today'], ['movie/popular', 'tv/popular'], ['movie/top_rated', 'tv/top_rated'], ['movie/upcoming', 'tv/on_the_air']];
 
   private readonly orderParam = ['popularity.desc', 'popularity.desc', 'popularity.asc', 'revenue.desc', 'revenue.asc', 'primary_release_date.desc', 'primary_release_date.asc', 'vote_average.desc', 'vote_average.asc', 'vote_count.desc', 'vote_count.asc'];
+
+  genres!: string[];
 
   constructor(private readonly http: HttpClient) { }
 
   getAllFilterOptions(): [string[], string[]] {
-    return [['', 'Now playing', 'Popular', 'Top Rated', 'Upcoming', 'Genres'], ['', 'Airing today', 'Popular', 'Top Rated', 'On the air', 'Genres']];
+    return [['Filter by 🔽', 'Now playing', 'Popular', 'Top Rated', 'Upcoming'], ['Filter by 🔽', 'Airing today', 'Popular', 'Top Rated', 'On the air']];
   }
 
   getAllOrderOptions(): string[] {
-    return ['', 'Popularity Descending', 'Popularity Ascending', 'Revenues Descending', 'Revenues Ascending', 'Release date Descending', 'Release date Ascending', 'Vote average Descending', 'Vote average Ascending', 'Vote count Descending', 'Vote count Ascending'];
+    return ['Order by 📶', 'Popularity Descending', 'Popularity Ascending', 'Revenues Descending', 'Revenues Ascending', 'Release date Descending', 'Release date Ascending', 'Vote average Descending', 'Vote average Ascending', 'Vote count Descending', 'Vote count Ascending'];
   }
 
-  getAllGenres(): Observable<any> {
+  getAllGenres(type: string): Observable<any> {
     const params = new HttpParams()
       .set('api_key', this.API)
       .set('language', 'en')
-      .set('type', 'movie');
-    const entity = 'genre/movie/list';
+      .set('type', type === '0'? 'movie' : 'tv');
+    const entity = 'genre/'+ params.get('type') +'/list';
     return this.http.get<any>(`${this.URL}${entity}`, { params })
       .pipe(map(response => {
+        console.log(response);
+        this.genres = response.genres;
         return { genres: response.genres };
       }));
   }
@@ -45,6 +49,7 @@ export class DataService {
     console.log(params);
     return this.http.get<any>(`${this.URL}${entity}`, {params})
       .pipe(map(response => {
+        console.log(response);
         console.log(response.total_pages > 500 ? 500 : response.total_pages);
         return { films: response.results, pages: response.total_pages > 500 ? 500 : response.total_pages };
       }));
@@ -58,6 +63,7 @@ export class DataService {
       .set('language', 'en-US')
       .set('page', 1)
       .set('sort_by', 'popularity.desc');
+
     let entity!: string;
     switch (type){
       case '0':
@@ -86,7 +92,8 @@ export class DataService {
     params = params.append('query', extraParams.search);
   if (extraParams.order !== '0')
     params = params.set('sort_by', this.orderParam[parseInt(extraParams.order)]);
-  console.log(params);
+  if (extraParams.genre.length !== 0)
+    params = params.set('with_genres', extraParams.genre.join());
   return params; 
   }
 

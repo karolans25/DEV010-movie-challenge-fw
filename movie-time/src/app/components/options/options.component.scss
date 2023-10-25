@@ -1,23 +1,44 @@
 form{
-    width: 100vw;
+    width: 80vw;
     justify-self: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 10px 10px 5px grey;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, .6);
+    font-size: 16px;
+    // backdrop-filter: blur(6px);
 }
 
-form .row{
-    width: 80%;
-    // background-color: violet;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // justify-content: center;
+p {
+    font-size: 14px;
 }
 
 input, select {
     backdrop-filter: blur(6px);
+    width: 25vw;
+}
+
+select {
+    width: 20vw;
+}
+
+button {
+    width: 20vw;
+    height: fit-content;
+    align-self: flex-end;
+}
+
+.order {
+    width: 70%;
+}
+
+label .badge {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background: grey;
 }
 
 .sec-submit {
@@ -29,6 +50,24 @@ input, select {
 //     width: 80%;
 //     justify-self: center;
 // }
+
+.offcanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background: dark;
+}
+
+.offcanvas button {
+    width: 20%; 
+    transform: translate(10%);
+    margin: 10px;
+}
+
+.order {
+    width: 100%;
+}
 
 figure{
     position: absolute;
@@ -55,4 +94,3 @@ figure:hover, figure:hover + * {
     transform: translate(900px, 0px);
     background: cyan;
 }
-

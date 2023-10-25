@@ -1,32 +1,36 @@
 main {
-    background: url('../../../assets/film-lamps.png') no-repeat;
+    // background: url('../../../assets/film-lamps.png') no-repeat;
     // background: url('../../../assets/cinta_0.png') no-repeat;
-    background-size: 100% auto;
+    background: url('../../../assets/bg.png') no-repeat;
+    background-size: 100% 150%;
     // background-color: #B5D1FB;
     background-color: #bcc1c4;
     position: absolute;
-    top: 0px;
-    width: 100%;
+    top: 35px;
+    width: 100vw;
     // max-width: 1000px;
     // height: calc(100vh - 55px - 30px);
-    height: 100%;
+    height: calc(100% - 40px - 30px);
     display: grid;
     grid-template-rows: 1fr 6fr;
     justify-content: center;
     flex-flow: row wrap;
-    padding-top: 50px;
     left: 0;
+    // overflow-x: hidden;
+    // overflow-y: hidden;
 }
 
-article{
+article {
     width: 80vw;
-    height: 61vh;
+    height: 66vh;
     justify-self: center;
-    margin-bottom: 5vh;
+    margin: 1.8vh 0 5vh 0;
     // align-self: flex-end;
     z-index: 1;
-    background: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .6);
     backdrop-filter: blur(6px);
-    box-shadow: 10px 10px 10px 0 lightgoldenrodyellow;
+    // box-shadow: 10px 10px 10px 0 lightgoldenrodyellow;
+    box-shadow: 10px 10px 10px 0 grey;
     padding: 20px 20px 10px 10px;
+    border: 2px solid white;
 }

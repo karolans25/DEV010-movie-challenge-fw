@@ -4,6 +4,7 @@ import { DataService } from 'src/app/services/data.service';
 import { Movie } from 'src/app/interfaces/movie';
 import { Serie } from 'src/app/interfaces/serie';
 import { Options } from 'src/app/interfaces/options';
+import { Genre } from 'src/app/interfaces/genre';
 // import { MOVIES } from 'src/app/components/films/mock-movies';
 // import { SERIES } from 'src/app/components/films/mock-series';
 
@@ -16,7 +17,7 @@ export class DashboardComponent implements OnInit{
   
   @Output() updateNumOfPages = new EventEmitter<number>();
 
-  genres!: [];
+  genres!: Genre[];
   // movies!: Movie[];
   // series!: Serie[];
   numOfPages!: number;
@@ -42,14 +43,12 @@ export class DashboardComponent implements OnInit{
     this.route.queryParams.subscribe( (params: Params) => {
       this.type = params['type'];
       this.filterOptions = this.dataSvc.getAllFilterOptions()[parseInt(this.type)];
+      this.dataSvc.getAllGenres(this.type)
+      .subscribe( response => this.genres = response.genres);
     });
 
-    this.params = {search: '', filter: '0', order: '0'};
-    // console.log(this.numOfPages);
-    // console.log(this.films);
+    this.params = {search: '', filter: '0', order: '0', genre: []};
     this.makeARequest(1, this.params);
-    // console.log(this.films);
-    // console.log(this.numOfPages);
   }
 
   searchByPage(page: number): void{
