@@ -58,6 +58,32 @@ section {
     padding: 10px;
 }
 
+section::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+section::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+section::-webkit-scrollbar-button:increment, article::-webkit-scrollbar-button {
+    display: none;
+} 
+
+section::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+section::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 1px solid #f1f2f3;
+}
+
+section::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
 h4 {
     transform: translate(0%, -15px);
     font-family: amita;

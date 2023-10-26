@@ -36,7 +36,6 @@ export class DataService {
     const entity = 'genre/'+ params.get('type') +'/list';
     return this.http.get<any>(`${this.URL}${entity}`, { params })
       .pipe(map(response => {
-        console.log(response);
         this.genres = response.genres;
         return { genres: response.genres };
       }));
@@ -45,12 +44,10 @@ export class DataService {
   getFilms(page: number, extraParams: Options, type: string): Observable<any>{
     const params = this.constructParams(page, extraParams);
     const entity = this.constructEntity(type, extraParams.filter, extraParams.search);
-    console.log(`${this.URL}${entity}`);
-    console.log(params);
+    // console.log(`${this.URL}${entity}`);
+    // console.log(params);
     return this.http.get<any>(`${this.URL}${entity}`, {params})
       .pipe(map(response => {
-        console.log(response);
-        console.log(response.total_pages > 500 ? 500 : response.total_pages);
         return { films: response.results, pages: response.total_pages > 500 ? 500 : response.total_pages };
       }));
   }

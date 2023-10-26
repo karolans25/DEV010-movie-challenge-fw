@@ -69,6 +69,32 @@ label .badge {
     width: 100%;
 }
 
+.offcanvas-body::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.offcanvas-body::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+.offcanvas-body::-webkit-scrollbar-button:increment, .offcanvas-body::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.offcanvas-body::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.offcanvas-body::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
 figure{
     position: absolute;
     width: 30px;

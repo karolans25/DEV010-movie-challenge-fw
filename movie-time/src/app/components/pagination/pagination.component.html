@@ -7,8 +7,8 @@
     </section>
 
     <!-- Buttons to navigate on number of pages -->
-    <section class="btn-group">
-        <button (updateNumOfPages)="createPagesButton()" type="button" class="btn btn-secondary"
+    <section class="btn-group pages">
+        <button type="button" class="btn btn-secondary"
             (click)="onPageClicked(i)"
             *ngFor="let i of pages" 
             [ngClass]="{'selected': i === selection}" 
@@ -20,7 +20,7 @@
     <!-- Buttons to go to the next page -->
     <section class="btn-group">
         <button type="button" class="btn btn-dark" (click)="onNextClicked()"><span> > </span></button>
-        <button type="button" class="btn btn-dark" (click)="onPageClicked(numOfPages)" ><span> >> </span></button>  
+        <button type="button" class="btn btn-dark" (click)="onPageClicked(numTotalPages)" ><span> >> </span></button>  
     </section>
 
     <!-- <ngb-toast class="bg-info">
