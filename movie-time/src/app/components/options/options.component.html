@@ -6,13 +6,13 @@
     <!-- Search input -->
     <label for="search" class="form-label ms-3 mt-2">
         <strong>Search by title </strong>
-        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-light" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
+        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-dark" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
         <!-- <p *ngIf="selectedSearch" [hidden]="selectedSearch === ''">{{selectedSearch}}</p>  -->
     </label>
 
     <!-- Simple filter  -->
     <label for="filter" class="form-label ms-3 mt-2"><strong>Filter by</strong>
-        <select (change)="onSubmit()" class="form-select bg-warning text-dark text-center ms-0" id="filter" title="Find movies or series with simple filters" name="filter" formControlName="filter" [disabled]="true">
+        <select (change)="onSubmit()" class="form-select bg-warning text-dark text-center ms-0" id="filter" title="Find movies or series with simple filters" name="filter" formControlName="filter">
             <option class="bg-dark text-light ms-5" *ngFor = "let option of filterOptions; let index = index, let last = last" [value]="index"><span>{{option}}</span></option>
         </select>
         <!-- <p *ngIf="selectedFilter" [hidden]="selectedFilter === (filterOptions.length - 1).toString()">{{selectedFilter}}</p> -->
@@ -42,8 +42,8 @@
             <br>
             <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
             
-            <button type="submit" class="btn btn-primary btn-md" [disabled]="optionsForm.invalid">Send</button>
-            <button type="button" class="btn btn-secondary btn-md" [disabled]="(optionsForm.get('order')?.value === '0')" (click)="resetForm()">Reset</button>
+            <button type="submit" class="btn btn-primary btn-md" >Send</button>
+            <button type="button" class="btn btn-secondary btn-md" (click)="resetForm()">Reset</button>
         </div>
       </div>
 </form>
