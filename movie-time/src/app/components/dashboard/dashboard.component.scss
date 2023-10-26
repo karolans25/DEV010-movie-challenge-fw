@@ -4,7 +4,6 @@ main {
     background: url('../../../assets/bg.png') no-repeat;
     background-size: 100% 150%;
     // background-color: #B5D1FB;
-    background-color: #bcc1c4;
     position: absolute;
     top: 35px;
     width: 100vw;
@@ -27,10 +26,10 @@ article {
     margin: 1.8vh 0 5vh 0;
     // align-self: flex-end;
     z-index: 1;
-    background: rgba(255, 255, 255, .6);
+    background: rgba(255, 255, 255, .5);
     backdrop-filter: blur(6px);
     // box-shadow: 10px 10px 10px 0 lightgoldenrodyellow;
-    box-shadow: 10px 10px 10px 0 grey;
+    box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, .5);
     padding: 20px 20px 10px 10px;
-    border: 2px solid white;
+    // border: 2px solid white;
 }

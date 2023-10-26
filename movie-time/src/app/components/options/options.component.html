@@ -6,7 +6,7 @@
     <!-- Search input -->
     <label for="search" class="form-label ms-3 mt-2">
         <strong>Search by title </strong>
-        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-dark" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
+        <input (keyup)="onSubmit()"  type="search" class="form-control bg-warning text-dark" id="search" placeholder="Write title (movie) or name (serie) 🔍" name="search" title="Search the title of the movie or the name of the serie"  formControlName="search">
         <!-- <p *ngIf="selectedSearch" [hidden]="selectedSearch === ''">{{selectedSearch}}</p>  -->
     </label>
 
@@ -30,7 +30,7 @@
           <h5>Choose the options for filtering</h5>
             
             <label for="order" class="col form-label ms-3 mb-3 mt-0"><p class="text-light">Order by:</p>
-                <select [(ngModel)]="selectedOrder" class="form-select bg-dark text-warning order" id="order" title="Select the order condition for the data" aria-placeholder="Select the condition for sorting the films" name="order" formControlName="order">
+                <select class="form-select bg-dark text-warning order" id="order" title="Select the order condition for the data" aria-placeholder="Select the condition for sorting the films" name="order" formControlName="order">
                     <option class="bg-dark text-light ms-5" *ngFor = "let option of orderOptions; let index = index"  [value]="index" ><span>{{option}}</span></option>
                 </select>
             </label>

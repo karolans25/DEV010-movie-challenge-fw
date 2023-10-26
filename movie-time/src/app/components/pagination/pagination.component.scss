@@ -15,8 +15,10 @@ nav > * {
 }
 
 .selected {
-    background-color: #0d6efd;
-    color: white;
+    background-color: orange;
+    color: black;
+    transform: scale(1.2);
+    z-index: 2;
 }
 
 .toast{
