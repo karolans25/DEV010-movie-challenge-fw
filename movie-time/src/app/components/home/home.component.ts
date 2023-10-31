@@ -19,8 +19,7 @@ export class HomeComponent {
     ];
   }
 
-  goRoute(type: any): void {
-    const index = this.typeFilms.indexOf(type);
-    this.router.navigate([this.typeFilms[index].link], {queryParams: {type: index}});
+  goRoute(index: number): void {
+    this.router.navigate([this.typeFilms[index].link], {queryParams: {type: index.toString()}});
   }
 }

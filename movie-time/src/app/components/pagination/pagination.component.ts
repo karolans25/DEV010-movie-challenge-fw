@@ -8,6 +8,7 @@ import { Component, OnChanges, OnInit, OnDestroy, SimpleChanges, Output, EventEm
 })
 
 export class PaginationComponent implements OnInit, OnChanges{
+  // @ViewChild('toastElement', { read: ElementRef }) el: ElementRef;
 
   @Input() numOfPages!: number;
   @Output() newPageEvent= new EventEmitter<number>();
@@ -22,7 +23,7 @@ export class PaginationComponent implements OnInit, OnChanges{
   constructor(private renderer: Renderer2, private el: ElementRef){}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('Hubo un cambioo -> ', this.numOfPages);
+    // console.log('Hubo un cambioo -> ', this.numOfPages);
     this.selection = 1;
     this.indixes = 0;
     this.totalPages = [];

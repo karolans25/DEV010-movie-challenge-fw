@@ -29,7 +29,8 @@ article {
     background: rgba(255, 255, 255, .5);
     backdrop-filter: blur(6px);
     // box-shadow: 10px 10px 10px 0 lightgoldenrodyellow;
-    box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, .5);
+    // box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, .5);
+    box-shadow: 10px 10px 10px 0 #ff8602;
     padding: 20px 20px 10px 10px;
     // border: 2px solid white;
 }
