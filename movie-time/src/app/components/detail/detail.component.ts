@@ -41,7 +41,7 @@ export class DetailComponent implements OnInit{
         this.date = response['release_date']? response['release_date'] : response['first_air_date'];
         this.year = this.getYearOfDate(this.date);
 
-        this.vote_average = response['vote_average'];
+        this.vote_average = response['vote_average'].toFixed(1);
         this.vote_count = response['vote_count'];
 
         this.genres = response['genres'];

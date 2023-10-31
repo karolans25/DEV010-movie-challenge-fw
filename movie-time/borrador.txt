@@ -1,0 +1,13 @@
+  result: Array<number>[] = [];
+  createPagesButton(totalButtons: number[]) {
+    let pack:number [] = [];
+    if (totalButtons.length > 12) {
+      pack = totalButtons.splice(0, this.maxButtons);
+      this.result.push(pack);
+      this.createPagesButton(totalButtons);
+    } else if(totalButtons.length > 0) {
+      pack = totalButtons.splice(0, totalButtons.length);
+      this.result.push(pack);
+    } else return;
+  }
+

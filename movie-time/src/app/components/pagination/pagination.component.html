@@ -8,9 +8,9 @@
 
     <!-- Buttons to navigate on number of pages -->
     <section class="btn-group">
-        <button (updateNumOfPages)="createPagesButton()" type="button" class="btn btn-secondary"
+        <button (updateNumOfPages)="createPagesButton(createArrayOfTotalNums())" type="button" class="btn btn-secondary"
             (click)="onPageClicked(i)"
-            *ngFor="let i of pages" 
+            *ngFor="let i of pages"
             [ngClass]="{'selected': i === selection}" 
             >
             <span>{{i}}</span>
@@ -36,5 +36,4 @@
         </div>
         <div class="toast-body"><p>{{msg}}</p></div>
     </div>
-    
 </nav>

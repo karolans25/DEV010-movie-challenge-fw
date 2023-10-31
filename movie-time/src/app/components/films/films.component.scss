@@ -12,6 +12,28 @@ main{
     overflow-y: scroll;
 }
 
-// .selected{
-//     transform: scale(0.9);
-// }
+main::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+main::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+main::-webkit-scrollbar-button:increment, main::-webkit-scrollbar-button {
+    display: none;
+} 
+
+main::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+main::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}

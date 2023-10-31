@@ -67,8 +67,6 @@ export class DashboardComponent implements OnInit{
     .subscribe( response => {
       this.numOfPages = response.pages;
       this.films = response.films;
-      console.log(this.numOfPages);
-      console.log(typeof this.numOfPages);
       this.updateNumOfPages.emit(this.numOfPages);
     });
   }

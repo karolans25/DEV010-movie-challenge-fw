@@ -5,10 +5,13 @@ form{
     flex-flow: row wrap;
     justify-content: space-around;
     box-shadow: 10px 10px 5px grey;
-    border: 1px solid white;
-    background: rgba(255, 255, 255, .6);
+    // border: 1px solid white;
+    background: rgba(255, 255, 255, .5);
     font-size: 16px;
     // backdrop-filter: blur(6px);
+    // box-shadow: 10px 10px 10px 0 rgba(255, 255, 255, .5);
+    box-shadow: 10px 10px 10px 0 #ff8602;
+
 }
 
 p {
@@ -42,20 +45,18 @@ label .badge {
 }
 
 .sec-submit {
-    // background-color: blue;
     display: flex;
     justify-content: flex-end;
 }
-// .row section, .row section section{
-//     width: 80%;
-//     justify-self: center;
-// }
 
 .offcanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 1;
+    height: 100vh;
+    transform: translate(-50vw, 0px);
+    // position: absolute;
+    // top: 0;
+    // left: 0;
+    // opacity: 1;
+    // z-index: 100;
     background: dark;
 }
 
@@ -69,28 +70,28 @@ label .badge {
     width: 100%;
 }
 
-figure{
-    position: absolute;
-    width: 30px;
-    height: 500px;
-    clip-path: polygon (50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    background-color: white;
-    // transform: translate(0px, -25px);
+.offcanvas-body::-webkit-scrollbar {
+    -webkit-appearance: none;
 }
 
-figure:hover, figure:hover + * {
-    background-color: yellow;
+.offcanvas-body::-webkit-scrollbar:vertical {
+    width:5px;
 }
 
-.fig-search {
-    transform: translate(170px, 0px);
+.offcanvas-body::-webkit-scrollbar-button:increment, .offcanvas-body::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.offcanvas-body::-webkit-scrollbar:horizontal {
+    height: 10px;
 }
 
-.fig-filter {
-    transform: translate(550px, 0px);
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
 }
 
-.fig-order {
-    transform: translate(900px, 0px);
-    background: cyan;
+.offcanvas-body::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }

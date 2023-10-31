@@ -8,7 +8,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 })
 export class CardComponent implements OnInit{
   // @Input() transform!: string;
-  @Input() backgroundImg!: string;
+  @Input() backgroundImg!: string | null;
   @Input() title!: string;
   @Input() year!: number;
 
