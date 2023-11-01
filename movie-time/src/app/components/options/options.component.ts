@@ -62,7 +62,7 @@ export class OptionsComponent implements OnInit {
     this.newOptionsEvent.emit(this.optionsForm.value);
   }
 
-  addGenre(genre: Genre, index: number): void {
+  addGenreToFilter(genre: Genre, index: number): void {
     const badge = document.getElementById(genre.id.toString());
     if(badge){
       this.optionsForm.get('genre')?.value.push(genre.id.toString());
