@@ -32,9 +32,9 @@ export class DetailComponent implements OnInit{
         // const newTab = window.open( link + '?' + queryParams, '_blank');
         console.log(response);
 
-        this.backdrop = response['backdrop_path']?"url(\'https:\/\/image.tmdb.org/t/p/w780" + response['backdrop_path'] + "\')" : 'url(../../../assets/not-available.png) no-repeat top';
+        this.backdrop = typeof response['backdrop_path'] === 'string' ? "url(\'https:\/\/image.tmdb.org/t/p/w780" + response['backdrop_path'] + "\')" : 'url(../../../assets/not-available.png) no-repeat top';
 
-        this.poster = response['poster_path']? "url(\'https:\/\/image.tmdb.org/t/p/w342" + response['poster_path'] + "\')" : 'url(../../../assets/not-available.png)';
+        this.poster = typeof response['poster_path'] === 'string' ? "url(\'https:\/\/image.tmdb.org/t/p/w342" + response['poster_path'] + "\')" : 'url(../../../assets/not-available.png)';
 
         this.title = response['title']? response['title'] : response['name'];
 

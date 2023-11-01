@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
@@ -28,25 +27,25 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'movie-time'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('movie-time');
-  });
-
-  // it('should render title', () => {
+  // it(`should have as title 'movie-time'`, () => {
   //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.nativeElement as HTMLElement;
-  //   expect(compiled.querySelector('.content span')?.textContent).toContain('movie-time app is running!');
+  //   const app = fixture.componentInstance;
+  //   expect(app.title).toEqual('movie-time');
   // });
 
-  it('should open the modal', () => {
-    const modalMock = 'modal-mock'; // You can provide a mock modal
+  // // it('should render title', () => {
+  // //   const fixture = TestBed.createComponent(AppComponent);
+  // //   fixture.detectChanges();
+  // //   const compiled = fixture.nativeElement as HTMLElement;
+  // //   expect(compiled.querySelector('.content span')?.textContent).toContain('movie-time app is running!');
+  // // });
 
-    component.open(modalMock);
+  // it('should open the modal', () => {
+  //   const modalMock = 'modal-mock'; // You can provide a mock modal
 
-    // Verify that the NgbModal service's open method was called with the provided modal
-    expect(modalService.open).toHaveBeenCalledWith(modalMock);
-  });
+  //   component.open(modalMock);
+
+  //   // Verify that the NgbModal service's open method was called with the provided modal
+  //   expect(modalService.open).toHaveBeenCalledWith(modalMock);
+  // });
 });

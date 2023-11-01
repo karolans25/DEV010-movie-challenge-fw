@@ -29,7 +29,6 @@ describe('FilmsComponent', () => {
     component.clickedCardEvent.subscribe((index) => {
       clickedCardIndex = index;
     });
-
     const testIndex = 1;
     component.onCardClicked(testIndex);
 

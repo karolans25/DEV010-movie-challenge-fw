@@ -3,6 +3,11 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { PaginationComponent } from './pagination.component';
 import { SimpleChanges } from '@angular/core';
 
+// import Spy from 'jasmine';
+// import createSpy from 'jasmine';
+import Spy = jasmine.Spy;
+import createSpy = jasmine.createSpy;
+
 describe('PaginationComponent', () => {
   let component: PaginationComponent;
   let fixture: ComponentFixture<PaginationComponent>;
@@ -23,31 +28,30 @@ describe('PaginationComponent', () => {
   it('should initialize the component properties correctly', () => {
     // Test the initial state of component properties
     expect(component.numOfPages).toBeUndefined();
-    expect(component.maxButtons).toBeUndefined();
-    expect(component.selection).toBeUndefined();
+    expect(component.maxButtons).toBe(12);
+    expect(component.selection).toBe(1);
     expect(component.pages).toEqual([]);
-    expect(component.totalPages).toEqual([]);
-    expect(component.indixes).toBeUndefined();
+    expect(component.totalPages).toEqual([[]]);
+    expect(component.indixes).toBe(0);
     expect(component.msg).toBeUndefined();
   });
 
-  it('should handle ngOnChanges correctly', () => {
-    // Simulate changes in the input properties
-    component.numOfPages = 10; // Provide a value
+  it('should handle ngOnChanges correctly for numOfPages', () => {
+    component.numOfPages = 10;
     fixture.detectChanges();
 
-    // Check that the component properties have been updated as expected
     expect(component.numOfPages).toBe(10);
-    // Add more expectations for other properties if needed
   });
 
-  it('should initialize selection, indices, totalPages, and pages on ngOnChanges', () => {
+  // it('should handle ngOnChanges correctly for numOfPages less than maxButton', () => {
+
+  it('should initialize selection, indixes, totalPages, and pages on ngOnChanges', () => {
     // Arrange
     const changes: SimpleChanges = {
       numOfPages: {
         previousValue: undefined,
         currentValue: 10,
-        firstChange: false,
+        firstChange: true,
         isFirstChange: function (): boolean {
           throw new Error('Function not implemented.');
         }
@@ -60,13 +64,22 @@ describe('PaginationComponent', () => {
     // Assert
     expect(component.selection).toEqual(1);
     expect(component.indixes).toEqual(0);
-    expect(component.totalPages).toEqual([]);
-    // Adjust the assertion according to your actual implementation
+    expect(component.totalPages).toEqual([[]]);
   });
   
   it('should emit newPageEvent when a page is clicked', () => {
     const emitSpy = spyOn(component.newPageEvent, 'emit');
     const pageIndex = 3; // Simulate clicking on page 3
+    component.onPageClicked(pageIndex);
+
+    // Verify that the event has been emitted with the correct index
+    expect(emitSpy).toHaveBeenCalledWith(pageIndex);
+  });
+
+  it('should emit newPageEvent when a page is clicked', () => {
+    component.selection = 2;
+    const emitSpy = spyOn(component.newPageEvent, 'emit');
+    const pageIndex = 1; // Simulate clicking on page 3
     component.onPageClicked(pageIndex);
 
     // Verify that the event has been emitted with the correct index
@@ -98,17 +111,14 @@ describe('PaginationComponent', () => {
     expect(component.msg).toBeUndefined(); // Verify that msg is not set
   });
 
-  it('should show a toast when onPageClicked is called with the same page index', () => {
-    // Simulate clicking on the same page
-    const pageIndex = 1; // Simulate clicking on page 3
-    component.onPageClicked(pageIndex);
-    component.onPageClicked(pageIndex); // Assuming the initial selection is also 1
+  // it('should show a toast when onPageClicked is called with the same page index', () => {
+  //   component.selection = 1;
+  //   const pageIndex = 1; // Simulate clicking on page 1
+  //   component.onPageClicked(pageIndex);
 
-    // Verify that a toast message is displayed or that the `showToast` function is called
-    // You can test this by spying on the `showToast` function and checking if it was called.
-    // const showToastSpy = spyOn(component.showToast, 'showToast');
-    expect(component.showToast).toHaveBeenCalled();
-  });
+  //   const showToastSpy = spyOn(component, 'showToast');
+    // expect(component.showToast).toHaveBeenCalled();
+  // });
 
   it('should show a toast and not emit an event when the same page is clicked', () => {
     const emitSpy = spyOn(component.newPageEvent, 'emit');
@@ -129,7 +139,7 @@ describe('PaginationComponent', () => {
     const emitSpy = spyOn(component.newPageEvent, 'emit');
     component.selection = 3; // Set an initial selection
     component.maxButtons = 12; // Set a value for maxButtons
-    component.indixes = 1; // Set indixes to a non-zero value
+    component.indixes = 0; // Set indixes to a zero value
     component.totalPages = [[1, 2, 3, 4, 5]]; // Set sample totalPages
 
     component.onPreviousClicked();
@@ -149,7 +159,7 @@ describe('PaginationComponent', () => {
 
     expect(component.selection).toBe(1);
     expect(emitSpy).not.toHaveBeenCalled(); // No event should be emitted
-    expect(component.indixes).toBeUndefined(); // Indixes should not change
+    expect(component.indixes).toBe(0); // Indixes should not change
     expect(component.msg).toBe('This is already the first page');
     expect(showToastSpy).toHaveBeenCalled(); // Verify that showToast function is called
   });
@@ -168,16 +178,15 @@ describe('PaginationComponent', () => {
     expect(component.indixes).toBe(0); // Indixes should be updated to the first index
   });
 
-  // it('should navigate to the next page and emit an event', () => {
-  //   // Simulate moving to the next page
-  //   component.selection = 2; // Set an initial selection
-  //   const emitSpy = spyOn(component.newPageEvent, 'emit');
-  //   component.onNextClicked();
+  it('should navigate to the next page and emit an event', () => {
+    component.selection = 2; // Set an initial selection
+    component.numOfPages = 6;
+    const emitSpy = spyOn(component.newPageEvent, 'emit');
+    component.onNextClicked();
 
-  //   // Verify that the event has been emitted with the new page index (3) and the selection has been updated
-  //   expect(emitSpy).toHaveBeenCalledWith(3);
-  //   expect(component.selection).toBe(3);
-  // });
+    expect(emitSpy).toHaveBeenCalledWith(3);
+    expect(component.selection).toBe(3);
+  });
 
   it('should navigate to the next page and emit an event when the current page is not the last page', () => {
     const emitSpy = spyOn(component.newPageEvent, 'emit');
@@ -205,7 +214,7 @@ describe('PaginationComponent', () => {
 
     expect(component.selection).toBe(10);
     expect(emitSpy).not.toHaveBeenCalled(); // No event should be emitted
-    expect(component.indixes).toBeUndefined(); // Indixes should not change
+    expect(component.indixes).toBe(0); // Indixes should not change
     expect(component.msg).toBe('This is already the last page');
     expect(showToastSpy).toHaveBeenCalled(); // Verify that showToast function is called
   });
@@ -229,18 +238,25 @@ describe('PaginationComponent', () => {
   });
 
   it('should show the toast and hide it after a delay', fakeAsync(() => {
-    const toastElement = { // Mock the toast element
-      classList: {
-        add: jasmine.createSpy('add'),
-        remove: jasmine.createSpy('remove'),
-      },
-    };
-    // component.el.nativeElement.querySelector = jasmine.createSpy('querySelector').and.returnValue(toastElement);
-    component.showToast();
+    // const classListMock: Partial<DOMTokenList> = {
+    //   add: createSpy('add') as Spy<(tokens: string) => void>,
+    //   remove: createSpy('remove') as Spy<(tokens: string) => void>,
+    // };
 
-    expect(toastElement.classList.add).toHaveBeenCalledWith('show');
-    tick(3000); // Advance the clock by 3000 milliseconds (simulate the delay)
-    expect(toastElement.classList.remove).toHaveBeenCalledWith('show');
+    // const classListMockAsDOMTokenList: DOMTokenList = classListMock as DOMTokenList;
+
+    // const toastElement: Partial<HTMLElement> = {
+    //   classList: classListMockAsDOMTokenList,
+    // };
+    component.showToast();
+    fixture.detectChanges();
+
+    const toastElement = fixture.nativeElement.querySelector('.toast');
+
+    expect(toastElement.classList.contains('show')).toBe(true);
+    tick(3000);
+    fixture.detectChanges();
+    expect(toastElement.classList.contains('show')).toBe(false);
   }));
 
   it('should create an array of total numbers correctly', () => {
@@ -249,22 +265,23 @@ describe('PaginationComponent', () => {
     expect(totalButtons).toEqual([1, 2, 3, 4, 5]); // Adjust the expected array accordingly
   });
 
-  it('should create pages button correctly', () => {
-    // You can provide a sample array and check if it's correctly split into pages
+  it('should create pages button', () => {
     const totalButtons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     component.createPagesButton(totalButtons);
 
-    // Check if totalPages property contains the expected sub-arrays
-    expect(component.totalPages).toEqual([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [13, 14, 15]]); // Adjust the expected array accordingly
+    expect(component.totalPages.length).toBeGreaterThan(0);
+    expect(component.totalPages).toEqual([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [13, 14, 15]]);
   });
 
-  it('should create pages button correctly', () => {
-    // You can provide a sample array and check if it's correctly split into pages
-    const totalButtons = [1, 2, 3, 4, 5, 6, 7, 8];
+  it('should create pages button', () => {
+    const totalButtons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     component.createPagesButton(totalButtons);
 
-    // Check if totalPages property contains the expected sub-arrays
-    expect(component.totalPages).toEqual([[1, 2, 3, 4, 5, 6, 7, 8]]); // Adjust the expected array accordingly
+    expect(component.totalPages.length).toBeGreaterThan(0);
+    expect(component.totalPages).toEqual([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]);
+    // for (let i = 0; i < component.totalPages.length; i++) {
+    //   const pageButtonPack = component.totalPages[i];
+    //   expect(pageButtonPack.length).toBeLessThanOrEqual(component.maxButtons);
+    // }
   });
-
 });

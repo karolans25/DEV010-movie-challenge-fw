@@ -35,7 +35,6 @@ describe('NavbarComponent', () => {
 
   it('should navigate to movies route when the movies\'s link is clicked', () => {
     const navigateSpy = spyOn(router, 'navigate');
-
     const link = component.links[0];
     component.goPath(link);
 
@@ -44,7 +43,6 @@ describe('NavbarComponent', () => {
 
   it('should navigate to series route when the series\'s link is clicked', () => {
     const navigateSpy = spyOn(router, 'navigate');
-
     const link = component.links[1];
     component.goPath(link);
 
@@ -53,7 +51,6 @@ describe('NavbarComponent', () => {
 
   it('should navigat to home route and component when home\'s link is clicked', () => {
     const navigateSpy = spyOn(router, 'navigate');
-
     const link = component.links[2];
     component.goPath(link);
 

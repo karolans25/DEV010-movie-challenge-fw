@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { CardComponent } from './card.component';
 
@@ -12,22 +12,23 @@ describe('CardComponent', () => {
     });
     fixture = TestBed.createComponent(CardComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should initialize the backgroundUrl when backgroundImg is not null', () => {
+  it('should set backgroundUrl to a valid URL when backgroundImg is a string', () => {
     component.backgroundImg = 'example.jpg';
-    fixture.detectChanges();
-    expect(component.backgroundUrl).toBe("url('https://image.tmdb.org/t/p/w154example.jpg')");
+    component.ngOnInit(); // Manually call ngOnInit
+
+    expect(component.backgroundUrl).toBe("url('https://image.tmdb.org/t/p/w154" + component.backgroundImg + "')");
   });
 
-  it('should initialize the backgroundUrl when backgroundImg is null', () => {
+  it('should set backgroundUrl to the "not-available" image when backgroundImg is null', () => {
     component.backgroundImg = null;
-    fixture.detectChanges();
+    component.ngOnInit(); // Manually call ngOnInit
+
     expect(component.backgroundUrl).toBe('url(../../../assets/not-available.png)');
   });
 });

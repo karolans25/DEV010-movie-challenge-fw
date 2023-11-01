@@ -15,26 +15,26 @@ export class PaginationComponent implements OnInit, OnChanges{
 
   maxButtons!: number;
   selection!: number;
-  pages: number[] = [];
+  pages!: number[];
   totalPages: Array<number>[] = [];
   indixes!: number;
   msg!: string;
 
   constructor(private renderer: Renderer2, private el: ElementRef){}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log('Hubo un cambioo -> ', this.numOfPages);
-    this.selection = 1;
-    this.indixes = 0;
-    this.totalPages = [];
-    this.createPagesButton(this.createArrayOfTotalNums());
-    this.pages = this.totalPages[this.indixes];
-  }
-
   ngOnInit(): void{
     this.maxButtons = 12;
     this.selection = 1;
     this.indixes = 0;
+    // this.totalPages = [];
+    this.createPagesButton(this.createArrayOfTotalNums());
+    this.pages = this.totalPages[this.indixes];
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.selection = 1;
+    this.indixes = 0;
+    this.pages = [1];
     this.totalPages = [];
     this.createPagesButton(this.createArrayOfTotalNums());
     this.pages = this.totalPages[this.indixes];
@@ -102,7 +102,7 @@ export class PaginationComponent implements OnInit, OnChanges{
     return nums;
   }
  
-  createPagesButton(totalButtons: number[]) {
+  createPagesButton(totalButtons: number[]): void {
     let pack: number[];
     if (totalButtons.length > this.maxButtons) {
       pack = totalButtons.slice(0, this.maxButtons);
@@ -111,5 +111,7 @@ export class PaginationComponent implements OnInit, OnChanges{
     } else {
       this.totalPages.push(totalButtons);
     }
+    if (this.totalPages.length > 1 && this.totalPages[0].length === 0)
+      this.totalPages.shift();
   }
 }
