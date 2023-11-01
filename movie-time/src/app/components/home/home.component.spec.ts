@@ -35,21 +35,26 @@ describe('HomeComponent', () => {
     expect(router.navigate).toHaveBeenCalledWith(['/dashboard/movies'], { queryParams: { type: '0' } });
   });
 
+  it('should call goRoute when the Movie\'s button is clicked', () => {
+    let button = fixture.debugElement.nativeElement.querySelectorAll('button'); 
+    button[0].click();
+    fixture.whenStable().then(() => {
+      expect(component.goRoute).toHaveBeenCalledWith(0);
+    });
+  });
+
   it('should rediret when click on Series\'s button to goRoute', () => {
     spyOn(router, 'navigate');
     component.goRoute(1);
     expect(router.navigate).toHaveBeenCalledWith(['/dashboard/series'], { queryParams: { type: '1' } });
   });
 
-  // it('should call goRoute when the button is clicked', () => {
-  //   // spyOn(component, 'goRoute');
+  it('should call goRoute when the Serie\'s button is clicked', () => {
+    let button = fixture.debugElement.nativeElement.querySelectorAll('button'); 
+    button[1].click();
+    fixture.whenStable().then(() => {
+      expect(component.goRoute).toHaveBeenCalledWith(1);
+    });
+  });
 
-  //   let button = fixture.debugElement.nativeElement.querySelectorAll('button');
-    
-  //   button[0].click();
-
-  //   fixture.whenStable().then(() => {
-  //     expect(component.goRoute).toHaveBeenCalledWith(0);
-  //   });
-  // });
 });
