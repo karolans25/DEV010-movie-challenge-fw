@@ -26,7 +26,7 @@ export class PaginationComponent implements OnInit, OnChanges{
     this.maxButtons = 12;
     this.selection = 1;
     this.indixes = 0;
-    this.totalPages = [];
+    // this.totalPages = [];
     this.createPagesButton(this.createArrayOfTotalNums());
     this.pages = this.totalPages[this.indixes];
   }
@@ -111,5 +111,7 @@ export class PaginationComponent implements OnInit, OnChanges{
     } else {
       this.totalPages.push(totalButtons);
     }
+    if (this.totalPages.length > 1 && this.totalPages[0].length === 0)
+      this.totalPages.shift();
   }
 }
