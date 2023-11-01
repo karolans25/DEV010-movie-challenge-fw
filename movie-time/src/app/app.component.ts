@@ -8,7 +8,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'movie-time';
+  title = 'MovieTime';
 
   constructor(private modalService: NgbModal){ }
 
