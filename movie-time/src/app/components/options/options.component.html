@@ -37,7 +37,7 @@
             <br>
             
             <label class="col form-label ms-3 mb-3 mt-0 text-light"><p>Filter with genre:</p>
-                <span class="badge badge-md text-dark" *ngFor="let genre of genres, let index = index" (click)="addGenre(genre, index)" id="{{genre.id}}">{{genre.name}}</span>
+                <span class="badge badge-md text-dark" *ngFor="let genre of genres, let index = index" (click)="addGenreToFilter(genre, index)" id="{{genre.id}}">{{genre.name}}</span>
             </label>
             <br>
             <!-- <p *ngIf="selectedOrder" [hidden]="selectedOrder === '0'"> {{selectedOrder}}</p> -->
