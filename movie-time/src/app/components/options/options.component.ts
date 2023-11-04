@@ -72,6 +72,7 @@ export class OptionsComponent implements OnInit {
 
   paintGreyGenreBadge(genreId: string): void {
     const badge = document.getElementById(genreId);
+    console.log(badge);
     if(badge){
       badge.style.backgroundColor = 'grey';
     }

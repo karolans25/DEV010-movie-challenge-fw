@@ -92,4 +92,21 @@ describe('DataService', () => {
     // httpTestingController.verify();
   });
 
+  it('should get film by ID', () => {
+    const id = 123;
+    const type = '1';
+
+    dataService.getFilmById(id, type).subscribe((response) => {
+      expect(response).toBeTruthy();
+    });
+
+    // const req = httpTestingController.expectOne((request) => {
+    //   return request.urlWithParams === `${dataService.URL}${dataService.constructEntity(type, '0', '')}/${id}?api_key=${dataService.API}&include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
+    // });
+    // expect(req.request.method).toEqual('GET');
+
+    // req.flush({ title: 'Test Movie' });
+    // httpTestingController.verify();
+  });
+
 });

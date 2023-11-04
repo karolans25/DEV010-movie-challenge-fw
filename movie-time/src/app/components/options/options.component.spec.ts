@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { OptionsComponent } from './options.component';
 import { Genre } from 'src/app/interfaces/genre';
 import { Options } from 'src/app/interfaces/options';
@@ -59,54 +59,37 @@ describe('OptionsComponent', () => {
     expect(component.newOptionsEvent.emit).toHaveBeenCalledWith({ search: '', filter: '0', order: '0', genre: [] });
   });
 
-  // it('should add genre to filter and update badge color', () => {
-  //   // Set up your test data
-  //   const genreId = 1;
-  //   const genre: Genre = { id: genreId, name: 'Action' };
-  //   const index = 0;
+  it('should add a genre to the filter and update badge color', () => {
+    const genre = { id: 1, name: 'Action' };
+    const index = 0;
+    component.colors = ['red', 'blue']; // Mock the colors array
+    component.optionsForm = new FormGroup({
+      genre: new FormControl([]), // Mock the form control
+    });
 
-  //   const mockStyle: Partial<CSSStyleDeclaration> = {
-  //     backgroundColor: 'red',
-  //     // Add other properties you need to test here
-  //   };
-  //   const mockElement: HTMLElement = {
-  //     style: mockStyle as CSSStyleDeclaration,
-  //     id: '1',
-  //     // Add other properties/methods of HTMLElement as needed
-  //   };
-  //   // Spy on the DOM manipulation methods
-  //   spyOn(document, 'getElementById').and.returnValue({ style: { backgroundColor: '' } });
+    // Create a badge element and add it to the DOM
+    const badge = document.createElement('div');
+    badge.id = '1'; // This should match the genre.id
+    document.body.appendChild(badge);
 
-  //   // Call the function
-  //   component.addGenreToFilter(genre, index);
+    component.addGenreToFilter(genre, index);
 
-  //   // Expectations
-  //   expect(component.optionsForm.get('genre')?.value).toContain(genreId);
-  //   expect(document.getElementById(genreId)?.style.backgroundColor).toBe(component.colors[index].toString());
-  // });
+    // Assert that the genre is added to the filter and badge color is updated
+    expect(component.optionsForm.get('genre')?.value).toEqual(['1']);
+    expect(badge.style.backgroundColor).toBe('red'); // Assuming red is the color for index 0
+  });
+  
+  it('should paint a genre badge grey', () => {
+    const genreId = '1';
 
-  // it('should add genre and update the form when addGenre is called', () => {
-  //   // Arrange
-  //   const genre: Genre = { id: 1, name: 'Action' };
-  //   const index = 0;
+    // Create a badge element and add it to the DOM
+    const badge = document.createElement('div');
+    badge.id = genreId;
+    document.body.appendChild(badge);
 
-  //   // Act
-  //   component.addGenreToFilter(genre, index);
+    component.paintGreyGenreBadge(genreId);
 
-  //   // Assert
-  //   expect(component.optionsForm.get('genre')?.value).toBe(1);
-  //   expect(component.optionsForm.get('genre')?.value).toContain(genre.id);
-  // });
-
-  // it('should paint genre badge grey when paintGreyGenreBadge is called', () => {
-  //   // Arrange
-  //   const genreId = '1';
-
-  //   // Act
-  //   component.paintGreyGenreBadge(genreId);
-
-  //   // Assert
-  //   const badge = document.getElementById(genreId);
-  //   expect(badge?.style.backgroundColor).toBe('grey');
-  // });
+    // Assert that the badge's background color is grey
+    expect(badge.style.backgroundColor).toBe('grey');
+  });
 });
