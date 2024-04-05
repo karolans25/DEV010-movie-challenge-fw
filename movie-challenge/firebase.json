@@ -1,9 +1,0 @@
-{
-  "hosting": [
-    {
-      "target": "movie-challenge",
-      "source": ".",
-      "frameworksBackend": {}
-    }
-  ]
-}
