@@ -1,0 +1,24 @@
+<main>
+    <h1 class="text-center mb-5 title">Films Time! </h1>
+    
+    <section class="container bg-light rounded">
+        <aside class="col-lg-5 col-md-5 col-sm-12 aside-img">
+          <img src="../assets/movie-time.jpg" class="img-fluid rounded-start" alt="Image with pop corns in black background">
+        </aside>
+      
+        <aside class="col-lg-7 col-md-7 col-sm-12 col-12 text-center py-5">
+            <h1>Welcome Back</h1>
+                    
+            <p>One of the most confortable space to look for your favorite movies or series.</p>
+    
+            <p class="lead">What would you like to search first?</p>
+            <div>
+              <ng-container *ngFor="let item of links; let index = index">
+                <button *ngIf="index != 0" (click)="goPath(item.link)" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button>
+                <!-- <button *ngIf="index != 0" [routerLink]="'dash/' + item.link" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button> -->
+              </ng-container>
+            </div>
+        </aside>
+      </section>
+      
+    </main>
