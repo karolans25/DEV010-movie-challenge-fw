@@ -12,7 +12,7 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  text = 'Made with 💖 ';
+  text = 'Made 💖 ';
   msgs: string[] = ['by Carolina Pulido 👩🏻‍💻', 'using TMDB and Angular', 'to have fun with movies', 'in Laboratoria Bootcamp'];
 
 }

@@ -1,36 +1,46 @@
-nav section{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    padding-top: 10px;
+nav {
+    section{
+        width: 100%;
+        // height: 100%;
+        height: 40px;
+        padding: 5px;
 
-    ul {
-        padding-left: 0px;
-        list-style: none;
-        height: 17px;
-        overflow: hidden;
-        
-        li {
+        p {
             position: relative;
-            padding-left: 10px;
-            animation: slide 48s steps(4) infinite;
-            text-align: start;
+            bottom: 0px;
+            margin: 0;
+            padding: 0;
         }
 
-        li::after{
-            content: "";
-            position: absolute;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background-color: #212529;
-            border-left: 2px solid #ff8602;
-            animation: typing 12s steps(23) infinite;
-        }        
+        ul {
+            position: relative;
+            bottom: 0px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            height: 25px;
+            overflow: hidden;
+            
+            li {
+                position: relative;
+                padding-left: 10px;
+                // animation: slide 48s steps(4) infinite;
+                text-align: start;
+            }
+
+            // li::after{
+            //     content: "";
+            //     position: absolute;
+            //     left: 0;
+            //     height: 100%;
+            //     width: 100%;
+            //     background-color: #212529;
+            //     border-left: 2px solid #ff8602;
+            //     animation: typing 12s steps(23) infinite;
+            // }        
+        }
     }
+
 }
 
 @keyframes slide {

@@ -14,8 +14,8 @@
             <p class="lead">What would you like to search first?</p>
             <div>
               <ng-container *ngFor="let item of links; let index = index">
-                <button *ngIf="index != 0" (click)="goPath(item.link)" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button>
-                <!-- <button *ngIf="index != 0" [routerLink]="'dash/' + item.link" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button> -->
+                <!-- <button *ngIf="index != 0" (click)="goPath(item.link)" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button> -->
+                <button *ngIf="index != 0" [routerLink]="item.link" routerLinkActive="router-link-active"  type="button" class="btn btn-dark" >{{item.text}}</button>
               </ng-container>
             </div>
         </aside>

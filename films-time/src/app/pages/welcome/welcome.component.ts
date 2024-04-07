@@ -18,24 +18,6 @@ export class WelcomeComponent implements OnInit {
   goPath(link: string):void {
     console.log(link);
     this.router.navigate([link], {queryParams: {}});
-    // const item = this.links.find(m => m.link === link);
-    // console.log(item);
-    // if (item?.link === ''){
-      // this.router.navigate([item.link]);      
-    // }
-    // console.log(item?.link || '');
-    
-    // if (index !== 0){
-    //   // this.router.navigate([link.link], {queryParams: {type: index}});
-    //   console.log(link.link)
-    //   this.router.navigate([link.link], {
-    //     queryParams: {type: index},
-    //     // skipLocationChange: true
-    //     // state: {link: link.link}
-    //   });
-    // } else {
-    //   this.router.navigate([link.link], {queryParams: {}});
-    // }
   }
 
 }

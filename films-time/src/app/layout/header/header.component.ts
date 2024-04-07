@@ -14,12 +14,12 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  title = '🎞 \t Movie Time \t 📽️';//'🎞️🎬 \t Movie Time \t 📽️';
+  // title = '🎞 \t Movie Time \t 📽️';//'🎞️🎬 \t Movie Time \t 📽️';
+  title = '📽️\tFilms time\t';//'🎞️🎬 \t Movie Time \t 📽️';
   links = PATHS;
 
   goPath(link: string):void {
     this.router.navigate([link], {queryParams: {}});
   }
-
 
 }

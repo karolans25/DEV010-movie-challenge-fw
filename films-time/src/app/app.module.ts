@@ -7,6 +7,11 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { CommonModule } from '@angular/common';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ApiTmdbInterceptor } from '@shared/interceptors/api-tmdb.interceptor';
+import { OptionsComponent } from './features/films/options/options.component';
+import { PaginatorComponent } from './features/films/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,18 @@ import { FooterComponent } from './layout/footer/footer.component';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiTmdbInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CommonModule,
   ]
 })
 export class AppModule { }

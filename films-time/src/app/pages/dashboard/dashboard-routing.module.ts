@@ -6,24 +6,23 @@ import { DetailsComponent } from '@features/films/details/details.component';
 
 const routes: Routes = [
   {
-    path: 'series',
-    // component: FilmsComponent
-    loadChildren: () => import('@pages/dashboard/dashboard.module').then(m => m.DashboardModule),
-  },
-  {
-    path: 'movies',
-    // component: FilmsComponent
-    loadChildren: () => import('@pages/dashboard/dashboard.module').then(m => m.DashboardModule),
-  },
-  {
     path: '',
-    component: DashboardComponent
-    // loadChildren: () => import('@pages/dashboard/dashboard.module').then(m => m.DashboardModule),
+    component: DashboardComponent,
+    children: [
+      {
+        path: '',
+        // component: FilmsComponent,
+        loadChildren: () => import('@pages/dashboard/films/films.module').then( m => m.FilmsModule),
+        // pathMatch: 'full',
+      },
+      // {
+      //   path: ':id',
+      //   component: DetailsComponent,
+      //   // loadChildren: () => import('@pages/dashboard/details/details.module').then( m => m.DetailsModule),
+      //   // pathMatch: 'full',
+      // },
+    ],
   },
-  // {
-    // path: ':id',
-    // component: DetailsComponent
-  // }
 ];
 
 @NgModule({

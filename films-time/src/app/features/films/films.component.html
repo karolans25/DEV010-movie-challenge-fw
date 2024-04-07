@@ -1,1 +1,19 @@
-<p>films works!</p>
+<main class="container rounded m-auto d-flex flex-column justify-content-center align-items-center">
+
+    <app-options class="d-flex flex-row flex-nowrap"></app-options>
+
+    <section class="rounded p-4 d-flex flex-wrap justify-content-center align-items-center ">
+        <div class="d-flex flex-row">
+            <app-card class="card rounded bg-transparent border border-0"
+            (click)="showDetailFilm(index)"
+            *ngFor="let film of films; let index = index" 
+            [title]="film.title? film.title : film.name"
+            [backgroundImg]="film.poster_path"
+            [year]="getYearOfDate(film.release_date? film.release_date: film.first_air_date)"
+            >
+            </app-card>
+        </div>
+        <app-paginator></app-paginator>
+    </section>
+
+</main>

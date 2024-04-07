@@ -1,1 +1,7 @@
-<p>card works!</p>
+<figure class="card rounded bg-transparent" [style]="{'background': backgroundUrl, 'year': year}">
+    <!-- <h3>Title 1</h3> -->
+    <!-- <caption><h4>Probando un titulo muy largoTitle</h4><span>year</span></caption> -->
+    <!-- <div class="ribbon"></div> -->
+    <figcaption class="rounded ribbon">{{year}}</figcaption>
+    <figcaption class="rounded-bottom">{{title}}</figcaption>
+</figure>
